@@ -1,0 +1,14 @@
+[user]
+  name = Brian Doll
+  email = brian@emphaticsolutions.com
+[alias]
+  co = checkout
+  s = status
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[core]
+  excludesfile = ~/.gitignore
+[apply]
+  whitespace = nowarn
