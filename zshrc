@@ -1,3 +1,5 @@
+PROMPT='[%n@%m %~]\$' 
+
 . ~/.zsh/config
 . ~/.zsh/aliases
 . ~/.zsh/completion
