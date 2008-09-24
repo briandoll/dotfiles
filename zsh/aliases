@@ -1,12 +1,18 @@
+
 # cd
 alias ..='cd ..'
  
 # ls
-alias ls="ls -F"
+alias ls="ls -F --color=auto"
 alias l="ls -lAh"
 alias ll="ls -l"
 alias la='ls -A'
- 
+
+# emacs
+alias emacs='emacs -nw'
+alias vi='emacs -nw'
+alias vim='emacs -nw'
+
 # git
 alias gl='git pull'
 alias gp='git push'

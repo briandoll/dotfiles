@@ -1,7 +1,7 @@
+
 #!/usr/bin/env ruby
  
-# from http://errtheblog.com/posts/89-huba-huba
- 
+# from http://errtheblog.com/posts/89-huba-huba 
 home = ENV['HOME']
  
 Dir.chdir File.dirname(__FILE__) do
