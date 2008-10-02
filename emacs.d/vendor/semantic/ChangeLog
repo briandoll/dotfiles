@@ -1,0 +1,7838 @@
+2003-04-22 14:58  ponced
+
+	* semantic.el:
+
+	(semantic-version): Updated to 1.4.4.
+	
+2003-04-22 14:57  ponced
+
+	* Project.ede:
+
+	(ede-proj-project "semantic"): Updated :version to 1.4.4.
+	
+2003-04-11 09:53  berndl
+
+	* semantic-util-modes.el:
+
+	(semantic-stickyfunc-fetch-stickyline): Searching the token-name to get more
+	useful information in the header line
+	
+2003-04-10 17:40  berndl
+
+	* NEWS:
+
+	Added news for bugfixes of the c++-grammar
+	
+2003-04-08 14:53  ponced
+
+	* semantic-util.el:
+
+	(semantic-uml-nonterminal-protection): New macro.
+	(semantic-uml-abbreviate-nonterminal-default)
+	(semantic-uml-prototype-nonterminal-default)
+	(semantic-uml-concise-prototype-nonterminal-default): Use it.
+	
+2003-04-08 14:34  zappo
+
+	* NEWS:
+
+	Added section for semantic 1.4.4.
+	Discuss stickyfunc mode.
+	
+2003-04-08 00:09  zappo
+
+	* semantic-load.el:
+
+	(global-semantic-stickyfunc-mode): On by default if available.
+	
+2003-04-08 00:07  zappo
+
+	* semantic-util-modes.el:
+
+	(global-semantic-stickyfunc-mode)
+	(global-semantic-stickyfunc-mode-hook)
+	(semantic-stickyfunc-mode-map)
+	(semantic-stickyfunc-mode)
+	(semantic-stickyfunc-mode-setup)
+	(semantic-stickyfunc-sticky-classes)
+	(semantic-stickyfunc-fetch-stickyline): New minor mode.
+	
+2003-04-04 14:19  berndl
+
+	* semantic-c.el, c.bnf:
+
+	(namespace-symbol): fixed so also template-specifiers can be parsed here.
+	
+	(typeformbase): ajusted for new namespace-symbol definition
+	
+2003-04-04 11:42  berndl
+
+	* c.bnf:
+
+	(macro-expression-list): Removed a backslash from the comment before which
+	prevented the whole file from being lexed and/or parsed.
+	
+2003-04-04 10:28  ponced
+
+	* senator.el:
+
+	Fix for bug #692919.
+	Unconditionally add `senator-hippie-expand-hook' to
+	`senator-minor-mode-hook'.
+	
+2003-02-01 19:18  berndl
+
+	* NEWS:
+
+	Added announcements for recent enhancements for C++ parsing
+	
+2003-02-01 19:16  berndl
+
+	* semantic-c.el:
+
+	Regenerated from latest c.bnf
+	
+2003-02-01 19:15  berndl
+
+	* c.bnf:
+
+	(template-var): In template-types arguments can be any symbols with optional
+	adress-operator (&) and optional dereferencing operator (*)
+	
+	(template-type): template-types can be all flavors of variable-args
+	
+2003-01-30 14:42  berndl
+
+	* NEWS:
+
+	templates-types with constants or literals as parameters are parsed.
+	
+2003-01-30 14:41  berndl
+
+	* semantic-c.el:
+
+	Newly generated from c.bnf
+	
+2003-01-30 14:41  berndl
+
+	* c.bnf:
+
+	(template-var): Parses constants and literals in template types like in
+	foo<ClassX, 10> foo_10_var;
+	
+2003-01-30 09:09  berndl
+
+	* semantic-c.el:
+
+	(semantic-flex-c-extensions): Added
+	semantic-flex-wide-char-literal
+	(semantic-flex-wide-char-literal): New function which lexes
+	wide-char string- and char-literals like L"str" and L'c'
+	
+2003-01-30 09:09  berndl
+
+	* NEWS:
+
+	Added announcement for parsing wide-char literals like L"str"
+	
+2003-01-29 17:19  berndl
+
+	* NEWS:
+
+	Added more enhancements announcements
+	
+2003-01-29 17:19  berndl
+
+	* semantic-c.el:
+
+	Newly generated from latest c.bnf
+	
+2003-01-29 17:18  berndl
+
+	* c.bnf:
+
+	(variablearg): Removed a superfluous opt-stars which has prevented
+	pointers counted correct for arguments
+	(variablearg-opt-name): Enabled parsing and counting pointers even
+	for arguments without an argumentname.
+	WCHAR: Added new token for "wchar_t"
+	(builtintype-types): Added WCHAR
+	(string-seq): New rule for string sequences
+	(expression): Changed string to string-seq, so that
+	string-sequences are parsed correct too
+	
+2003-01-29 10:14  ponced
+
+	* semantic-c.el:
+
+	(semantic-flex-c-extensions): Support #elif.
+	
+2003-01-28 09:19  berndl
+
+	* NEWS:
+
+	Added entry for better parsing of const and volatile
+	
+2003-01-28 09:18  berndl
+
+	* semantic-c.el:
+
+	Newly generated from latest c.bnf
+	
+2003-01-28 09:18  berndl
+
+	* c.bnf:
+
+	(typesimple): typedefs can also include declmods
+	(CVDECLMOD): New rule
+	(cv-declmods): New rule
+	(DECLMOD): uses now CVDECLMOD
+	(codeblock-var-or-fun): declmods also after typeformbase allowed
+	(variablearg): cv-declmods after typeformbase allowed
+	
+2003-01-27 17:19  ponced
+
+	* semantic.el:
+
+	(semantic-version): Updated to 1.4.3.
+	
+2003-01-27 17:17  ponced
+
+	* Project.ede:
+
+	(ede-proj-project "semantic"): Updated :version to 1.4.3.
+	
+2003-01-24 13:34  berndl
+
+	* NEWS:
+
+	New section for semantic 1.4.3 and an entry "Enhancements to the C/C++
+	grammar" which describes all enhancements in c.bnf and semantic-c.el
+	
+2003-01-24 13:31  berndl
+
+	* semantic-c.el:
+
+	(semantic-flex-c-extensions): Added semantic-flex-backslash-newline
+	(semantic-flex-backslash-newline): New function
+	
+2003-01-24 13:31  berndl
+
+	* c.bnf:
+
+	(macro-expression-list): Parsing one-line macros correct
+	(define): Fixing a bug
+	(type): Added unnamed namespaces
+	(using): Allowing "using namespace XXX"
+	(template-type): changing symbol -> namespace-symbol, adding
+		keyword typename
+	(DECLMOD): Removed SIGNED and UNSIGNED, added TYPENAME
+	(builtintype-types): was builtintype; added long int, long long,
+		long double
+	(signedmod): New
+	(builtintype): Now uses signedmod and builtintype-types
+	(opt-initializers): changing symbol -> namespace-symbol
+	(varname): changing symbol -> namespace-symbol
+	(namespace-opt-class): Allowing template-specifiers
+	(opt-class): parsing namespaces here
+	(operatorsym): Parsing operator()() and operator[]()
+	(function-call): changing symbol -> namespace-symbol
+	(expression): changing symbol -> namespace-symbol
+	
+2002-12-31 10:50  ponced
+
+	* NEWS:
+
+	Semantic 1.4.2 released.
+	
+2002-12-29 19:15  ponced
+
+	* senator-isearch.el:
+
+	Obsolete file.
+	
+2002-12-29 19:15  ponced
+
+	* semantic.el:
+
+	(semantic-version): Updated to 1.4.2.
+	
+2002-12-29 19:14  ponced
+
+	* Project.ede:
+
+	(ede-proj-project "semantic"): Updated :version to 1.4.2.
+	
+2002-12-27 18:01  ponced
+
+	* semantic-c.el:
+
+	(semantic-toplevel-c-bovine-table): Re-generated from c.bnf.
+	
+2002-12-27 18:00  ponced
+
+	* c.bnf:
+
+	(class-parents): Enable namespace names for class parent declarations.
+	(DECLMOD): Add virtual as a possible declaration modifier.
+	(typeformbase): Accept namespace names.
+	(typeformclassbase): Removed.
+	(throw-exception-list): Enable namespace exceptions.
+	(namespace-symbol): New.
+	
+2002-12-26 12:08  ponced
+
+	* semantic-util.el:
+
+	(semantic-type-relation-separator-character)
+	(semantic-map-buffers): Doc fix.
+	
+2002-12-26 12:07  ponced
+
+	* semantic-util-modes.el:
+
+	(semantic-update-mode-line)
+	(global-semantic-show-dirty-mode)
+	(global-semantic-show-unmatched-syntax-mode)
+	(semantic-unmatched-syntax-face)
+	(semantic-show-unmatched-syntax)
+	(semantic-show-unmatched-syntax-mode)
+	(semantic-show-unmatched-syntax-next): Doc fix.
+	
+	(semantic-auto-parse-no-working-message)
+	(semantic-auto-parse-working-in-modeline-flag): Reverted back to 1.4
+	version.  Doc fix.
+	
+	(semantic-auto-parse-max-buffer-size)
+	(global-semantic-auto-parse-mode): Doc fix.
+	
+	(semantic-auto-parse-bovinate): Reverted back to 1.4 version.  Doc
+	fix.
+	
+	(global-semantic-summary-mode): Doc fix.
+	
+2002-12-26 12:07  ponced
+
+	* semantic-texi.el:
+
+	(semantic-texi-recursive-combobulate-list): Doc fix.
+	
+2002-12-26 12:06  ponced
+
+	* semantic-java.el:
+
+	(semantic-java-keyword-table): White space fix.
+	(semantic-java-find-documentation)
+	(semantic-java-doc-line-tags)
+	(semantic-java-doc-keywords-map): Doc fix.
+	
+2002-12-26 12:05  ponced
+
+	* semantic-c.el:
+
+	(semantic-toplevel-c-bovine-table): Re-generated from c.bnf.
+	
+	(semantic-c-classname)
+	(semantic-c-analyze-dereference-metatype): Doc fix.
+	(semantic-c-keyword-table): White space fix.
+	
+2002-12-26 12:05  ponced
+
+	* document.el:
+
+	(eval-when-compile 'semantic 'semantic-util): XEmacs change: needed to
+	define macros at compile time.
+	
+	(document-function-name-comment)
+	(document-insert-parameters)
+	(document-parameter-comment)
+	(document-argument-name)
+	(document-programmer->english): Doc fix.
+	
+2002-12-26 12:04  ponced
+
+	* c.bnf:
+
+	(using): Fixed typo.
+	
+2002-12-17 12:50  ponced
+
+	* semantic-texi.el:
+
+	* semantic-texi.el:
+	
+	(semantic-texi-super-regex): Added missing matcher for `defopt'.
+	Thanks to "Klaus Berndl" <klaus.berndl@sdm.de>.
+	
+2002-11-27 09:53  ponced
+
+	* semantic.el:
+
+	(semantic-version): Updated to 1.4.1.
+	
+2002-11-27 09:52  ponced
+
+	* Project.ede:
+
+	(ede-proj-project "semantic"): Updated :version to 1.4.1.
+	
+2002-11-27 09:52  ponced
+
+	* NEWS:
+
+	Added entry for Semantic 1.4.1.
+	
+2002-11-21 10:58  ponced
+
+	* semantic-c.el:
+
+	(semantic-toplevel-c-bovine-table): New c.bnf.
+	
+2002-11-21 10:56  ponced
+
+	* semantic-texi.el:
+
+	(semantic-texi-name-field-list): Add `defopt' as a parsable field
+	entry.
+	
+2002-11-21 10:55  ponced
+
+	* c.bnf:
+
+	(opt-class-declmods): New.
+	(typeformbase): Support templates after :: operator.
+	(variablearg): Support *'s in nameless arguments.
+	
+2002-11-18 11:39  ponced
+
+	* semantic-util.el:
+
+	(semantic-change-function-mark-dirty): Fixed bug #513650, "Stack
+	overflow in equal" in `add-to-list' when comparing complex tokens.
+	
+2002-06-18 23:32  ponced
+
+	* senator.el:
+
+	Use `senator-minor-mode-hook' to add semantic completion to
+	`hippie-expand'.  Thanks to Phillip Lord <p.lord@russet.org.uk>.
+	
+	(hippie-expand): Removed `defadvice'.
+	(senator-try-function-already-enabled): New variable.
+	(senator-hippie-expand-hook): New function.
+	(senator-try-expand-semantic): Removed (require 'senator).  Added an
+	autoload cookie.
+	
+2002-06-18 23:31  ponced
+
+	* semantic-bnf.el:
+
+	(semantic-bnf-complete): Removed (require 'senator).
+	
+2002-06-18 23:31  ponced
+
+	* semantic-load.el:
+
+	(senator-try-expand-semantic): auto-loaded.
+	(senator-complete-symbol): auto-loaded.
+	
+2002-06-17 22:00  zappo
+
+	* semantic-el.el:
+
+	(semantic-elisp-use-read): Support `defun*'.
+	
+2002-06-14 15:15  zappo
+
+	* semantic-util.el:
+
+	(semantic-nonterminal-full-name): New name.
+	(semantic-nonterminal-full-name-default): New name.
+	(semantic-assert-valid-token): New function.
+	
+2002-06-14 15:13  zappo
+
+	* semantic.el:
+
+	Removed crufty History comment.
+	(semantic-flex-tokens): Removed trailing whitespace.
+	
+2002-06-14 15:11  zappo
+
+	* semanticdb.el:
+
+	(semanticdb-table-oob-santity-check, semantic-table-sanity-check):
+	(semanticdb-database-santity-check): New functions.
+	
+2002-06-13 20:14  ponced
+
+	* INSTALL, semantic.texi:
+
+	Fixed typo.
+	
+2002-06-13 17:20  zappo
+
+	* semantic-c.el:
+
+	(semantic-toplevel-c-bovine-table): New c.bnf.
+	(semantic-flex-c-extensions): Added `semantic-flex-c-include-system'.
+	(semantic-flex-c-include-system): New fn.
+	
+2002-06-13 17:05  zappo
+
+	* c.bnf:
+
+	(macro-or-include): Use new lexical symbol system-include
+	(filename-prefix, filename-extension,filename): Deleted.
+	(namespacesubparts): Added template and using clauses
+	(using): Added :: notation support.
+	(METADECLMOD): Added MUTABLE
+	(func-decl): Added template type specifier
+	(throw-exception-list): Support empty throw lists.
+	(function-call): New rule.
+	(expression): Support function calls in expressions.
+	
+2002-06-11 22:44  zappo
+
+	* INSTALL:
+
+	Added mailing list information.
+	
+2002-06-11 22:43  zappo
+
+	* semantic.texi:
+
+	(Top): Removed request for parser help.
+	Added mailing list information.
+	
+2002-06-07 20:24  ponced
+
+	* semantic.texi:
+
+	no message
+	
+2002-05-31 20:42  ponced
+
+	* semantic.el:
+
+	(semantic-flex-tokens): Updated token list.
+	(semantic-flex-enable-bol): New variable.
+	(semantic-flex): Use it to catch beginning of lines when needed.
+	Handle `semantic-flex-extensions' first, just after BOL.
+	Handle newlines and whitespaces independently.
+	Return comments as whitespaces when `semantic-ignore-comments' and
+	`semantic-flex-enable-whitespace' are both non-nil.
+	Correctly handle newlines following comments.
+	
+2002-05-16 09:40  ponced
+
+	* semantic-util.el:
+
+	(semantic-summarize-nonterminal-default): Use
+	`semantic-symbol->name-assoc-list-for-type-parts' and
+	`semantic-bucketize-token-token'.
+	
+2002-05-15 21:21  ponced
+
+	* semantic-java.el:
+
+	(semantic-default-java-setup): Re-generated from updated grammar.
+	
+2002-05-15 21:21  ponced
+
+	* java.bnf:
+
+	(setup): take into account new
+	`semantic-symbol->name-assoc-list-for-type-parts' option.
+	
+2002-05-13 06:54  emacsman
+
+	* semantic.el, semantic-bnf.el:
+
+	Corrected spelling in comments and doc-strings.
+	
+2002-05-13 06:54  emacsman
+
+	* semantic.texi:
+
+	Corrected spelling and added "LocalWords" at the end of the file as
+	texinfo comments for the benefit of future ispell runs.
+	
+2002-05-09 06:24  emacsman
+
+	* semantic-bnf.el:
+
+	Added (eval-after-load "info-look" ...) form to hook up semantic-bnf-mode with semantic.info file.
+	
+2002-05-09 06:21  emacsman
+
+	* semantic.texi:
+
+	Replaced use of "@table...@end table" with "@deffn ... @end deffn" for
+	the BNF settings so that a proper index entry is create for each
+	setting.
+	
+2002-05-09 00:01  ponced
+
+	* semantic-util.el:
+
+	(semantic-util): provided before requiring semantic-util-modes to
+	avoid recursive load.
+	
+2002-05-07 04:17  zappo
+
+	* semantic-util.el:
+
+	Added a provide statement to end.
+	
+2002-05-07 03:34  zappo
+
+	* semantic-util.el:
+
+	(semantic-something-to-stream): Fixed typos
+	(semantic-find-nonterminal-by-function-first-match): Fixed typos
+	
+2002-05-07 03:31  zappo
+
+	* working.el, senator.el, sformat.el, semantic-el.el,
+	semantic-imenu.el, semantic-load.el, semantic-make.el,
+	semantic-sb.el, semantic-texi.el, semantic.el, semanticdb.el,
+	Project.ede, document.el, make.bnf, semantic-analyze.el,
+	semantic-c.el, semantic-ctxt.el:
+
+	Merged from v1_4 branch.
+	
+2002-05-07 03:27  zappo
+
+	* c.bnf:
+
+	Merged from v1_4 branch.
+	
+2002-05-07 03:26  zappo
+
+	* semantic-util.el:
+
+	Merged from v1_4 branch.
+	(semantic-something-to-stream): New function.
+	(semantic-find-nonterminal-by-function):
+	(semantic-find-nonterminal-by-function-first-match): Use above.
+	(semantic-nonterminal-full-package-name): New function
+	(semantic-nonterminal-full-package-name-default): New function
+	
+2002-05-07 02:40  zappo
+
+	* semantic-util-modes.el:
+	
+	Fixed bug #619758 "semantic-map-buffers void, only ver. 1.4"
+
+2002-04-06 05:47  zappo
+
+	* semantic-bnf.el:
+
+	(semantic-bnf-to-bovine): Remove errant space from last CR insert.
+	
+2002-03-23 04:08  zappo
+
+	* semantic-ia-sb.el:
+
+	(semantic-speedbar-analysis): Doc fix
+	
+2002-03-23 04:08  zappo
+
+	* semantic-ia.el:
+
+	(semantic-ia-complete-symbol): Doc fix
+	(semantic-ia-complete-symbol-menu): Doc fix
+	
+2002-03-23 04:07  zappo
+
+	* semantic-cb.el:
+
+	(semantic-cb-new-class-browser): Doc fix
+	(semantic-cb-speedbar-mode): Doc fix
+	
+2002-03-23 04:02  zappo
+
+	* semantic.texi:
+
+	(analyzer, Smart Completion, Speedbar Analysis, class browser):
+	New sections.
+	(Speedbar): Added references to new speedbar displays in new nodes.
+	
+2002-03-20 19:13  zappo
+
+	* semantic-ia-sb.el:
+
+	(semantic-ia-sb-key-map): Removed expand/contract
+	(semantic-ia-sb-token-info): fix bug w/ use of `semantic-analyze-token-type'.
+	(semantic-ia-sb-tag-info): New command.
+	
+2002-03-20 03:02  zappo
+
+	* semantic-ia-sb.el:
+
+	(semantic-ia-sb-more-buttons): Fixed copy/paste bug.
+	
+2002-03-20 02:59  zappo
+
+	* semantic-ia-sb.el:
+
+	(semantic-ia-speedbar): Added in current function.
+	Call method to display specialized speedbar buttons for a given
+	context.
+	(semantic-ia-sb-more-buttons): New method.
+	(semantic-ia-sb-token-info): Replace big icky bits with special call
+	to semantic-analyze function I had forgotten about.
+	
+2002-03-17 18:14  zappo
+
+	* semantic-cb.el:
+
+	Added requirement for eieio-base.
+	
+2002-03-16 16:46  zappo
+
+	* semantic.texi:
+
+	(Token Queries): Added semantic-equivalent-tokens-p.
+	
+2002-03-16 16:29  zappo
+
+	* semantic-ia-sb.el:
+
+	(semantic-ia-sb-easymenu-definition): Added some basic entries
+	(semantic-ia-speedbar): Use new speedbar labels.
+	Use completion functions.
+	Use info speedbar icons.
+	(semantic-ia-sb-token-info): New function
+	(semantic-ia-sb-completion-list): New function
+	(semantic-ia-sb-complete): Delete text and insert new more sanely.
+	
+2002-03-16 16:21  zappo
+
+	* semantic-cb.el:
+
+	(initialize-instance:semantic-cb-token): New initializer.
+	(semantic-cb-speedbar-mode): Renamed, autoloaded token.
+	
+2002-03-16 16:18  zappo
+
+	* NEWS:
+
+	Updated with some new news.
+	
+2002-03-14 19:28  zappo
+
+	* semantic-ia-sb.el:
+
+	Add some function overrides for our Analyze mode.
+	(semantic-ia-speedbar): Fix typo.
+	Add functions to our buttons to jump to those tags.
+	(semantic-ia-sb-line-path): New function.
+	(semantic-ia-sb-complete): New function.
+	
+2002-03-14 04:31  zappo
+
+	* semantic-ia-sb.el:
+
+	Speedbar mode for displaying context sensitive information.
+	
+2002-03-13 13:03  zappo
+
+	* semantic-cb.el:
+
+	Create a class browser structure.
+	Primitive speedbar hack on the structure.
+	
+2002-02-28 03:19  zappo
+
+	* Project.ede:
+
+	Added semantic-example.el
+	
+2002-02-28 02:11  zappo
+
+	* semantic.texi:
+
+	(Example Programs): New section.
+	
+2002-02-28 01:39  zappo
+
+	* semantic-example.el:
+
+	Examples for basic semantic API calls.
+	
+2002-02-27 14:34  zappo
+
+	* Project.ede:
+
+	Updated version number.
+	Added semantic-ia.el.
+	
+2002-02-27 05:23  zappo
+
+	* semantic-ia.el:
+
+	Interactive access to analysis functions.
+	
+2002-02-26 19:14  zappo
+
+	* plan.txt:
+
+	Plan.
+	
+2002-02-24 14:53  zappo
+
+	* semantic.texi:
+
+	(Nonterminal sorting): New section.
+	
+2002-02-23 09:55  ponced
+
+	* working.el:
+
+	(noninteractive): Define it to avoid byte-compiler warnings.
+	(working-current-message): New function.
+	(working-status-forms): Restore current message when it exits.
+	(working-status-timeout): Ditto.
+	
+2002-02-14 10:48  ponced
+
+	* semantic-bnf.el:
+
+	(semantic-bnf-matching-to-lalr): Don't discard %prec clause in EMPTY rules.
+	
+2002-02-10 19:09  zappo
+
+	* Project.ede:
+
+	Version update.
+	Add speedbar to path.
+	
+2002-02-06 19:53  zappo
+
+	* semantic-util.el:
+
+	(semantic-token-add-extra-spec): Removed unused local variable esl
+	(semantic-token->text-functions): Renamed
+	`semantic-emacs-lisp-nonterminal' to
+	(semantic-prin1-nonterminal): Renamed.
+	
+2002-02-06 04:20  zappo
+
+	* semantic-util.el:
+
+	(semantic-token-extra-specs): New fcn
+	(semantic-token-add-extra-spec): New fcn
+	(semantic-token->text-functions): Added `semantic-emacs-lisp-nonterminal'.
+	(semantic-emacs-lisp-nonterminal): New fcn
+	
+2002-02-06 04:18  zappo
+
+	* semantic.el:
+
+	(semantic-bovinate-show): Added ?a for abort.  Quit now exits properly.
+	
+2002-02-06 04:13  zappo
+
+	* semantic-c.el:
+
+	(semantic-toplevel-c-bovine-table): New c.bnf 1.57
+	(semantic-c-reconstitute-template): New fcn
+	(semantic-c-keyword-table): Removed extra TEMPLATE token.
+	(semantic-c-nonterminal-template, semantic-c-nonterminal-template-specifier)
+	(semantic-c-template-string-body, semantic-c-template-string)
+	(semantic-c-concise-prototype-nonterminal): New functions
+	(semantic-default-c-setup): Add `concise-prototype-nonterminal' override.
+	
+2002-02-06 04:10  zappo
+
+	* c.bnf:
+
+	(typesimple): Add template specifiers to the extra spec
+	(opt-template-equal): Use template-specifier-type, not the list.
+	(template-type): Concat in the type.  Indentation.
+	(opt-bits): Use new number terminal.
+	
+2002-01-19 21:49  zappo
+
+	* c.bnf:
+
+	(TEMPLATE): Removed duplicate definition.
+	(opt-symbol): New rule
+	(classsubparts): Use opt-symbol to help QT slot definition thingies.
+	(opt-class-parents): Added optional template specifier
+	(opt-class-protection): New rule
+	(class-protection): Removed `EMPTY'
+	(namespacesubparts): Use opt-class-protection
+	(typesimple): Added template specifier.  Added bodyless class/struct.
+	(template): Reconstitute the template definition.
+	(template-specifier, tempalate-specifier-type-list):
+	(template-var, opt-template-specifier, template-type): Update to
+	return something useful.
+	
+2002-01-19 21:21  zappo
+
+	* semantic-bnf.el:
+
+	(semantic-bnf-generate-and-load): Bind `inhibit-modification-hooks'.
+	
+2002-01-15 07:35  ponced
+
+	* semantic-bnf.el:
+
+	(semantic-bnf-to-lalr-EXPANDTHING): No more bind `$regionI'
+	variables.  Use existing ones instead.
+	
+2001-12-18 18:37  emacsman
+
+	* semantic.el:
+
+	Created semantic-flex-tokens variable to document the token types returend by semantic-flex.
+	
+2001-12-18 03:49  zappo
+
+	* semantic.el:
+
+	(semantic-bovinate-toplevel): When doing a full reparse, lex the
+	buffer before clearing the cache.  If an error occurs, the cache will
+	be safe.
+	
+2001-12-18 03:40  zappo
+
+	* semantic-c.el:
+
+	New c.bnf supporting templates.
+	(semantic-c-nonterminal-protection): If type type of a type is
+	unknown in a parent, specify an unknown protection.
+	
+2001-12-18 03:39  zappo
+
+	* c.bnf:
+
+	(TEMPLATE): New token
+	(declaration): Added template
+	(template, template-specifier, template-specifier-type-list,
+	 template-var, opt-template-equal, template-type,
+	 template-definition): New rules
+	(typeformbase): Added tempalte specified type and class :: types.
+	
+2001-12-18 03:21  zappo
+
+	* semantic-make.el:
+
+	New make.bnf
+	
+2001-12-18 03:19  zappo
+
+	* make.bnf:
+
+	Removed parens and $ from symbol syntax types.
+	Added IFEQ and IFNEQ tokens
+	Added BACKSLASH and DOLLAR tokens
+	Added IFEQ and IFNEQ rule matches
+	Added $(VAR) types to expression.
+	Support backslash terminated lines for variables.
+	
+2001-12-16 00:25  ponced
+
+	* semantic-bnf.el:
+
+	(semantic-bnf-to-lalr-EXPANDTHING): Fixed missing quote.
+	
+2001-12-12 02:49  zappo
+
+	* semantic.el:
+
+	Small language changes to doc strings suggested by Alex Schroeder <alex@gnu.org>
+	
+2001-12-12 02:36  zappo
+
+	* semantic.texi:
+
+	Small language changes suggested by Alex Schroeder <alex@gnu.org>
+	
+2001-12-08 04:12  zappo
+
+	* semantic-util-modes.el:
+
+	(semantic-auto-parse-bovinate): Use
+	`semantic-flex-unterminated-syntax-end-function' instead of
+	`semantic-flex-unterminated-syntax-throw-symbol' to throw lexical issues.
+	
+2001-12-08 04:10  zappo
+
+	* semantic.el:
+
+	(semantic-flex-unterminated-syntax-end-function): New variable
+	(semantic-flex): Use above var instead of old throw variable.
+	
+2001-12-07 22:12  ponced
+
+	* senator.el:
+
+	(senator-mode-menu-item-format): New option.  Format of menu item
+	labels in the "Modes" menu when displaying through a window system.
+	
+	(senator-mode-menu-item-format-tty): New option.  Format of menu item
+	labels in the "Modes" menu when using a text-only terminal.
+	
+	(senator-build-mode-menu-items): Use the above options.  On window
+	system minor mode labels as now simple text items.  Emacs displays
+	them as menu titles in bold face.
+	
+2001-12-07 20:58  zappo
+
+	* semantic-c.el:
+
+	(semantic-toplevel-c-bovine-table, semantic-c-keyword-table): New c.bnf
+	(semantic-c-reconstitute-token): For functions, add methodconst, and pure-virtual
+	
+2001-12-07 20:55  zappo
+
+	* c.bnf:
+
+	(UNDERP, UNDERUNDERP): Fix typo in summary
+	(opt-stars): Add opt-starmod
+	(opt-starmod, STARMOD): New rule
+	(func-decl): Un-splic $7 in  match2
+	(variablearg): Let varname handle stars and refs.
+	(arg-list): Explicit (void) match added
+	(fun-or-proto-end): Add pure-virtual case return.
+	
+2001-12-07 02:37  zappo
+
+	* Project.ede:
+
+	Update version
+	
+2001-12-07 02:36  zappo
+
+	* semantic-make.el:
+
+	New make.bnf
+	
+2001-12-07 02:36  zappo
+
+	* make.bnf:
+
+	Added ifdef, and ifndef tokens.  (Oy)
+	
+2001-12-07 02:32  zappo
+
+	* make.bnf:
+
+	Added ifdef, and ifndef commands.
+	
+2001-12-07 02:27  zappo
+
+	* semantic.el:
+
+	(semantic-before-toplevel-bovination-hook): New hook suggested by Klaus Berndl.
+	(semantic-bovinate-toplevel): Do not parse anything if above hook returns nil.
+	When a full reparse is needed, do not clear the cache till after the
+	parse has happened, and everything was successful.
+	
+2001-12-04 20:11  zappo
+
+	* semantic-c.el:
+
+	(semantic-toplevel-c-bovine-table): New c.bnf
+	(semantic-c-nonterminal-children): New override fcn
+	(semantic-default-c-setup): Add above override.
+	
+2001-12-04 20:08  zappo
+
+	* c.bnf:
+
+	(extern-c): Add quotes to the "C" string regex.
+	
+2001-12-04 03:50  zappo
+
+	* semanticdb.el:
+
+	(semanticdb-default-save-directory): New variable.
+	(semanticdb-project-database): Added `reference-directory' slot.
+	(semanticdb-create-database): Simplified if to existence of the found DB
+	(semantic-get-database): Use `semantic-file-loaded-p'
+	(semantic-file-loaded-p): Moved.  Use eieio call.
+	(semanticdb-file-table): Tables use file name w/out path.
+	(semanticdb-full-filename): Tables use file name w/out path.
+	(semanticdb-write-directory-p): Use new reference directory for tables.
+	(semanticdb-cache-filename): New function to calc filename of a DB.
+	(semanticdb-semantic-init-hook-fcn): use above Fcn for directory name.
+	Always set the reference directory slot in the DB.
+	Specify the file of new tables as the file name sans directory.
+	
+2001-12-04 02:30  zappo
+
+	* semantic-util-modes.el:
+
+	(semantic-auto-parse-bovinate): Enable syntax error `throw'ing.  Catch
+	those errors, and do not pester the user who is probably in the
+	middle of thinking important thoughts, and is uninterested in having
+	Emacs complain about such things.
+	
+2001-12-04 02:26  zappo
+
+	* semantic.el:
+
+	(semantic-flex-unterminated-syntax-throw-symbol): New variable
+	(semantic-flex): `throw' an error for incomplete syntax when above is non-nil.
+	
+2001-12-04 02:24  zappo
+
+	* working.el:
+
+	(working-message): Only display a canned message for the first entry.
+	(working-status-forms): Clear mode line when using modeline mode.
+	(working-status-timeout): Clear mode line when using modeline mode.
+	
+2001-12-03 23:27  ponced
+
+	* semantic-util-modes.el:
+
+	(semantic-auto-parse-timer): Moved before first use.
+	(semantic-auto-parse-idle-time): Added `:set' clause to re-setup the
+	`semantic-auto-parse-timer' when the idle time value is changed.
+	
+2001-12-03 01:26  zappo
+
+	* semantic.el:
+
+	Updated version to 1.4 beta 13
+	
+2001-11-30 17:59  ponced
+
+	* working.el:
+
+	(append global-mode-string): Quoted `working-mode-line-message'.
+	
+2001-11-30 04:57  zappo
+
+	* semantic-util-modes.el:
+
+	(global-semantic-show-dirty-mode): Doc fix.
+	(semantic-show-dirty-mode-setup): Doc fix.
+	Use `semantic-make-local-hook' alias.
+	(global-semantic-show-unmatched-syntax-mode): Doc fix
+	(semantic-show-unmatched-syntax-mode-setup):
+	Use `semantic-make-local-hook' alias.
+	(semantic-auto-parse-working-in-modeline-flag): New variable
+	(global-semantic-auto-parse-mode): Doc Fix
+	(semantic-auto-parse-bovinate): Doc fix.
+	Use the mode-line to display working messages when auto-parsing.
+	(semantic-auto-parse-mode-setup): Doc Fix
+	(semantic-auto-parse-mode): Doc Fix
+	(global-semantic-summary-mode): Doc Fix
+	(semantic-summary-mode-setup): Doc Fix
+	(semantic-summary-mode): Doc Fix
+	
+2001-11-30 04:52  zappo
+
+	* working.el:
+
+	(working-message): Added sit-for to help force modeline updates.
+	
+2001-11-30 04:51  zappo
+
+	* semantic-c.el:
+
+	New c.bnf fix for include filename.
+	
+2001-11-30 04:50  zappo
+
+	* c.bnf:
+
+	(filename): Fixed OLE to get the string from filename prefix.
+	
+2001-11-30 04:36  zappo
+
+	* working.el:
+
+	If `global-mode-string' is available, use it as the location to
+	display mode-line based working messages.
+	
+2001-11-30 04:33  zappo
+
+	* senator.el:
+
+	(senator-minor-mode-setup): Use `semantic-make-local-hook' alias.
+	
+2001-11-30 04:31  zappo
+
+	* semantic-imenu.el:
+
+	(semantic-create-imenu-index): Use `semantic-make-local-hook' alias.
+	
+2001-11-30 04:25  zappo
+
+	* semantic.el:
+
+	(semantic-make-local-hook): New alias
+	(semantic-set-toplevel-bovine-cache): Use this alias.
+	
+2001-11-30 04:05  zappo
+
+	* semantic-util-modes.el:
+
+	(semantic-auto-parse-bovinate): Enable quiting during a parse.
+	
+2001-11-30 04:03  zappo
+
+	* semantic-load.el:
+
+	Add .bnf as a speedbar extension.
+	New variable `semantic-load-turn-useful-things-on'.
+	Consider which-func to be non-useful.
+	Consider show-dirty-mode non-useful.
+	Do not load semantic-sb for speedbar.  This already happens.
+	
+2001-11-30 04:00  zappo
+
+	* semantic-util.el:
+
+	(semantic-bucketize): Remove ref to speedbar in doc string.
+	
+2001-11-30 03:59  zappo
+
+	* semanticdb.el:
+
+	(semanticdb-semantic-init-hook-fcn): When a table isn't valid, do not
+	force a parse.  This will happen in time.
+	
+2001-11-30 03:55  zappo
+
+	* semantic-bnf.el:
+
+	Changed how speedbar support for BNF files were added.
+	
+2001-11-30 03:49  zappo
+
+	* semantic-c.el:
+
+	New c.bnf supporting float.h.
+	
+2001-11-30 03:48  zappo
+
+	* c.bnf:
+
+	Added support for float.h, where `float' was snagged as a keyword.
+	
+2001-11-26 22:27  ponced
+
+	* semantic.el:
+
+	(semantic-flex):  Handle broken strings.
+	
+2001-11-26 22:19  ponced
+
+	* senator.el:
+
+	(senator-minor-mode-name): Defined as constant.  Moved just before it
+	is first used.
+	(senator-minor-mode-isearch-suffix): Ditto.
+	
+	(senator-minor-mode-on-hook): Removed.
+	(senator-minor-mode-off-hook): Removed.
+	(senator-minor-mode): Don't run on/off mode hooks.
+	
+	(senator-register-mode-menu-entry["Summaries"]): Added.
+	(senator-register-mode-menu-entry"[Which Function"]): Added when
+	'which-func feature is available.
+	
+2001-11-26 22:18  ponced
+
+	* semantic-util-modes.el:
+
+	(semantic-propertize): New function.  Return a copy of STRING with
+	text properties added.
+	
+	(semantic-mode-line-prefix): New option.  Prefix added to minor mode
+	indicators in the mode line.  The default value use
+	`semantic-propertize' to have this string displayed in 'bold face on
+	Emacs 21 :-)
+	
+	(semantic-mode-line-update): Skip empty strings.  Use
+	`semantic-mode-line-prefix'.
+	
+	(semantic-show-dirty-mode-on-hook): Removed.
+	(semantic-show-dirty-mode-off-hook): Removed.
+	(semantic-show-dirty-mode): Don't run on/off mode hooks.
+	
+	(semantic-show-unmatched-syntax-mode-on-hook): Removed.
+	(semantic-show-unmatched-syntax-mode-off-hook): Removed.
+	(semantic-show-unmatched-syntax-mode): Don't run on/off mode hooks.
+	
+	(semantic-auto-parse-mode-on-hook): Removed.
+	(semantic-auto-parse-mode-off-hook): Removed.
+	(semantic-auto-parse-mode): Don't run on/off mode hooks.
+	
+	(global-semantic-summary-mode): New function.  Toggle global use of
+	`semantic-summary-mode'.
+	(global-semantic-summary-mode): New variable.  If non-nil enable
+	global use of summary mode.
+	(semantic-summary-mode-hook): New hook.  Run at the end of function
+	`semantic-summary-mode'.
+	(semantic-summary-mode-map: New variable.  Keymap for summary minor
+	mode.
+	(semantic-summary-mode: New variable.  Non-nil if summary minor mode
+	is enabled.
+	(semantic-summary-mode-setup: New function.  Setup
+	`semantic-summary-mode'.
+	(semantic-summary-mode): New function.  Minor mode to show useful
+	things about tokens in echo area.
+	(semantic-add-minor-mode[semantic-summary-mode]): Added.
+	
+2001-11-26 22:17  ponced
+
+	* semantic-load.el:
+
+	Added autoloads for `semantic-summary-mode'.
+	(when semantic-load-turn-everything-on): Use
+	`global-semantic-summary-mode'.
+	
+2001-11-26 01:45  emacsman
+
+	* semantic.texi:
+
+	Added "Lexer Overview" and "Lexer Output" nodes.
+	
+2001-11-23 21:31  emacsman
+
+	* semantic.texi:
+
+	Fixed a typo in last checkin.  Sorry.
+	
+2001-11-23 20:09  emacsman
+
+	* semantic.texi:
+
+	Created "Overview" and "Semantic Components" chapters.
+	
+2001-11-22 18:08  zappo
+
+	* semantic-sb.el:
+
+	(semantic-fetch-dynamic-bovine): Set out to t when there is no parser available.
+	
+2001-11-21 20:32  ponced
+
+	* senator.el:
+
+	(senator-minor-mode-name): Use "n" as default value.
+	(senator-minor-mode-isearch-suffix): Use "i" as default value.
+	
+	(senator-jump-regexp): Added autoload cookie.
+	
+	(senator-register-mode-menu-entry["Senator"]): No more use
+	`senator-mode'.
+	
+	(senator-status): Renamed from `senator-mode'.
+	
+	(senator-mode-line-update): Renamed from `senator-show-status'.  Use
+	`senator-status'.  Use `semantic-mode-line-update' instead of
+	`force-mode-line-update'.  Removed "Emacs 21 goodies".
+	
+	(senator-minor-mode-setup): Removed call to `senator-show-status'.
+	
+	(senator-minor-mode): Use `senator-mode-line-update' instead
+	of `force-mode-line-update'.
+	(senator-isearch-toggle-semantic-mode): Ditto.
+	(senator-isearch-mode-hook): Ditto.
+	
+	(semantic-add-minor-mode[senator-minor-mode]): Use 'senator-status.
+	
+	(semantic-add-minor-mode[senator-isearch-semantic-mode]): Added.
+	
+2001-11-21 20:31  ponced
+
+	* semantic-util-modes.el:
+
+	(semantic-update-mode-line): New option.  If non-nil show enabled
+	minor modes in the mode line.
+	
+	(semantic-minor-modes-status): New variable.  String displayed in the
+	mode line to show the Semantic minor modes which are locally enabled.
+	
+	(semantic-minor-mode-alist): New variable.  Alist saying how to show
+	Semantic minor modes in the mode line.a
+	
+	(semantic-mode-line-update): New function.  Update display of Semantic
+	minor modes in the mode line.
+	
+	(semantic-add-minor-mode): Update `semantic-minor-mode-alist'.  Lazily
+	install `semantic-minor-modes-status' as a dummy minor mode used to
+	show Semantic minor modes status in the mode line.
+	
+	(semantic-show-dirty-mode):  Use `semantic-mode-line-update'.
+	(semantic-show-unmatched-syntax-mode): Ditto.
+	(semantic-auto-parse-mode): Ditto.
+	
+	(semantic-add-minor-mode[semantic-show-dirty-mode]): Use "d" to
+	indicate that the minor mode is enabled.
+	(semantic-add-minor-mode[semantic-show-unmatched-syntax-mode]): Use
+	"u" to indicate that the minor mode is enabled.
+	(semantic-add-minor-mode[semantic-auto-parse-mode]): Use "a" to
+	indicate that the minor mode is enabled.
+	
+2001-11-21 20:30  ponced
+
+	* semanticdb.el:
+
+	(global-semanticdb-minor-mode):  Fixed bad setting of
+	`semanticdb-global-mode'.
+	
+2001-11-19 05:12  emacsman
+
+	* semantic.texi:
+
+	Added comments on semantic-flex and in "document" node.
+	This is only the first of many additions to be made in the future.
+	
+2001-11-18 00:01  ponced
+
+	* senator.el:
+
+	(senator-last-local-item-name): Removed.
+	(senator-last-global-item-name): Removed.
+	(senator-new-menu-item-name): Removed.
+	
+	(senator-modes-menu-cache): New variable.  Cache the last computed
+	value of the "Modes" sub-menu.
+	
+	(senator-register-command-menu): Renamed from
+	`senator-register-mode-menu-item'.  Register and return a command menu
+	specification instead of a pre-build menu item.
+	(senator-register-mode-menu-entry): Clear the cached menu.  Register
+	specifications instead of actual menu items.  Thus the menu building
+	is clearly a separated task.
+	
+	(senator-base-local-label): New constant.  Default name of the menu
+	item used to change minor mode buffer local setting.
+	(senator-base-global-label): New constant.  Default name of the menu
+	item used to change minor mode global setting.
+	(senator-uniquify-count): New variable.  Used to generate unique menu
+	item names.
+	
+	(senator-build-command-menu-item): New function.  Return a command
+	menu item with an unique name.
+	
+	(senator-build-mode-menu-items): With window system display minor mode
+	labels as a disabled menu items to get a consistent look of the
+	"Modes" menu both in Emacs and XEmacs.  On text-only terminal no more
+	use the hard coded strings " (In this buffer)" and " (Globally)" but
+	the corresponding default name constant.
+	
+	(senator-build-modes-menu): Compute the value of the menu only if
+	necessary.  Return a cached value when available.
+	Use "--" instead of single "-" for menu separator.  The "Emacs Lisp
+	Reference Manual" says that "separator-type is a string starting with
+	two or more dashes".
+	
+	(senator-menu-bar): Use "--" instead of single "-" for menu separator.
+	
+	(semantic database menu item): When selected show if the database is
+	persistent (saved on disk) or only available for the current session.
+	
+2001-11-17 16:51  zappo
+
+	* semantic-texi.el:
+
+	(semantic-default-texi-setup): Added autoload
+	
+2001-11-17 16:50  zappo
+
+	* semantic-c.el:
+
+	(semantic-toplevel-c-bovine-table): New c.bnf
+	(semantic-expand-c-nonterminal): Expand batched extern "c" entries.
+	(semantic-default-c-setup): Added autoload
+	
+2001-11-17 16:48  zappo
+
+	* c.bnf:
+
+	(declaration): Added extern-c entry
+	(extern-c-contents, extern-c): new rules
+	
+2001-11-17 16:45  zappo
+
+	* semantic-bnf.el:
+
+	(bnf-mode, semantic-bnf-mode): Added autoload
+	
+2001-11-17 16:44  zappo
+
+	* semantic-chart.el:
+
+	(semantic-chart-nonterminals-by-token): Added autoload
+	(semantic-chart-database-size): Added autoload
+	(semantic-chart-nonterminal-complexity-token): Added autoload
+	
+2001-11-17 16:44  zappo
+
+	* semanticdb.el:
+
+	(global-semanticdb-minor-mode): Added autoload
+	
+2001-11-17 16:43  zappo
+
+	* semantic-el.el:
+
+	(semantic-default-elisp-setup): Added autoload
+	
+2001-11-17 16:43  zappo
+
+	* semantic-java.el:
+
+	(semantic-default-java-setup): Added autoload
+	
+2001-11-17 16:42  zappo
+
+	* semantic-make.el:
+
+	(semantic-default-make-setup): Added autoload
+	
+2001-11-17 16:42  zappo
+
+	* semantic-scm.el:
+
+	(semantic-default-scheme-setup): Added autoload
+	
+2001-11-17 16:41  zappo
+
+	* semantic-skel.el:
+
+	(semantic-default-skel-setup): Fixed typo in name.
+	
+2001-11-14 23:29  ponced
+
+	* semantic-sb.el:
+
+	(semantic-fetch-dynamic-bovine): Fixed.  Didn't get the tokens
+	returned by `semantic-bovinate-toplevel'.
+	
+2001-11-14 20:42  ponced
+
+	* senator.el:
+
+	(senator-menu-item):  Moved before it is first used.
+	
+	(senator-last-local-item-name): New variable.
+	(senator-last-global-item-name): Ditto.
+	(senator-registered-mode-entries): Ditto.
+	(senator-registered-mode-settings): Ditto.
+	
+	(senator-new-menu-item-name):  New function.  Return a new unique
+	generated menu item name.
+	
+	(senator-register-mode-menu-item):  New function.  Register a minor
+	mode menu item.
+	(senator-register-mode-menu-entry): New function.  Register a minor
+	mode menu entry.
+	(senator-build-mode-menu-items): New function.  Return menu items for
+	a registered minor mode.
+	(senator-build-modes-menu): New function.  Build and return the
+	"Modes" menu.
+	
+	(senator-global-mode-options): Removed.
+	(senator-global-mode-options-save): Renamed to
+	`senator-save-registered-mode-settings'.
+	
+	(open code): Added registration of Semantic minor modes.
+	
+	(senator-menu-bar):  Use `senator-build-modes-menu' to dynamically
+	build the "Modes" sub-menu based on registered minor modes.
+	
+2001-11-14 02:51  zappo
+
+	* semantic.texi:
+
+	(miscellaneous): Renamed
+	(minor modes): Added variable options for all the modes listed.
+	
+2001-11-14 02:49  zappo
+
+	* semantic-util-modes.el:
+
+	(semantic-show-dirty-mode-*hook),
+	(semantic-show-unmatched-syntax-mode-*hook),
+	(semantic-unmatched-syntax-face),
+	(semantic-auto-parse-mode-*hook): Add * as a user option.
+	
+2001-11-13 20:52  zappo
+
+	* semantic-util-modes.el:
+
+	(semantic-show-unmatched-syntax): Remove message about no bad syntax.
+	
+2001-11-12 20:51  ponced
+
+	* senator.el:
+
+	(senator-global-mode-options): New constant.  List of Semantic minor
+	modes which can be enabled globally.
+	
+	(senator-global-mode-options-save): New command.  Save current values
+	of `senator-global-mode-options' using Custom."
+	
+	(senator-menu-bar):  New menu items in the "Modes" sub-menu to toggle
+	minor modes globally and save these settings via custom.
+	
+2001-11-12 20:50  ponced
+
+	* semanticdb.el:
+
+	(global-semanticdb-minor-mode):  Set `semanticdb-global-mode' to the
+	minor mode status.
+	
+2001-11-10 14:05  zappo
+
+	* semantic.texi:
+
+	(miscellaneous): Added `[global-]semantic-auto-parse-mode'.
+	
+2001-11-10 12:01  ponced
+
+	* semantic.el:
+
+	(semantic-rebovinate-token): Removed specific error handler.
+	
+	(semantic-bovinate-nonterminal): Added general error handler.
+	
+2001-11-08 20:41  zappo
+
+	* semantic-make.el:
+
+	New make.bnf 1.9
+	
+2001-11-08 20:40  zappo
+
+	* make.bnf:
+
+	(Makefile): Handle blank lines
+	
+2001-11-08 16:54  zappo
+
+	* Project.ede:
+
+	Updated the web directory
+	
+2001-11-08 16:52  zappo
+
+	* semantic-load.el, senator.el:
+
+	Removed all ^M line endings.
+	
+2001-11-08 16:49  zappo
+
+	* semantic.el, semantic-imenu.el:
+
+	Removed all ^M line endings.
+	
+2001-11-08 16:28  zappo
+
+	* NEWS:
+
+	Added new news.
+	
+2001-11-07 21:17  ponced
+
+	* semanticdb.el:
+
+	(semanticdb-toggle-global-mode): No more call `semanticdb-kill-hook'.
+	When `semanticdb-write-directory-p' returns nil, that is indicating to
+	not write the DB on disk, overlays were removed from the token cache
+	by `semanticdb-kill-hook' and not recreated.
+	
+2001-11-07 21:16  ponced
+
+	* semantic-util-modes.el:
+
+	(semantic-auto-parse-interval): Removed.
+	
+	(semantic-auto-parse-idle-time): New variable.  Time in seconds of
+	idle time before auto-reparse.
+	
+	(semantic-auto-parse-timer): No more buffer local.  Now an idle timer.
+	
+	(semantic-auto-parse-bovinate): Moved.  Does nothing if
+	`semantic-auto-parse-mode' is not enabled.
+	
+	(semantic-auto-parse-enabled-p): Moved.  Also check
+	`semantic-auto-parse-mode'.
+	
+	(semantic-auto-parse-triggering-delay): Removed.
+	(semantic-auto-parse-change-hook): Removed.
+	(semantic-auto-parse-stop-after-parse): Removed.
+	
+	(semantic-auto-parse-setup-timer): New function.  Lazy initialization
+	of the auto parse idle timer.
+	(semantic-auto-parse-mode-setup): Use it.
+	
+2001-11-02 22:37  ponced
+
+	* semantic.el:
+
+	(semantic-set-toplevel-bovine-cache): Made `after-change-functions'
+	hook local using `make-local-hook' before using `add-hook' with the
+	LOCAL flag set.
+	
+2001-11-02 22:36  ponced
+
+	* semantic-imenu.el:
+
+	(semantic-create-imenu-index): Made
+	`semantic-before-toplevel-cache-flush-hook' and
+	`semantic-clean-token-hooks' locals using `make-local-hook' before
+	using `add-hook' with the LOCAL flag set.
+	
+2001-11-02 22:35  ponced
+
+	* senator.el:
+
+	(senator-menu-bar): Added auto parse to "Modes" sub-menu.
+	
+	(senator-minor-mode-setup): Made
+	`semantic-before-toplevel-cache-flush-hook' and
+	`semantic-clean-token-hooks' locals using `make-local-hook' before
+	using `add-hook' with the LOCAL flag set.
+	
+2001-11-02 22:34  ponced
+
+	* semantic-load.el:
+
+	Added autoloads for `semantic-auto-parse-mode' minor mode.
+	Turn on `global-semantic-auto-parse-mode' when
+	`semantic-load-turn-everything-on' is non-nil.
+	
+2001-11-02 22:33  ponced
+
+	* semantic-util-modes.el:
+
+	New `semantic-auto-parse-mode' minor mode to auto reparse buffer.
+	
+	(semantic-auto-parse-no-working-message): New variable.  Non-nil
+	disable display of working message during auto-parse.
+	(semantic-auto-parse-interval): New variable.  Time in seconds between
+	buffer change and reparse.
+	(semantic-auto-parse-max-buffer-size): New variable.  Maximum size in
+	bytes of buffers automatically reparsed.
+	(semantic-auto-parse-timer): New variable.  Timer used to schedule
+	automatic reparse.
+	(semantic-auto-parse-bovinate): New function.  Reparse the current
+	buffer.
+	(semantic-auto-parse-enabled-p): New function.  Return non-nil if
+	auto-parse is enabled for this buffer.
+	(semantic-auto-parse-triggering-delay): New function.  Return the time
+	in seconds before auto-parse triggering.
+	(semantic-auto-parse-change-hook): New function.  Hook run to schedule
+	the auto-parse task when Semantic detects a change in the current
+	buffer.
+	(semantic-auto-parse-stop-after-parse): New function.  Hook run to
+	stop scheduled auto-parse task after Semantic changed the token cache.
+	(global-semantic-auto-parse-mode): New variable.  If non-nil enable
+	global use of auto-parse mode.
+	(global-semantic-auto-parse-mode): New function.  Toggle global use of
+	`semantic-auto-parse-mode'.
+	(semantic-auto-parse-mode-hook): New variable.  Hook run at the end of
+	function `semantic-show-dirty-mode'.
+	(semantic-auto-parse-mode-on-hook): New variable.  Hook run when
+	auto-parse minor mode is turned on.
+	(semantic-auto-parse-mode-off-hook): New variable.  Hook run when
+	auto-parse minor mode is turned off.
+	(semantic-auto-parse-mode): New variable.  Non-nil if auto-parse minor
+	mode is enabled.
+	(semantic-auto-parse-mode-setup): New function.  Setup
+	`semantic-auto-parse-mode'.
+	(semantic-auto-parse-mode): New function.  Minor mode to auto parse
+	buffer following changes.
+	
+2001-10-31 19:28  zappo
+
+	* semantic-util.el:
+
+	(semantic-prototype-nonterminal-default): Support reference &
+	(semantic-uml-token-or-string-to-string): Support pointers *, and references &
+	
+2001-10-31 17:14  zappo
+
+	* working.el:
+
+	(working-mode-line-update): New compat alias
+	(working-mode-line-message, working-use-echo-area-p): New vars
+	(working-message): Renamed to working-message-echo.
+	New function that obeys working-use-echo-area-p.
+	(working-status-forms): Always reset working-mode-line-message
+	(working-status-timeout): Resest working-mode-line-message
+	(working-verify-mode-line): New test function.
+	
+2001-10-31 17:06  zappo
+
+	* semantic-sb.el:
+
+	(semantic-fetch-dynamic-bovine): If a file isn't in semanticdb, load
+	it and bovinate it.
+	
+2001-10-30 14:40  zappo
+
+	* semanticdb.el:
+
+	(semanticdb-semantic-init-hook-fcn): For backward compatibility with
+	old cache files, handle the case when the unmatched-syntax slot
+	is not bound.
+	
+2001-10-28 03:00  zappo
+
+	* semanticdb.el:
+
+	(semanticdb-table): Add unmatched-syntax slot.
+	(semanticdb-semantic-init-hook-fcn): Set the unmatched syntax cache.
+	(semanticdb-post-bovination-unmatched-syntax): New hook fcn.
+	(semanticdb-hooks): Set our init hook into `semantic-init-db-hooks'.
+	
+2001-10-28 02:59  zappo
+
+	* semantic.el:
+
+	(semantic-init-db-hooks): New hook variable for semanticdb.
+	(semantic-new-buffer-fcn): Call semantic-init-db-hooks before other hooks.
+	(semantic-set-unmatched-syntax-cache): New function for semanticdb.
+	(semantic-bovinate-nonterminals): Indent change.
+	
+2001-10-28 02:57  zappo
+
+	* semantic-load.el:
+
+	Enable show-unmatched-syntax-mode by default.
+	
+2001-10-28 02:01  zappo
+
+	* semantic.texi:
+
+	(Local Context): Removed old context analysis functions.
+	Added xref to to new context analysis section.
+	
+2001-10-28 02:00  zappo
+
+	* semantic-analyze.el:
+
+	(semantic-analyze-token-type): New function extraced from
+	'semantic-analyze-find-nonterminal-sequence'
+	(semantic-analyze-find-nonterminal-sequence): Extracted token type analysis.
+	(semantic-analyze-scoped-nonterminals): Added a comment about getting
+	all parents.
+	(semantic-analyze-scoped-types): Add in scope from functions with
+	parnts.  Add in context scopes (eg. code-wise use clauses)
+	(semantic-analyze-possible-completions): Fixed search to use the
+	completetexttype.
+	Add in search for the local scope.
+	
+2001-10-28 02:55  zappo
+
+	* semantic-sb.el:
+
+	(semantic-sb-insert-details): When inserting a type's parts, bucketize
+	them if they appear as tokens.
+	
+2001-10-28 02:51  zappo
+
+	* semantic-c.el:
+
+	(semantic-toplevel-c-bovine-table): New c.bnf 1.49
+	(semantic-expand-c-nonterminal): Extract default value for vars
+	
+2001-10-28 02:50  zappo
+
+	* c.bnf:
+
+	(codeblock): Use codeblock-var-or-fun instead of var-or-fun
+	(class-parents): Add opt-class-declmod to one-parent case.
+	(opt-name): empty name gets "" string instead of nil.
+	(opt-ref): Pass back a 1 for a ref match
+	(codeblock-var-or-fun): New rule. Don't match anon types.
+	(opt-initializers): Add coma prefixed initializer.
+	(variablearg): Pass down a reference
+	(expression): Send back start/end of the expression.
+	
+2001-10-26 21:40  ponced
+
+	* semantic.el:
+
+	(semantic-unmatched-syntax-cache): New variable.  Cached copy of
+	unmatched syntax tokens.
+	
+	(semantic-unmatched-syntax-cache-check): New variable.  Non nil if the
+	unmatched syntax cache is out of date.
+	
+	(semantic-overlay-error-recovery-stack): Removed.
+	(semantic-overlay-stack-add): Removed.
+	(semantic-overlay-stack-clear): Removed.
+	
+	(semantic-bovine-umatched-syntax-refresh-needed-p): New function.
+	Return non-nil if the unmatched syntax cache needs a refresh.
+	
+	(semantic-clear-unmatched-syntax-cache): New function.  Clear
+	`semantic-unmatched-syntax-cache'.
+	
+	(semantic-bovinate-unmatched-syntax): New function.  Return the list
+	of unmatched syntax tokens.
+	
+	(semantic-clear-toplevel-cache): Call
+	`semantic-clear-unmatched-syntax-cache'.
+	
+	(semantic-bovinate-toplevel): Call
+	`semantic-clear-unmatched-syntax-cache' after partial re-parse.  Use
+	`semantic-overlay-list' to setup token overlays after full re-parse.
+	
+	(semantic-set-toplevel-bovine-cache): Set
+	`semantic-unmatched-syntax-cache-check' to nil.  Run hook
+	`semantic-unmatched-syntax-hook' to refresh highlighting of unmatched
+	syntax tokens.
+	
+	(semantic-change-function): Set
+	`semantic-unmatched-syntax-cache-check' to t.
+	
+	(semantic-raw-to-cooked-token): Replaced token overlay by vector of
+	START END positions.
+	
+	(semantic-bovinate-nonterminals): Setup
+	`semantic-unmatched-syntax-cache'.  No more use overlay recovery
+	stack.  No more run `semantic-unmatched-syntax-hook'.
+	
+	(semantic-rebovinate-token, semantic-bovinate-nonterminal): No more
+	setup token overlays.
+	
+2001-10-26 21:30  ponced
+
+	* semantic-util-modes.el:
+
+	  (semantic-unmatched-syntax-overlay-p): New function.
+	
+	  (semantic-showing-unmatched-syntax-p): Use `semantic-overlays-in'
+	  instead of `semantic-overlay-lists'.  Use
+	  `semantic-unmatched-syntax-overlay-p'.
+	
+	  (semantic-clean-unmatched-syntax-in-region):Moved for clarity.
+	  (semantic-clean-token-of-unmatched-syntax): Ditto.
+	
+	  (semantic-clean-unmatched-syntax-in-buffer): New function.
+	
+	  (semantic-hide-unmatched-syntax): Removed.  Replaced by
+	  `semantic-clean-unmatched-syntax-in-buffer'.
+	
+	  (semantic-show-unmatched-syntax): Clear any previous highlighting.
+	  No more use `semantic-overlay-stack-add'.  Comment fixes.
+	
+	  (semantic-next-unmatched-syntax):  Use
+	  `semantic-unmatched-syntax-overlay-p'.
+	
+	  (semantic-show-unmatched-syntax-mode-setup): Use the function
+	  `semantic-bovinate-unmatched-syntax' to get the list of unmatched
+	  syntax tokens.  Then call `semantic-show-unmatched-syntax' to
+	  highlight them.
+	
+2001-10-26 16:13  zappo
+
+	* document.el:
+
+	(document-massage-to-texinfo): When searching for things to wrap
+	in @var, move search start point after each match to avoid
+	double-match for THREE-WORD-SYMBOLS.
+	
+2001-10-26 16:10  zappo
+
+	* semantic-ctxt.el:
+
+	(semantic-ctxt-scoped-types, semantic-ctxt-scoped-types-default): New fcn
+	
+2001-10-26 16:05  zappo
+
+	* semantic-util.el:
+
+	(semantic-nonterminal-children-default): Handle anonymous types with children.
+	
+2001-10-25 01:07  zappo
+
+	* semantic.texi:
+
+	(Tools): Added a charts section
+	(speedbar): Made note of semantic-load.el
+	(imenu): Made note of semantic-load.el
+	(charts): New section
+	
+2001-10-25 00:35  zappo
+
+	* semantic-util-modes.el:
+
+	(global-semantic-show-dirty-mode): Fixed doc.
+	
+2001-10-24 04:08  zappo
+
+	* semantic.texi:
+
+	(Bovinating, BNF conversion, Optional Lambda Expression): xref syntax fix
+	(Current Context): Renamed "suggestions" node to "syntax analysis"
+	(Local Variables): Doc update from source
+	(Derived Context): Doc update from source
+	(Context Analysis): New section w/ doc copied from source
+	(senator): xref syntax fix
+	(miscellaneous): Updated from source.  Added show-unmatched-syntax functions.
+	
+2001-10-24 03:16  zappo
+
+	* semantic-c.el:
+
+	Updated for c.bnf
+	(semantic-flex-c-if-0): Optimize #if 0 out of lexical stream.
+	(semantic-flex-c-extensions): Added above.
+	
+2001-10-24 03:15  zappo
+
+	* c.bnf:
+
+	Removed log comments.
+	(unionparts): Fixed names
+	(class-parents): Added opt-class-declmods.
+	(typesimple): Fixed name of union parts
+	(var-or-fun): Split to two sub-rules
+	(opt-initializers): Fixed COMA case.
+	(expression): Added cast info of an expression.
+	
+2001-10-24 03:11  zappo
+
+	* semantic-util-modes.el:
+
+	(semantic-show-dirty-mode-on-hook,
+	 semantic-show-dirty-mode-off-hook): Fixed doc strings.
+	
+2001-10-24 02:59  zappo
+
+	* INSTALL:
+
+	Fixed quoting problem with LOADPATH.
+	
+2001-10-24 02:55  zappo
+
+	* semanticdb.el:
+
+	(semanticdb-semantic-init-hook-fcn): Added comments.
+	
+2001-10-24 02:52  zappo
+
+	* semantic-load.el:
+
+	Do not enable global-semantic-show-unmatched-syntax-mode when turning
+	everything on until bugs in it are fixed.
+	
+2001-10-17 15:08  zappo
+
+	* semantic-bnf.el:
+
+	By Juanma Barranquero <lektu@terra.es>:
+	(which-func-modes): In Emacs 21, it can be t, so don't add
+	semantic-bnf mode.
+	
+2001-10-09 20:33  ponced
+
+	* semantic-ctxt.el:
+
+	(semantic-get-local-variables, semantic-get-local-arguments): Fixed
+	last check in.
+	
+2001-10-09 19:49  ponced
+
+	* semantic-ctxt.el:
+
+	(semantic-get-local-variables): For consistency with
+	`semantic-get-local-variables' return tokens without overlay.
+	
+	(semantic-get-all-local-variables-default): Always return a cons
+	(LOCAL-ARGUMENTS . LOCAL-VARIABLES).  Removed reversing of the result
+	list because values returned by `semantic-get-local-arguments' and
+	`semantic-get-local-variables' are already in correct order.
+	
+2001-10-08 23:17  zappo
+
+	* Project.ede:
+
+	Added an "example" target with skeletons bnf, and Lisp file.
+	
+2001-10-08 23:16  zappo
+
+	* semantic-load.el:
+
+	Moved charting autoloads together.
+	
+2001-10-08 23:15  zappo
+
+	* semantic-c.el:
+
+	(semantic-toplevel-c-bovine-table): New c.bnf
+	(semantic-c-classname): New state variable
+	(semantic-c-reconstitute-token): handle constructor via
+	`semantic-c-classname' and new auto-typeing information for implicitly
+	typed functions.
+	(semantic-default-c-built-in-types): Deleted
+	(semantic-default-c-setup): Don't assign
+	 `semantic-default-c-built-in-types'
+	
+2001-10-08 23:12  zappo
+
+	* c.bnf:
+
+	(unionpartsparts): new rule; used to be classparts
+	(typesimple): When building a class, store off the classname found.
+	Used to reconstitute functions later.
+	(var-or-fun): Re-enable untyped functions and variables.
+	
+2001-10-08 23:10  zappo
+
+	* semantic-analyze.el:
+
+	(semantic-analyze-possible-completions): Fixed typo.
+	
+2001-10-08 23:08  zappo
+
+	* semantic-analyze.el:
+
+	(semantic-analyze-current-local-variables): Removed
+	(semantic-analyze-find-nonterminal-sequence): Accept localvariable
+	list, and scoped variable list.
+	(semantic-analyze-type-parts, semantic-analyze-scoped-nonterminals,
+	semantic-analyze-scoped-types): New functions
+	(semantic-analyze-context, semantic-analyze-context-assignment,
+	 semantic-analyze-context-functionarg,
+	 semantic-analyze-context-return): New classes
+	(semantic-analyze-current-context): Use new classes instead of hacking
+	together a list.  Collect new local variable and scoping information
+	into the analysis.
+	(semantic-analyze-type-constraint): New method set for new classes.
+	(semantic-analyze-possible-completions): use new object returned by
+	`semantic-analyze-current-context' to do the same thing.
+	(semantic-analyze-show): New method set for new classes.
+	(semantic-analyze-pop-to-context): Use new method.
+	
+2001-10-08 23:02  zappo
+
+	* semantic-util.el:
+
+	(semantic-default-built-in-types): Removed.
+	
+2001-10-08 22:40  zappo
+
+	* semantic.texi:
+
+	Spelling and grammar fixes.  (Thanks Colin Marquardt)
+	Added detail about constructor specifier in tokens.
+	
+2001-10-08 22:36  zappo
+
+	* semantic-skel.el:
+
+	Example on how to start an Emacs Lisp source target for a bnf file.
+	
+2001-10-08 22:34  zappo
+
+	* skeleton.bnf:
+
+	Example on how to start a .bnf project.
+	
+2001-10-08 22:32  ponced
+
+	* semantic-java.el:
+
+	(semantic-java-get-local-variables): New implementation consistent
+	with `semantic-get-local-variables-default'.
+	
+2001-10-05 23:32  ponced
+
+	* semantic-bnf.el:
+
+	Merged wisent branch.
+	
+2001-10-05 23:04  ponced
+
+	* semantic.texi:
+
+	Fixed typo.
+	
+2001-10-05 21:40  zappo
+
+	* semantic-analyze.el:
+
+	(semantic-analyze-current-local-variables): New var
+	(semantic-analyze-find-nonterminals-by-prefix): New function
+	(semantic-analyze-find-nonterminal-sequence): New arg TYPERETURN.
+	(semantic-analyze-current-context): Get back the types from prefix
+	sequence.  Add them to the return value.
+	(semantic-analyze-possible-completions): New command.
+	(semantic-analyze-pop-to-context): Handle the types of the prefix.
+	
+2001-10-05 21:37  zappo
+
+	* semantic-c.el:
+
+	New c.bnf
+	
+2001-10-05 21:36  zappo
+
+	* c.bnf:
+
+	(var-or-fun): Disable support (for now) of int declarations for vars
+	and funs with unspecified types.  Who does that anymore anyway?
+	
+2001-10-05 21:30  zappo
+
+	* semantic-ctxt.el:
+
+	(semantic-up-context): Specify a bounds type (ie, only go up withing
+	the bounds of a specific token type.)  Narrow region to that token.
+	(semantic-up-context-default): Remove old narrowing code.
+	(semantic-get-local-variables-default): Disable working messages.
+	Go up w/in the scope of 'function only. Be sure to append old vars.
+	(semantic-get-all-local-variables-default): Do not loop up contexts.
+	Let the get-local-vars function do that.
+	
+2001-10-05 21:27  zappo
+
+	* semantic-util.el:
+
+	(semantic-find-nonterminal-by-type): Do not return built in types.
+	This function is supposed to return non-type tokens which have TYPE
+	as an type.
+	
+2001-10-05 04:11  zappo
+
+	* semantic-util-modes.el:
+
+	(semantic-next-unmatched-syntax): New function
+	(semantic-clean-unmatched-syntax-in-region): Implemented.
+	(semantic-clean-token-of-unmatched-syntax): New function for hook.
+	(semantic-show-unmatched-syntax-mode-map): Add binding
+	`semantic-show-unmatched-syntax-next'.
+	(semantic-show-unmatched-syntax-mode-setup): Add pre clean token hook.
+	(semantic-show-unmatched-syntax-next): New command.
+	
+2001-10-05 04:09  zappo
+
+	* semantic-ctxt.el:
+
+	(semantic-get-local-variables-default): Disable all hooks associated
+	with unmatched syntax.
+	
+2001-10-05 04:04  zappo
+
+	* semantic-c.el:
+
+	New c.bnf
+	
+2001-10-05 04:01  zappo
+
+	* c.bnf:
+
+	(UNDERP, UNDERUNDERP): New keywords
+	(macro-or-include): Handle optional argument list
+	(opt-define-arglist): New rules
+	(var-or-func-decl): Account for optional _P before arglist.
+	(opt-under-p): New rule
+	(arg-list): Remove check for _P here.  Regex wasn't working.
+	(arg-sub-list): Unused.
+	(expression): Add symbol as valid part.
+	
+2001-10-04 17:05  zappo
+
+	* Project.ede:
+
+	Added semantic-analyze.el
+	
+2001-10-04 17:05  zappo
+
+	* semantic-bnf.el:
+
+	(semantic-bnf-syntax-help): Added number to list of built ins.
+	
+2001-10-04 17:04  zappo
+
+	* semantic-util.el:
+
+	(semantic-current-nonterminal-of-type): New function
+	(semantic-with-buffer-narrowed-to-current-token): New macro
+	(semantic-with-buffer-narrowed-to-token): New macro
+	
+2001-10-04 17:02  zappo
+
+	* semantic.el:
+
+	(semantic-number-expression): Use number expression from semantic-java
+	since it looks like the common way of parsing numbers for most
+	langauges.
+	
+2001-10-04 17:01  zappo
+
+	* semantic-c.el:
+
+	New c.bnf
+	
+2001-10-04 17:00  zappo
+
+	* c.bnf:
+
+	(expression): Use newer number token which handles floats.
+	
+2001-10-04 16:59  zappo
+
+	* semantic-ctxt.el:
+
+	(semantic-up-context-default): Narrow to current function token first.
+	(semantic-get-local-variables-default): Collect variables from
+	multiple levels.
+	(semantic-ctxt-current-symbol-default): Break at beginning of buffer.
+	(semantic-ctxt-current-argument): doc fix.
+	(semantic-ctxt-current-argument-default): doc fix
+	(semantic-suggest-lookup-item,
+	 semantic-suggest-variable-token-hierarchy,
+	 semantic-suggest-current-type): Deleted functionality moved to
+	semantic-analyze.
+	
+2001-10-04 16:52  zappo
+
+	* semantic-analyze.el:
+
+	Analysis of the current context.
+	Uses semantic-ctxt to determine textual context around point.
+	Uses searches to find the tokens associated with that context.
+	
+2001-10-03 19:57  ponced
+
+	* semantic-java.el:
+
+	(semantic-java-number-regexp): New constant.  Regular expression used
+	by the lexer to match Java numbers.
+	
+	(semantic-toplevel-java-bovine-table, semantic-default-java-setup):
+	BNF update.
+	
+2001-10-03 19:56  ponced
+
+	* java.bnf:
+
+	In setup: Added setting of `semantic-number-expression'.
+	
+	In grammar: Removed 'number nonterminal now directly provided as
+	terminal by the lexer.
+	
+2001-10-03 19:55  ponced
+
+	* semantic-c.el:
+
+	Added (require 'senator) at compilation time to fix byte-compiler
+	warning.
+	
+2001-10-03 19:54  ponced
+
+	* senator.el:
+
+	(senator-menu-bar): New "Chart" and "Modes" sub-menus.
+	
+2001-10-03 19:46  ponced
+
+	* semantic.el:
+
+	Added (require 'assoc) to fix byte-compiler warning.
+	
+	(semantic-flex): Fixed to handle numbers which are not symbols (that
+	is for example floating point numbers starting with a dot like ".10").
+	
+2001-10-03 03:07  zappo
+
+	* semantic.texi:
+
+	(Settings): Added number expression doc.
+	(Rules): Added large section about valid syntax tokens.
+	
+2001-10-03 02:55  zappo
+
+	* semantic-util-modes.el:
+
+	(global-semantic-show-dirty-mode): Doc Fix
+	(semantic-show-dirty-mode-setup): Doc Fix
+	(semantic-show-dirty-mode): Doc Fix
+	(global-semantic-show-unmatched-syntax-mode): Doc Fix
+	(semantic-clean-unmatched-syntax-in-region): New fn placeholder
+	(semantic-show-unmatched-syntax-mode-map): Doc Fix
+	(semantic-show-unmatched-syntax-mode-setup): Doc Fix
+	(semantic-show-unmatched-syntax-mode): Doc Fix
+	
+2001-10-03 02:46  zappo
+
+	* Project.ede:
+
+	Add semantic-util-modes.
+	Update version number.
+	
+2001-10-03 02:45  zappo
+
+	* semantic-c.el:
+
+	New c.bnf (1.43)
+	
+2001-10-03 02:44  zappo
+
+	* c.bnf:
+
+	(INLINE): Fix typo
+	(opt-class-protection): EMPTY is valid match
+	(opt-name): UNION can have class parts.  Fix typedef name.
+	(DECLMOD): Add METADECLMOD
+	(metadeclmod, METADECLMOD): New rules
+	(var-or-fun-decl): Accept metadeclmods in the middle.
+	(fun-or-proto-end): Accept "= 0;" as a valid function end.
+	(opt-expression): Deal with numbers.
+	
+2001-10-03 02:33  zappo
+
+	* semantic-chart.el:
+
+	(semantic-chart-database-size): New command.
+	(semantic-chart-nonterminal-complexity-token): Get the Y label from
+	token type name assoc list.
+	
+2001-10-03 02:32  zappo
+
+	* semantic-load.el:
+
+	Added in chart autoloads.
+	
+2001-10-03 02:31  zappo
+
+	* semantic-bnf.el:
+
+	(semantic-bnf-mode-keywords): Support the new number keyword.
+	
+2001-10-03 02:30  zappo
+
+	* semantic-scm.el:
+
+	New version of scheme.bnf.
+	
+2001-10-03 02:29  zappo
+
+	* semantic-make.el:
+
+	New version of make.bnf.
+	
+2001-10-03 02:29  zappo
+
+	* make.bnf, scheme.bnf:
+
+	Disable number matching.
+	
+2001-10-03 02:28  zappo
+
+	* semantic.el:
+
+	(semantic-version): Update to 1.4beta 12
+	(semantic-pre-clean-token-hooks): New hook.
+	(semantic-rebovinate-token): Call `semantic-pre-clean-token-hooks'
+	(semantic-number-expression): New flex option
+	(semantic-flex): Create number tokens from symbols if they match
+	above symbol.
+	
+2001-10-02 20:52  ponced
+
+	* senator.el:
+
+	(global-senator-minor-mode): New variable and function to turn on/off
+	`senator-minor-mode' in every Semantic enabled buffer.
+	
+	(senator-minor-mode): Added autoload cookie.  Use
+	`semantic-add-minor-mode' to register the minor mode.
+	
+2001-10-02 20:51  ponced
+
+	* semantic-util.el:
+
+	(semantic-show-dirty-mode, semantic-show-unmatched-syntax-mode):
+	All related code moved into semantic-util-modes.el.
+	
+	Added (require 'semantic-util-mode).
+	
+2001-10-02 20:50  ponced
+
+	* semantic-load.el:
+
+	Updated minor mode autoloads.
+	Use `global-senator-minor-mode', `global-semantic-show-dirty-mode' and
+	`global-semantic-show-unmatched-syntax-mode' to globally turn on minor
+	modes when `semantic-load-turn-everything-on' is non-nil.
+	
+2001-10-02 20:49  ponced
+
+	* semantic-util-modes.el:
+
+	Initial revision.   Implementation of Semantic minor modes.
+	
+2001-09-30 02:06  ponced
+
+	* sformat.el:
+
+	(newstr): Local variable declared at compilation time to fix
+	byte-compiler warnings.
+	
+2001-09-30 02:05  ponced
+
+	* senator.el:
+
+	(senator-completion-menu-window-offsets): Removed binding of unused
+	local variables.
+	
+	(senator-minor-menu): Declared to fix byte-compiler warnings.
+	
+	(senator-minor-mode): Moved to fix byte-compiler warnings.
+	
+2001-09-30 01:58  ponced
+
+	* semantic.el:
+
+	(semantic-dirty-token-hooks): Fixed doc string typo.
+	
+	(semantic-flex-start, semantic-flex-end, semantic-flex-text,
+	semantic-bovine-toplevel-full-reparse-needed-p,
+	semantic-bovine-toplevel-partial-reparse-needed-p): Moved to fix byte
+	compiler warnings.
+	
+	(semantic-token-with-position-p): To avoid implementation
+	inconsistencies with `semantic-token-p' call it.
+	
+	(semantic-flex): Removed binding of unused local variable.
+	
+2001-09-30 01:49  ponced
+
+	* semantic-util.el:
+
+	Require 'newcomment at compilation time to fix Emacs 21 byte-compiler
+	warnings.
+	
+	(semantic-find-nonterminal-by-function): Ignore invalid children
+	tokens when SEARCH-PARTS is not 'positiononly.  Some improvements.
+	
+	(semantic-name-nonterminal, semantic-prototype-nonterminal-default,
+	semantic-concise-prototype-nonterminal-default,
+	semantic-uml-token-or-string-to-string,
+	semantic-uml-abbreviate-nonterminal-default,
+	semantic-uml-concise-prototype-nonterminal-default): Removed binding
+	of unused local variables.
+	
+2001-09-30 01:48  ponced
+
+	* semantic-texi.el:
+
+	(semantic-texi-recursive-combobulate-list): Removed binding of unused
+	local variables.
+	
+2001-09-30 01:47  ponced
+
+	* semantic-sb.el:
+
+	(semantic-sb-one-button): Removed binding of unused local variable.
+	
+2001-09-30 01:47  ponced
+
+	* semantic-imenu.el:
+
+	Require 'imenu at compilation time to fix byte-compiler warnings.
+	
+	(semantic-create-imenu-index-1): Removed binding of unused local
+	variable.
+	
+2001-09-30 01:45  ponced
+
+	* semantic-ctxt.el:
+
+	(semantic-ctxt-current-symbol-default,
+	semantic-suggest-variable-token-hierarchy): Removed binding of unused
+	local variable.
+	
+2001-09-30 01:44  ponced
+
+	* semantic-c.el, semantic-el.el:
+
+	Require 'semantic-imenu at compilation time to fix byte-compiler
+	warnings.
+	
+2001-09-30 01:42  ponced
+
+	* document.el:
+
+	(document-comment-start, document-comment-end,
+	document-comment-line-prefix): Moved to document-vars.el to fix
+	byte-compiler warnings.
+	
+	Removed extra (require 'document-vars).
+	
+2001-09-30 01:42  ponced
+
+	* document-vars.el:
+
+	Require 'newcomment at compilation time to fix Emacs 21 byte-compiler
+	warnings.
+	
+	(document-comment-start, document-comment-end,
+	document-comment-line-prefix): Moved from document.el to fix
+	byte-compiler warnings.
+	
+2001-09-27 23:05  ponced
+
+	* semantic-java.el:
+
+	(semantic-default-java-setup): BNF update.
+	
+2001-09-27 23:04  ponced
+
+	* java.bnf:
+
+	In setup: Removed unnecessary setting of `block-comment-end' which
+	breaks `indent-new-comment-line'.
+	
+2001-09-27 05:29  zappo
+
+	* semantic-load.el:
+
+	Added `semantic-show-unmatched-syntax-mode'.
+	
+2001-09-27 02:52  zappo
+
+	* semantic.el:
+
+	(semantic-unmatched-syntax-hook): New hook.
+	(semantic-bovinate-nonterminals): Track all unmatched syntax elements.
+	Call new hook with the unmatched syntax.
+	
+2001-09-27 02:28  zappo
+
+	* semantic-util.el:
+
+	(semantic-find-nonterminal-by-overlay,
+	 semantic-find-nonterminal-by-overlay-in-region,
+	 semantic-find-nonterminal-by-overlay-next,
+	 semantic-find-nonterminal-by-overlay-prev): Make sure the 'semantic
+	part of the overlay is a token to be valid while searching.
+	(semantic-show-unmatched-syntax-mode): New user option.
+	(semantic-unmatched-syntax-face): New face.
+	(semantic-show-unmatched-syntax): New function
+	(semantic-show-unmatched-syntax-mode): New mode.
+	
+2001-09-27 01:55  zappo
+
+	* semantic-c.el:
+
+	(semantic-toplevel-c-bovine-table): Updated from c.bnf
+	
+2001-09-27 01:54  zappo
+
+	* c.bnf:
+
+	(enumsubparts): Account for commas
+	(arg-sub-list): Account for commas
+	(opt-expression): Account for floating point numbers,
+	or struct dereferences.
+	
+2001-09-26 23:07  ponced
+
+	* semantic-chart.el:
+
+	(semantic-chart-nonterminals-by-token): Changed the call to
+	`semantic-find-nonterminal-by-token' to search in sub-parts of tokens.
+	
+	(semantic-chart-nonterminal-complexity-token): Changed call to
+	`semantic-find-nonterminal-by-token' to use 'positiononly instead of
+	t.
+	
+2001-09-26 23:06  ponced
+
+	* semantic-util.el:
+
+	(semantic-find-nonterminal-by-function):  Take into account
+	'positiononly value of the SEARCH-PARTS argument.
+	
+2001-09-26 03:03  zappo
+
+	* semantic-chart.el:
+
+	Added a name to the complexity chart.
+	
+2001-09-26 02:43  zappo
+
+	* semantic.el:
+
+	Update version numbers.
+	
+2001-09-26 02:32  zappo
+
+	* Project.ede:
+
+	Updated version.
+	
+2001-09-21 16:13  ponced
+
+	* semantic.el:
+
+	(semantic-token-name, semantic-token-get, semantic-token-start,
+	semantic-token-end, semantic-token-buffer, semantic-token-p,
+	semantic-bovine-toplevel-full-reparse-needed-p,
+	semantic-bovine-toplevel-partial-reparse-needed-p): Defined as inline
+	functions.
+	
+	(semantic-bovinate-toplevel): Garbage collector is run before parsing
+	and suspended during parsing to speed up the parser and optimize
+	memory use.
+	
+2001-09-21 16:12  ponced
+
+	* working.el:
+
+	(working-message-emacs, working-message-xemacs): Do nothing if running
+	in batch mode.
+	
+	(working-run-with-timer, working-cancel-timer): Default implementation
+	uses `working-message' instead of `message'.  Moved the definitions
+	after definition of `working-message' to avoid byte compiler warnings.
+	
+2001-09-18 22:24  zappo
+
+	* semantic-ctxt.el:
+
+	(semantic-function-argument-separation-character): Fix doc.
+	
+2001-09-18 21:21  ponced
+
+	* semantic-imenu.el:
+
+	(semantic-create-imenu-subindex):  Use `imenu--split-submenus' to sort
+	and split sub index.
+	
+2001-09-18 20:21  zappo
+
+	* semantic-c.el:
+
+	(semantic-c-nonterminal-protection): Only check for class/struct if
+	the token is a type.  Otherwise, always default to public.
+	
+2001-09-18 20:18  zappo
+
+	* semantic-el.el:
+
+	(semantic-elisp-prototype-nonterminal): Deleted
+	(semantic-default-elisp-setup): Remove reference to above.
+	Set `semantic-function-argument-separator' and
+	`semantic-function-argument-separatiion' to good values.
+	
+2001-09-18 20:07  zappo
+
+	* semantic-util.el:
+
+	(semantic-test-all-token->text-functions): New function
+	(semantic-function-argument-separator): New variable
+	(semantic-prototype-nonterminal-default): Use new variable above.
+	(semantic-concise-prototype-nonterminal-default): Use new variable above.
+	(semantic-uml-token-or-string-to-string): Always display argument list.
+	(semantic-uml-arguments-to-string): Use above new variable.
+	
+2001-09-14 22:28  zappo
+
+	* Project.ede:
+
+	Version update.
+	Added semantic-chart.el to tools.
+	
+2001-09-14 21:43  zappo
+
+	* semantic-load.el:
+
+	Added a semantic-chart autoload.
+	
+2001-09-14 21:42  zappo
+
+	* semantic-chart.el:
+
+	Chart some aspects of a file based on what Semantic knows.
+	(Requires eieio 0.17 beta 3 or better)
+	
+2001-09-14 21:32  zappo
+
+	* semantic-c.el:
+
+	Removed broken commentary
+	
+2001-09-14 16:22  ponced
+
+	* working.el:
+
+	(working-status-dynamic-type): Added `working-text-display' to the
+	list of available functions.
+	
+	(working-number-display): Doc string fix.
+	
+	(working-text-display): New function to display step strings.
+	
+2001-09-14 09:31  ponced
+
+	* semantic-el.el:
+
+	(semantic-expand-elisp-nonterminal): After expanding NONTERM delete
+	the overlay from its buffer.
+	
+2001-09-12 17:53  ponced
+
+	* semantic.el:
+
+	(find-file-hooks): Replaced `semantic-change-major-mode-hook-function'
+	by `semantic-post-change-major-mode-function'.
+	
+2001-09-12 15:29  zappo
+
+	* semantic.texi:
+
+	(Extra Specifiers): Fix end of table location.
+	
+2001-09-12 15:28  zappo
+
+	* semantic.el:
+
+	Revert old find-file-hook behavior.
+	
+2001-09-12 06:55  zappo
+
+	* semantic.el:
+
+	(semantic-version): beta10.  Oy.
+	(semantic-token-with-position-p): Make sure trailing array is not a string.
+	(sematic-find-file-function): New hook function.
+	(find-file-hooks): Add above.
+	
+2001-09-12 06:52  zappo
+
+	* semantic.texi:
+
+	(Extra Specifiers): Specify dereference spec for C example is a NUMBER.
+	Specify new pionter spec.
+	Specify new prototype flag.
+	
+2001-09-12 06:49  zappo
+
+	* semantic-util.el:
+
+	Doc fixes.
+	(semantic-prototype-nonterminal-default): Use new version of pointer value.
+	
+2001-09-12 06:47  zappo
+
+	* semantic-imenu.el:
+
+	(semantic-create-imenu-subindex): Only create submenues if the token
+	being expanded has a position available for jumping and sorting.
+	
+2001-09-12 06:46  zappo
+
+	* semantic-el.el:
+
+	(semantic-elisp-use-read): Extract contents of `eval-and-load'.
+	Support autoload as a prototyping mechanism for functions.
+	(semantic-expand-elisp-nonterminal): Expand nested definition lists.
+	(semantic-default-elisp-setup): Use above.
+	
+2001-09-12 06:43  zappo
+
+	* semantic-c.el:
+
+	New c.bnf.
+	
+2001-09-12 06:42  zappo
+
+	* c.bnf:
+
+	(var-or-func-decl): Change to host multiple postfix fcn modifiers, and
+	initializers.
+	(opt-reentrant): deleted
+	(opt-initializers, opt-post-fcn-modifiers, post-fcn-modifiers): New rules
+	
+2001-09-03 15:44  ponced
+
+	* senator.el:
+
+	(senator-show-status): Emacs 21.0.105 compatibility change.  Set
+	`senator-mode' local-map property to `mode-line-minor-mode-keymap'.
+	The function `make-mode-line-mouse2-map' no more exists in 21.0.105.
+	
+	(senator-mode-line-toggle): Removed because of new mode line design
+	for minor mode in GNU Emacs 21.0.105.
+	
+2001-08-30 14:42  zappo
+
+	* semantic-ctxt.el:
+
+	(semantic-up-context, semantic-beginning-of-context,
+	semantic-end-of-context, semantic-get-local-variables,
+	semantic-get-local-arguments, semantic-get-all-local-variables,
+	semantic-ctxt-current-symbol, semantic-ctxt-current-assignment,
+	semantic-ctxt-current-function, semantic-ctxt-current-argument):
+	Fixed bug going to (point) instead of `point'.
+	(semantic-get-local-variables): deoverlay the local variables.
+	(semantic-get-local-variables-default): Move to the beginning of the
+	current context before parsing.
+	
+2001-08-30 09:17  ponced
+
+	* semantic-java.el:
+
+	(semantic-java-get-local-variables): New function.  Java specific
+	`get-local-variables' override.
+	
+	(semantic-default-java-setup): Override `get-local-variables' with
+	`semantic-java-get-local-variables'.
+	
+2001-08-28 14:52  ponced
+
+	* semantic.texi:
+
+	Synchronized with semantic.el doc fixes.
+	
+	Added missing documentation for
+	`semantic-after-toplevel-cache-change-hook' and documented new hook:
+	`semantic-after-partial-cache-change-hook'.
+	
+2001-08-28 14:51  ponced
+
+	* semantic.el:
+
+	(semantic-after-partial-cache-change-hook): Fixed doc string.
+	
+	(semantic-remove-dirty-children-internal): Moved.
+	
+	(semantic-remove-dirty-children): Moved.  Now remove all children of
+	dirty tokens from `semantic-dirty-tokens'.
+	
+	(semantic-bovinate-toplevel): Call `semantic-remove-dirty-children'
+	before partial reparse.  Pass the list of updated tokens to hooks in
+	`semantic-after-partial-cache-change-hook'.
+	
+	(semantic-rebovinate-token): No more need to call
+	`semantic-remove-dirty-children'.
+	
+2001-08-27 22:37  ponced
+
+	* semantic.el:
+
+	(semantic-clean-token-hooks, semantic-change-hooks,
+	semantic-after-toplevel-bovinate-hook,
+	semantic-before-toplevel-cache-flush-hook): Fixed doc strings.
+	
+	(semantic-after-partial-cache-change-hook): New variable holding hooks
+	run after the buffer token list has been updated after partial reparse
+	completed.
+	
+	(semantic-bovinate-toplevel): Run hooks in
+	`semantic-after-partial-cache-change-hook' after partial reparse
+	completed.
+	
+2001-08-27 16:53  ponced
+
+	* senator.el:
+
+	(senator-minor-mode-name): Can be set to nil to disable display of the
+	minor mode name in the mode line.
+	
+	(senator-minor-mode-isearch-suffix): New option to set up the string
+	appended to the mode name when senator isearch mode is on.
+	
+	(senator-minor-mode-hook, senator-minor-mode-on-hook,
+	senator-minor-mode-off-hook): Moved to group minor mode options
+	together.
+	
+	(senator-menu-bar): For consistency always use "Senator" for the menu
+	title.
+	
+	(senator-show-status): Use `senator-minor-mode-name' and
+	`senator-minor-mode-isearch-suffix' settings.
+	
+	(senator-minor-mode-setup): Signal an error when attempting to turn on
+	Senator minor mode in a buffer not set up for parsing.
+	
+	(senator-show-status, senator-mode-line-toggle): New GNU Emacs 21
+	goodies to turn off Senator minor mode from the mode line or to turn
+	it on or off from the the minor mode menu in the mode line.
+	
+2001-08-22 03:47  zappo
+
+	* semantic-el.el:
+
+	(semantic-elisp-clos-slot-property-string,
+	semantic-elisp-clos-args-to-semantic): New functions
+	(semantic-elisp-form-to-doc-string): extract class slot details with
+	above.
+	(semantic-elisp-nonterminal-protection): New function.
+	(semantic-default-elisp-setup): Remove old UML overrides, added
+	`nonterminal-protection' override.
+	
+2001-08-18 06:08  zappo
+
+	* semantic-c.el:
+
+	New c.bnf 1.40
+	(semantic-expand-c-nonterminal): Handle 'pointer stuff for variables.
+	(semantic-c-reconstitute-token): Handle 'pointer stuff for functions.
+	
+2001-08-18 06:06  zappo
+
+	* c.bnf:
+
+	Fixed the inclusion of * in variables and functions.
+	
+2001-08-17 23:21  zappo
+
+	* Project.ede:
+
+	Version change.
+	
+2001-08-17 23:20  zappo
+
+	* semantic.el:
+
+	(semantic-version): Update
+	(semantic-toplevel-bovine-table): Removed main help on this variable,
+	the details are in the texinfo manual now.
+	
+2001-08-17 23:11  zappo
+
+	* semantic.texi:
+
+	Added a section on Extra Specifiers
+	
+2001-08-17 23:09  zappo
+
+	* semantic-util.el:
+
+	(semantic-override-table): Doc udpate.
+	
+2001-08-17 23:08  zappo
+
+	* semantic-c.el:
+
+	New c.bnf (1.39)
+	(semantic-c-nonterminal-protection): Fix default protection based on
+	class or struct.
+	(semantic-default-c-setup): Added `semantic-c-nonterminal-protection'
+	to the list of function overrides.
+	
+2001-08-17 23:02  zappo
+
+	* c.bnf:
+
+	Added register.
+	Added template w/ comment, but don't use it.
+	
+2001-08-15 04:55  zappo
+
+	* semantic.texi:
+
+	Added a style guide chapter, with lots of details about different
+	tokens, and whats in them.
+	
+2001-08-13 15:28  ponced
+
+	* semantic-bnf.el:
+
+	(semantic-bnf-find-table-destination-old,
+	semantic-bnf-find-table-destination,
+	semantic-bnf-find-keyword-destination): Fixed "def[var|const]" regular
+	expression to ensure that the searched variable or constant name is on
+	word boundaries.
+	
+2001-08-13 01:20  zappo
+
+	* semantic-ctxt.el:
+
+	(semantic-narrow-to-context, semantic-with-buffer-narrowed-to-context,
+	semantic-point-at-beginning-of-command,
+	semantic-point-at-end-of-command, semantic-narrow-to-command,
+	semantic-with-buffer-narrowed-to-command): New functions.
+	(semantic-end-of-command, semantic-beginning-of-context):
+	Narrow to current context.
+	(semantic-end-of-command-default, semantic-beginning-of-context-default):
+	Use a search, and if that fails go to point-[min/max].
+	(semantic-ctxt-current-assignment-default): Narrow to current statement.
+	Use searching functions for an equals.
+	
+2001-08-10 14:46  ponced
+
+	* semantic-java.el:
+
+	(semantic-java-keyword-table): Updated BNF grammar.
+	
+	(semantic-java-doc-tag, semantic-java-doc-tag-name): New functions to
+	convert to/from javadoc @tag notation.
+	
+	(semantic-java-doc-keyword-before-p, semantic-java-doc-keywords-map,
+	semantic-java-doc-setup): Take into account new @tag notation used for
+	javadoc keywords.
+	
+2001-08-10 14:45  ponced
+
+	* java.bnf:
+
+	Use @tag notation for the javadoc keywords to avoid conflicts with
+	language reserved words.
+	
+2001-08-08 03:14  zappo
+
+	* Project.ede:
+
+	Added the ChangeLog
+	
+2001-08-08 03:11  zappo
+
+	* NEWS:
+
+	NEWS
+	
+2001-08-08 02:56  zappo
+
+	* semantic-sb.el:
+
+	(semantic-sb-button-token->text-function,
+	 semantic-sb-info-token->text-function): New options.
+	(semantic-sb-one-button): Use above to get abbreviation text.
+	
+2001-08-04 23:01  ponced
+
+	* senator.el:
+
+	(senator-eldoc-print-current-symbol-info-default): Fixed void-variable
+	error on `semanticdb-current-database' when the optional semanticdb
+	feature is not provided.
+	
+2001-08-01 16:35  zappo
+
+	* semantic-c.el:
+
+	New c.bnf.
+	(semantic-c-reconstitute-token): Added reentrant support.
+	
+2001-08-01 16:34  zappo
+
+	* c.bnf:
+
+	Support reentrant.
+	
+2001-07-21 00:05  ponced
+
+	* semantic.el:
+
+	(semantic-flex-keyword-p, semantic-flex-buffer, semantic-flex-start,
+	semantic-flex-end, semantic-flex-text, semantic-flex-list): Use
+	`defsubst' instead of `defun' to improve performance of byte compiled
+	code.
+	
+2001-07-20 23:33  zappo
+
+	* Project.ede:
+
+	Version update.
+	
+2001-07-20 23:31  zappo
+
+	* semantic.el:
+
+	Update version to beta 9
+	
+2001-07-20 23:30  zappo
+
+	* semantic.texi:
+
+	Added bits about getting destructor information, and about
+	semantic-current-nonterminal-parent.
+	
+2001-07-20 16:04  zappo
+
+	* semantic-util.el:
+
+	(semantic-name-nonterminal-default): Only get destructor flag if TOKEN
+	 is a function.
+	
+2001-07-20 15:11  zappo
+
+	* semanticdb.el:
+
+	(semanticdb-find-nonterminal-by-token): New fn by Jesper Nordenberg
+	
+2001-07-20 15:10  zappo
+
+	* semantic-c.el:
+
+	Return public for the protection on any class part which is unlabeled.
+	
+2001-07-20 14:56  zappo
+
+	* semantic-el.el:
+
+	Support uml prototypes.
+	
+2001-07-19 21:43  zappo
+
+	* semantic-util.el:
+
+	(semantic-concise-prototype-nonterminal-default): Add spaces before (,
+	and after ,
+	(semantic-uml-colon-string, semantic-uml-no-protection-string): New Var
+	(semantic-uml-protection-to-string): Return no-protection-string, more
+	doc.
+	(semantic-uml-arguments-to-string): Add some spaces into the text.
+	(semantic-uml-prototype-nonterminal-default,
+	 semantic-uml-concice-prototype-nonterminal-default): Use
+	 -uml-colon-string.
+	
+2001-07-19 15:32  zappo
+
+	* semantic.el:
+
+	(semantic-toplevel-bovine-table): Added text for the destructor.
+	
+2001-07-19 15:19  zappo
+
+	* semantic-util.el:
+
+	(semantic-token-function-destructor): New function
+	(semantic-current-nonterminal-parent): New function
+	(semantic-name-nonterminal-default): Handle destructor.
+	(semantic-uml-arguments-to-string): Pass arguments into mapconcat.
+	(semantic-uml-prototype-nonterminal-default): Fixed argument display
+	to not use non-uml prototype to string function, and added support
+	for types.
+	
+2001-07-19 14:38  zappo
+
+	* semantic-util.el:
+
+	(semantic-token->text-functions): Added uml-concise... funciton.
+	(semantic-uml-protection-to-string): Return nil for unknown protection.
+	(semantic-uml-token-or-string-to-string): Convert a token or string
+	into a UML like string.  Taken from the body of
+	`semantic-uml-abbreviate-nonterminal-default'.
+	(semantic-uml-abbreviate-nonterminal-default): Use the above.
+	(semantic-uml-arguments-to-string): Convert an argument list to a UML
+	string list.  Use in above.
+	(semantic-uml-prototype-nonterminal-default): Use the above two new fns.
+	(semantic-uml-concise-prototype-nonterminal[-default]): New functions
+	(semantic-nonterminal-protection-default): Remove static from list of
+	modifiers that mean private.
+	
+2001-07-13 18:12  zappo
+
+	* semantic-util.el:
+
+	(semantic-token-modifiers): New function.
+	(semantic-uml-prototype-nonterminal): New function.
+	(semantic-token->text-functions): Added above function.
+	(semantic-face-alist): Added keyword font face, and more doc.
+	(semantic-uml-protection-to-string): New function from
+	  semantic-utml-abbreviate-nonterminal-default.
+	(semantic-abbreviate-nonterminal-default): Use above fn.
+	(semantic-nonterminal-protection): Swap out friend, use protected.
+	(semantic-nonterminal-protection-default): Use
+	  `semantic-token-modifiers' instead of
+	  `semantic-token-type-modifiers'.
+	
+2001-07-13 18:07  zappo
+
+	* senator.el:
+
+	(senator-jump): Push the mark before moving.
+	
+2001-07-13 18:05  zappo
+
+	* semantic-el.el:
+
+	Highlight &optional in prototypes with the keyword face.
+	
+2001-07-13 18:04  zappo
+
+	* semantic-c.el:
+
+	Stop using friend, and use protected.
+	
+2001-07-13 17:39  zappo
+
+	* semantic.el:
+
+	Updated version number.
+	
+2001-06-11 20:38  zappo
+
+	* semantic.texi:
+
+	(semantic-token-type-parent): Describe the format of the parent list.
+	(semantic-token-type-parent-superclass,
+	semantic-token-type-parent-implement): New function doc.
+	
+2001-06-11 20:08  zappo
+
+	* semantic.el:
+
+	(semantic-toplevel-bovine-table): Doc fix.
+	
+2001-06-11 20:04  zappo
+
+	* semantic-util.el:
+
+	(semantic-token-type-parent): Describe the format of the parent list.
+	(semantic-token-type-parent-superclass,
+	semantic-token-type-parent-implement): New functions.
+	
+2001-06-05 22:09  zappo
+
+	* semantic-c.el:
+
+	(semantic-default-c-path, semantic-default-c-built-in-types): Moved
+	(semantic-c-nonterminal-protection): New function
+	(semantic-default-c-setup): Add an override table with above in it.
+	
+2001-06-05 22:07  zappo
+
+	* semantic.texi:
+
+	(semantic-override-table): Doc update.
+	(semantic-nonterminal-protection): New doc.
+	
+2001-06-05 22:06  zappo
+
+	* semantic-util.el:
+
+	(semantic-override-table): Doc update.
+	(semantic-uml-abbreviate-nonterminal-default): Display protection symbol
+	(semantic-nonterminal-protection, semantic-nonterminal-protection-default):
+	  New functions.
+	
+2001-06-03 23:38  zappo
+
+	* semantic.el:
+
+	(semantic-toplevel-bovine-cache): Doc fix.
+	(semantic-after-toplevel-bovinate-hook): Doc fix.
+	(semantic-after-toplevel-cache-change-hook): Doc fix.
+	
+2001-06-03 17:23  zappo
+
+	* semanticdb.el:
+
+	(semanticdb-post-bovination): Update to take a parameter.
+	
+2001-06-03 16:28  zappo
+
+	* Project.ede:
+
+	Updated version.
+	
+2001-06-03 16:26  zappo
+
+	* semanticdb.el:
+
+	(semanticdb-hooks): Use `semantic-after-toplevel-cache-change-hook'
+	instead of `semantic-after-toplevel-bovinate-hook'.
+	
+2001-06-03 16:25  zappo
+
+	* semantic.el:
+
+	(semantic-version): New version
+	((semantic-toplevel-bovine-cache): Doc change.
+	(semantic-after-toplevel-cache-change-hook): New hook.
+	(semantic-clear-toplevel-cache): Do not call
+	`semantic-after-toplevel-bovineate-hook' for 1.3 compatibility.
+	Do call `semantic-after-toplevel-cache-change-hook'.
+	(semantic-bovinate-toplevel): Do not call
+	`semantic-after-toplevel-bovinate-hook' after custom parser.
+	Call `semantic-after-toplevel-cache-change-hook' after full parse.
+	
+2001-06-03 16:02  zappo
+
+	* semantic-c.el:
+
+	New c.bnf
+	Add throws to semantic-c-reconstitute-token.
+	Add `throw' keyword.
+	
+2001-06-03 16:01  zappo
+
+	* c.bnf:
+
+	Multi-inheritance for classes.
+	Structs like classes for C++.
+	No ; on name spaces.
+	Throws for methods.
+	(Bugs & patches from "Jesper Nordenberg" <mayhem@home.se>
+	and Norbert Lindlbauer <Norbert_Lindlbauer@betaresearch.de>)
+	
+2001-05-29 17:06  ponced
+
+	* semantic.el:
+
+	(semantic-remove-dirty-children,
+	semantic-remove-dirty-children-internal): New functions.
+	
+	(semantic-rebovinate-token): Fixed "wrong-type-argument overlayp" bug.
+	Use `semantic-remove-dirty-children' to remove the old token children
+	from the dirty list before deorverlaying it.
+	
+2001-05-28 08:51  ponced
+
+	* semantic-java.el:
+
+	(semantic-java-skip-spaces-backward,
+	semantic-java-skip-spaces-forward): Changed definition from macro to
+	more appropriate in-line function.
+	
+2001-05-25 03:12  zappo
+
+	* semantic-c.el:
+
+	New c.bnf.
+	
+2001-05-25 03:12  zappo
+
+	* c.bnf:
+
+	(expression): Added string.
+	
+2001-05-24 14:56  zappo
+
+	* working.el:
+
+	Removed variables to stop message logging from working.*status fns.
+	This was a merge error.
+	
+2001-05-24 01:09  zappo
+
+	* semantic-scm.el:
+
+	New scheme.bnf
+	
+2001-05-24 01:09  zappo
+
+	* scheme.bnf:
+
+	Fixed type on LOAD token generation.
+	
+2001-05-24 00:49  zappo
+
+	* working.el:
+
+	Updated version number.
+	(working-status-percentage-type, working-status-dynamic-type): added nil option
+	(working-percentage-step): New variable.
+	(working-last-percent): New variable.
+	(working-message): Added `eval-and-compile' around it.
+	(working-status-forms): Added `working-last-percent' to let statement.
+	(working-status): Wrap body of code in an if statement to make sure
+	we only display a message if `working-percentage-step' had passed.
+	Enable nil message type.
+	(working-dynamic-status): Enable nil message type.
+	
+2001-05-23 15:40  ponced
+
+	* semantic-java.el:
+
+	Require 'senator at compile time.
+	(semantic-default-java-setup): Rebuilt from updated java.bnf.
+	
+2001-05-23 15:39  ponced
+
+	* java.bnf:
+
+	Added `senator-step-at-token-ids' useful default value in language
+	settings.
+	Removed in line CVS change log.
+	
+2001-05-23 10:24  ponced
+
+	* senator.el:
+
+	(senator-message): Removed. Replaced by new `working-message'
+	function.
+	
+	(senator-step-at-parent): Now returns the outermost parent found
+	instead of the innermost one.
+	
+	(senator-next-token, senator-previous-token, senator-jump,
+	senator-beginning-of-defun, senator-isearch-toggle-semantic-mode): Use
+	`working-message'.
+	
+2001-05-23 10:24  ponced
+
+	* working.el:
+
+	(working-message-emacs, working-message-xemacs, working-message): New
+	functions to display messages without logging.
+	
+	(working-status, working-dynamic-status): Use `working-message'.
+	
+2001-05-22 00:01  ponced
+
+	* senator.el:
+
+	(senator-message): No more logging of messages on XEmacs.
+	
+	(senator-find-token-before, senator-find-previous-token,
+	senator-find-last-token, senator-find-next-token): Removed these
+	no more used functions.
+	
+	(senator-step-at-parent, senator-previous-token-or-parent): New
+	functions.
+	
+	(senator-next-token, senator-previous-token): New implementation
+	based on `semantic-find-nonterminal-by-overlay-next' and
+	`semantic-find-nonterminal-by-overlay-prev'.
+	
+	(senator-beginning-of-defun): Fixed the bad
+	`senator-step-at-start-end-token-ids' value.  Ensure that the
+	point is always at the beginning of the previous token found.
+	
+	(senator-beginning-of-defun, senator-end-of-defun): Doc string
+	updated to inform that the ARG parameter is not yet handled.
+	
+2001-05-20 14:51  zappo
+
+	* Project.ede:
+
+	Fixed name.
+	Added URLs
+	
+2001-05-18 04:56  zappo
+
+	* semantic-util.el:
+
+	(semantic-find-documentation): Fixed to handle deoverlayed (from db)
+	cases, plus normalized cases of slots in structs without position info.
+	
+2001-05-16 16:42  ponced
+
+	* senator.el:
+
+	(senator-insert-foreign-token-default, senator-insert-foreign-token,
+	senator-eldoc-print-current-symbol-info-default,
+	senator-eldoc-print-current-symbol-info): Functions moved to avoid
+	compiler warnings.
+	
+2001-05-16 04:17  zappo
+
+	* INSTALL:
+
+	Added info about adding speedbar to the load path.
+	
+2001-05-16 04:01  zappo
+
+	* semantic.el:
+
+	Update version number.
+	
+2001-05-15 16:02  ponced
+
+	* senator.el:
+
+	(senator-completion-flatten-stream): No more add function arguments to
+	the completion stream.
+	
+	(senator-completion-function-args): New function to build a string of
+	function argument names.
+	
+	(senator-completion-refine-name): New function to refine a token
+	completion name in an incremental way.
+	
+	(senator-completion-uniquify-names): New function to uniquify token
+	names in a completion stream.
+	
+	(senator-completion-stream): Use `senator-completion-uniquify-names'.
+	
+2001-05-14 18:32  zappo
+
+	* semantic.texi:
+
+	Added new submenus for override functions, with big special detail
+	about token->text functions.
+	
+2001-05-14 18:28  zappo
+
+	* semantic-imenu.el:
+
+	Make sure that semantic-sb is loaded when this is loaded.
+	Not because we needed it, but because speedbar will throw errors
+	with semantic generated imenu tokens.
+	
+2001-05-12 15:32  zappo
+
+	* semantic.el:
+
+	(semantic-bovinate-nonterminal): When calculating the results, if
+	there was no match, then the result stream equals the input stream, so
+	remove the non-matching token from the return stream, claiming that
+	nothing matched.  This prevents repetitive parsing.
+	(semantic-flex): If the comment-start-skip is matched, but
+	forward-comment does nothing, then make sure we skip intervening
+	boring characters so we don't loop infinitly.
+	
+2001-05-09 20:37  ponced
+
+	* semanticdb.el:
+
+	(semanticdb-current-database-list): Fixed `expand-file-name' bug when
+	`root' local variable is nil.
+	
+2001-05-09 05:27  zappo
+
+	* Project.ede:
+
+	Version & files.
+	
+2001-05-09 05:26  zappo
+
+	* semantic-c.el:
+
+	New c.bnf
+	
+2001-05-09 05:25  zappo
+
+	* c.bnf:
+
+	Added inline method support.
+	Store protection elements
+	Change enum parts to be integer variables.
+	
+2001-05-07 18:28  ponced
+
+	* semantic-util.el:
+
+	(semantic-prototype-nonterminal-default): Fixed extra space added
+	before the name of simple tokens like 'include and 'package.
+	
+2001-05-07 16:56  ponced
+
+	* semantic-java.el:
+
+	(semantic-java-prototype-function, semantic-java-prototype-variable,
+	semantic-java-prototype-type): Follows `semantic-colorize-text' API
+	change.
+	
+	(semantic-java-prototype-include, semantic-java-prototype-package):
+	Removed these unnecessary functions.
+	
+2001-05-07 13:33  zappo
+
+	* semantic-el.el:
+
+	(semantic-elisp-prototype-nonterminal): Changed with `semantic-colorize-text'.
+	
+2001-05-07 13:32  zappo
+
+	* semantic-bnf.el:
+
+	(semantic-bnf-mode): Removed `name-nonterminal' override.
+	Added new values to `semantic-face-alist'
+	(semantic-bnf-name-nonterminal): Removed.
+	(semantic-summarize-nonterminal): Changed with `semantic-colorize-text'.
+	
+2001-05-07 13:28  zappo
+
+	* semantic-util.el:
+
+	(semantic-prototype-nonterminal): Pass parent/color to subfunction.
+	
+2001-05-07 13:22  zappo
+
+	* semantic-util.el:
+
+	(semantic-colorize-text): Take a token as a face class instead of a face.
+	(semantic-face-alist): New.
+	(semantic-name-nonterminal): Doc fix.
+	(semantic-name-nonterminal-default): Use face-class.
+	(semantic-prototype-nonterminal): Doc fix.
+	(semantic-prototype-nonterminal-default): Use face-class.
+	(semantic-concise-prototype-nonterminal): Doc fix
+	(semantic-concise-prototype-nonterminal-default): Use face-class.
+	(semantic-uml-abbreviate-nonterminal): Doc fix
+	(semantic-uml-abbreviate-nonterminal-default): Use face-class.
+	
+2001-05-07 10:13  ponced
+
+	* semantic-java.el:
+
+	(semantic-java-prototype-function, semantic-java-prototype-variable,
+	semantic-java-prototype-type): Added implementation for the COLOR
+	parameter.
+	
+2001-05-06 17:50  ponced
+
+	* senator.el:
+
+	(senator-completion-menu-summary-function): Use
+	`semantic-token->text-custom-list' type instead of function type.
+	
+	(senator-completion-menu-insert-function): Added choice between
+	default `senator-completion-menu-insert-default' function or user's
+	specified one.
+	
+	(senator-completion-menu-window-offsets): Fixed an Emacs 21 bug w/
+	completion menu.  Returned offsets are now rounded down.
+	
+	(senator-eldoc-use-color): New option.
+	
+	(senator-eldoc-print-current-symbol-info): Use new
+	`senator-eldoc-use-color' option.
+	
+	Minor "checkdoc" fixes.
+	
+2001-05-06 17:49  ponced
+
+	* semantic-java.el:
+
+	(semantic-java-prototype-function, semantic-java-prototype-variable,
+	semantic-java-prototype-type, semantic-java-prototype-include,
+	semantic-java-prototype-package, semantic-java-prototype-nonterminal):
+	Added new `semantic-prototype-nonterminal' optional parameters PARENT
+	and COLOR (not yet used).
+	
+	(semantic-java-prototype-nonterminal): Replaced default behavior
+	`semantic-abbreviate-nonterminal' by
+	`semantic-prototype-nonterminal-default'. Minor code cleanup.
+	
+2001-05-05 17:02  zappo
+
+	* semantic-imenu.el:
+
+	Be safe about loading the imenu library.
+	(semantic-imenu-summary-function): Use new
+	`semantic-token->text-custom-list' for customization type.
+	(semantic-which-function-use-color): New variable
+	(semantic-default-which-function): Use
+	`semantic-which-function-use-color' to draw the token with colors.
+	
+2001-05-05 17:00  zappo
+
+	* semantic-scm.el:
+
+	Fixed the title comment.
+	
+2001-05-05 17:00  zappo
+
+	* semantic-load.el:
+
+	Do not set up imenu code if the imenu library is not available.
+	
+2001-05-05 16:59  zappo
+
+	* semantic-bnf.el:
+
+	(semantic-bnf-mode): Added `semantic-bnf-name-nonterminal' as a new
+	override fcn.
+	(semantic-bnf-name-nonterminal): New fcn
+	(semantic-bnf-abbreviate-nonterminal, semantic-bnf-summarize-nonterminal):
+	Use semantic-name-nonterminal for some things, accept parent/color
+	arguments.  Colorize text when appropriate.
+	
+2001-05-05 16:56  zappo
+
+	* semantic-el.el:
+
+	(semantic-elisp-prototype-nonterminal): Take parent/color argument.
+	Use the color argument to colorize the output text.
+	
+2001-05-05 16:54  zappo
+
+	* semantic-util.el:
+
+	(semantic-override-table): Doc fix.
+	(semantic-token->text-functions, semantic-token->text-custom-list): New var.
+	(semantic-name-nonterminal, semantic-name-nonterminal-default): New fcn
+	(semantic-abbreviate-nonterminal[-default]): Use semantic-name-nonterminal.
+	Added color parameter.
+	(semantic-summarize-nonterminal[-default]): Added color parameter.
+	(semantic-prototype-nonterminal[-default]): Added color parameter.
+	(semantic-concise-prototype-nonterminal[-default]): Added color parameter.
+	(semantic-uml-abbreviate-nonterminal[-defailt]): New functions
+	
+2001-05-05 16:37  zappo
+
+	* semantic.el:
+
+	(semantic-version): Updated
+	(semantic-token-p): nil is a symbol, so make sure that the 'token slot
+	 in a token is not nil.
+	
+2001-05-04 16:46  ponced
+
+	* semantic.el:
+
+	(semantic-bovinate-nonterminal-check-obarray): New variable to
+	remember streams already parsed for nonterminal symbols.
+	
+	(semantic-set-toplevel-bovine-cache): Cleanup
+	`semantic-bovinate-nonterminal-check-obarray'.
+	
+	(semantic-bovinate-nonterminal-check): New function to check if a
+	stream has already been parsed for nonterminal.
+	
+	(semantic-bovinate-nonterminal): Use
+	`semantic-bovinate-nonterminal-check' to detect infinite recursion
+	when doing a full reparse and abort parsing.
+	
+2001-05-02 03:32  zappo
+
+	* semantic-c.el:
+
+	New c.bnf
+	
+2001-05-01 18:52  zappo
+
+	* c.bnf:
+
+	Revamped lots of summary strings.
+	Added `type' as a possible expansion in classsubparts.
+	
+2001-05-01 18:51  zappo
+
+	* document-vars.el:
+
+	Checkdoc run.
+	
+2001-05-01 00:14  zappo
+
+	* semanticdb.el:
+
+	(semanticdb-project-roots): New variable
+	(semanticdb-project-root-functions): New variable
+	(semanticdb-current-database-list): New function
+	(semanticdb-find-nonterminal-by-function): Use
+	`semanticdb-current-database-list' to get list of databases if none
+	is specified.
+	
+2001-04-30 15:32  zappo
+
+	* semantic-el.el:
+
+	(semantic-elisp-form-to-doc-string): Fixed final cond condition.
+	
+2001-04-30 10:27  ponced
+
+	* java.bnf, semantic-java.el:
+
+	Changed "version" javadoc keyword to not optional.
+	
+2001-04-28 15:52  zappo
+
+	* semantic.el:
+
+	Added new documentation strings to all the reparsing related hooks to
+	be much more descriptive.
+	
+2001-04-28 15:50  zappo
+
+	* semantic.texi:
+
+	Changed the title.
+	Added new section `parser hooks', and moved  the two
+	`..reparse-needed' function doc in there, along with descriptions of
+	all the hooks, sucked from the source.
+	
+2001-04-28 03:54  zappo
+
+	* semantic-bnf.el:
+
+	(semantic-bovine-bnf-table): Extract buffer strings without properties.
+	Turn sublists in %put tokens into real tokens (with a symbol identifier)
+	(semantic-bnf-mode): Add `semantic-bnf-nonterminal-children' to
+	overload list.
+	(semantic-bnf-nonterminal-children): New fcn.
+	
+2001-04-27 17:29  ponced
+
+	* working.el:
+
+	(working-status, working-dynamic-status): No more log progress
+	messages on Xemacs.
+	
+2001-04-27 02:12  zappo
+
+	* semantic-el.el:
+
+	Fixed reading of doc strings if they are not actually strings.
+	
+2001-04-26 09:26  ponced
+
+	* semantic-java.el:
+
+	(semantic-java-keyword-table): reflect changes in java.bnf.
+	
+	(semantic-java-clean-docstring): removed.
+	
+	(semantic-java-find-documentation): use
+	`semantic-find-doc-snarf-comment' instead of
+	`semantic-java-clean-docstring'.
+	
+	(semantic-java-doc-line-tags, semantic-java-doc-with-name-tags,
+	semantic-java-doc-with-ref-tags, semantic-java-doc-extra-type-tags,
+	semantic-java-doc-extra-function-tags,
+	semantic-java-doc-extra-variable-tags, semantic-java-doc-type-tags,
+	semantic-java-doc-function-tags, semantic-java-doc-variable-tags): new
+	variables to handle javadoc tags.
+	
+	(semantic-java-doc-keyword-before-p, semantic-java-doc-keywords-map,
+	semantic-java-doc-setup): new functions to handle javadoc tags.
+	
+	(semantic-default-java-setup): reflect changes in java.bnf. Calls
+	`semantic-java-doc-setup' to setup javadoc elements.
+	
+2001-04-26 09:08  ponced
+
+	* java.bnf:
+
+	Added official javadoc line tag keywords.
+	Provided a value for `block-comment-end'.
+	
+2001-04-26 09:04  ponced
+
+	* senator.el:
+
+	(senator-minor-mode, senator-minor-mode-setup): Doc fix.
+	
+2001-04-26 03:43  zappo
+
+	* semanticdb.el:
+
+	(semanticdb-kill-hook): Use semantic-active-p, instead of checking for
+	the semantic table.
+	
+2001-04-25 20:56  ponced
+
+	* semantic.el:
+
+	(semantic-new-buffer-fcn, semantic-change-major-mode-hook-function,
+	semantic-post-change-major-mode-function): Fixed some problems when
+	initializing Semantic enabled buffers.
+	
+	(semantic-changed-major-mode): Renamed to
+	`semantic-changed-mode-buffers'.
+	
+2001-04-25 20:05  zappo
+
+	* semantic.texi:
+
+	Added documentation for new functions in semantic-util, and semanticdb.
+	
+2001-04-25 20:03  zappo
+
+	* semanticdb.el:
+
+	(semanticdb-current-database): new function.
+	(semanticdb-find-nonterminal-by-property,
+	 semanticdb-find-nonterminal-by-extra-spec,
+	 semanticdb-find-nonterminal-by-extra-spec-value): new functions.
+	(semanticdb-find-nonterminal-by-function): Use
+	 `semanticdb-current-database' as a function, not a variable.
+	
+2001-04-25 19:25  zappo
+
+	* semantic-util.el:
+
+	(semantic-find-nonterminal-by-extra-spec-value) New fcn.
+	(semantic-read-symbol) show the default value, and return it.
+	
+2001-04-23 17:28  ponced
+
+	* semantic-imenu.el:
+
+	(semantic-imenu-flush-fcn): Added missing `remove-hook' local flags.
+	(semantic-create-imenu-index): Index creation could remove hook just
+	added so moved `add-hook' after index creation.
+	
+2001-04-23 09:17  ponced
+
+	* senator.el:
+
+	semantic-imenu not only required at compile time.
+	(senator-momentary-highlight-face): Fixed typo.
+	(add-log-current-defun): new advice.
+	
+2001-04-22 03:42  zappo
+
+	* semantic.el:
+
+	Change name of old find-file-hook to semantic-new-buffer-fcn.
+	Do not call semantic-new-buffer-fcn in find-file-hook, only
+	call it from the change-major-mode-hook stuff.
+	
+2001-04-21 17:03  zappo
+
+	* semantic.texi:
+
+	Fixed up some docs, and added the semanticdb-persistent-path var too.
+	
+2001-04-21 17:02  zappo
+
+	* semantic.el:
+
+	Changed the eval-defun function hook to be generic.
+	Changed the change-major-mode sequence to a new function which
+	  will only clear the cache in a semantic buffer.  It then tracks all
+	  buffers changed, and in a post-command-hook, follows the find-file
+	  hook code on every changed buffer.
+	
+2001-04-21 16:43  zappo
+
+	* semantic-util.el:
+
+	When show-dirty-mode is on, add a rebovination into the after-save-hook.
+	
+2001-04-21 16:43  zappo
+
+	* semantic-el.el:
+
+	Fixed problems with defstruct
+	
+2001-04-21 16:42  zappo
+
+	* semantic-ctxt.el:
+
+	Make sure that semantic-case-fold is used for anything that uses
+	regexps with names.
+	
+2001-04-21 16:38  zappo
+
+	* semantic-c.el:
+
+	new c.bnf
+	
+2001-04-21 16:37  zappo
+
+	* c.bnf:
+
+	Spelling error for integer.
+	
+2001-04-21 16:37  zappo
+
+	* INSTALL:
+
+	Fixed instructions for .emacs files.
+	
+2001-04-21 04:34  zappo
+
+	* semanticdb.el:
+
+	Small doc changes.
+	When saving a database, use condition-case to protect against
+	file errors, or file write-protection errors.  This assumes that
+	we aren't going to worry about caches in directories we can't write
+	to.
+	
+2001-04-19 15:08  ponced
+
+	* senator.el:
+
+	Added isearch lazy highlighting support for XEmacs 21.4.
+	
+2001-04-14 00:11  ponced
+
+	* java.bnf:
+
+	Updated copyrights.
+	
+2001-04-13 18:59  zappo
+
+	* semantic-load.el:
+
+	Added autoload `semantic-change-function-mark-dirty
+	Add hook `semantic-change-hooks to contain above fcn.
+	
+2001-04-13 18:58  zappo
+
+	* semantic-util.el:
+
+	Remove hokey semantic dependency, and explicitly depend on semantic.
+	Moved several common token access functions back into semantic.el.
+	Moved token overlay/deoverlay functions into semantic.el.
+	Moved `semantic-file-token-stream' into this file.
+	New fn `semantic-change-function-mark-dirty' to be used as
+	  a hook in `semantic-change-hooks'.
+	
+2001-04-13 18:55  zappo
+
+	* semantic.el:
+
+	Stop depending on semantic-util.  Pull in the proper bits needed to
+	operate in from semantic-util.  (This makes undoes some of a previous
+	check in.)  This includes common token access, and deoverlay/overlay a
+	token functions.
+	Removed the after change function body, and call a hook.
+	
+2001-04-13 18:51  zappo
+
+	* semantic.texi:
+
+	Fixed a type originally found in document.el (which created much of
+	this documetnation.)
+	
+2001-04-13 18:46  zappo
+
+	* document.el:
+
+	Fixed a type-o (found by Richard Kim)
+	
+2001-04-13 12:29  ponced
+
+	* java.bnf:
+
+	Added keyword summaries.
+	
+2001-04-13 12:28  ponced
+
+	* semantic-java.el:
+
+	(semantic-java-keyword-table): Added keyword summaries.
+	
+2001-04-13 04:25  zappo
+
+	* semantic-c.el:
+
+	New c.bnf
+	
+2001-04-13 04:24  zappo
+
+	* c.bnf:
+
+	Added built in types (void, char, etc) and summaries.
+	
+2001-04-13 04:03  zappo
+
+	* semantic-scm.el:
+
+	New scheme.bnf.
+	
+2001-04-13 04:03  zappo
+
+	* scheme.bnf:
+
+	Added some summaries to tokens.
+	
+2001-04-13 04:02  zappo
+
+	* semantic-make.el:
+
+	New make.bnf
+	
+2001-04-13 04:01  zappo
+
+	* make.bnf:
+
+	Added a keyword table, and several new tokens and summaries.
+	Added support for the include macro.
+	
+2001-04-13 03:28  zappo
+
+	* INSTALL:
+
+	Added makefile tricks to the INSTALL process.
+	
+2001-04-13 03:28  zappo
+
+	* semantic.texi:
+
+	Added semanticdb-mode-hooks.
+	
+2001-04-13 03:16  zappo
+
+	* semantic-imenu.el:
+
+	Added `semantic-imenu-flush-fcn', and add it to the semanticdb-mode-hooks.
+	
+2001-04-13 03:10  zappo
+
+	* semanticdb.el:
+
+	Added `semanticdb-mode-hooks', run when the global semanticdb is
+	turned on and off.
+	Removed imenu reference when toggling semanticdb on and off.
+	
+2001-04-12 10:19  ponced
+
+	* senator.el:
+
+	Eliminated lots of compile warnings.
+	
+	(senator-minor-mode): No more use Emacs 21 `define-minor-mode' to
+	avoid byte code incompatibilities between Emacs 21 and previous
+	versions.
+	
+2001-04-12 03:24  zappo
+
+	* Project.ede:
+
+	Version, and some naming.
+	
+2001-04-12 03:15  zappo
+
+	* semantic.el:
+
+	Removed some compile time requirements.  Accept the errors.
+	Remove autoloads for functions defined locally.
+	
+2001-04-12 03:14  zappo
+
+	* semantic-util.el, semanticdb.el:
+
+	Added compile time require statements.
+	
+2001-04-12 03:10  zappo
+
+	* semantic-bnf.el, semantic-c.el, semantic-ctxt.el,
+	semantic-imenu.el, semantic-java.el, semantic-scm.el,
+	semantic-texi.el:
+
+	Added compile time require statements.
+	
+2001-04-11 15:22  ponced
+
+	* senator.el:
+
+	(senator-completion-menu-window-offsets): On Emacs 21 add the window
+	left margin width to XOFFSET.
+	
+2001-04-10 15:47  ponced
+
+	* semanticdb.el:
+
+	(semanticdb-find-nonterminal-by-function): Search take into account
+	the current buffer local value of `semantic-case-fold'.
+	
+2001-04-10 15:46  ponced
+
+	* semantic-util.el:
+
+	(semantic-find-nonterminal-by-name,
+	semantic-find-nonterminal-by-function,
+	semantic-find-nonterminal-by-function-first-match): Search take into
+	account the current buffer local value of `semantic-case-fold'.
+	
+2001-04-09 09:18  ponced
+
+	* senator.el:
+
+	Fixed header comments and removed inline CVS change log.
+	
+	(senator-completion-menu-window-offsets): New function.
+	
+	(senator-completion-menu-point-as-event): When running Emacs, use
+	`senator-completion-menu-window-offsets' to translate a point position
+	in frame coordinates.
+	
+2001-04-07 16:37  zappo
+
+	* Project.ede:
+
+	More project updates.
+	
+2001-04-07 16:32  zappo
+
+	* semantic.texi:
+
+	A series of cleanup items submitted by Karl Eichwalder <keichwa@gmx.net>.
+	
+2001-04-07 16:29  zappo
+
+	* semantic-el.el:
+
+	Handle double parent case for quoted toplevel code.
+	
+2001-04-07 16:28  zappo
+
+	* semantic-c.el:
+
+	Added equivalent modes setting from c.bnf w/ new semantic-bnf code.
+	
+2001-04-07 16:28  zappo
+
+	* semantic-ctxt.el:
+
+	Fixed up some documentation that didn't mention the override function.
+	
+2001-04-07 16:26  zappo
+
+	* document.el:
+
+	Added a note about texinfo generation.
+	
+2001-04-07 16:26  zappo
+
+	* semantic-bnf.el:
+
+	Better speedbar support.
+	Creates new local variable `semantic-equivalent-major-modes'.
+	
+2001-04-07 16:10  zappo
+
+	* semantic.el:
+
+	Removed macros to semantic-util.
+	Imported commands that deal specifically with parsing from semantic-util.
+	
+2001-04-07 16:00  zappo
+
+	* semantic-util.el:
+
+	Copied some macros from semantic.el into semantic-util.el.
+	Copied interactive parsing functions out of semantic-util.
+	
+2001-04-07 15:44  zappo
+
+	* semantic-imenu.el:
+
+	Use `semantidb-equivalent-mode' instead of just comparing major modes.
+	This lets C and C++ to show up in the same directory imenu menu.
+	
+2001-04-07 15:42  zappo
+
+	* semanticdb.el:
+
+	Require semantic.
+	When `semanticdb-persistent-path' is `project', and there are no
+	 project predicates, be equivalent to 'always.
+	Added `semanticdb-equivalent-mode' function.  Use it in the find function.
+	
+2001-04-07 04:44  zappo
+
+	* semantic-c.el:
+
+	New c.bnf
+	
+2001-04-07 04:43  zappo
+
+	* c.bnf:
+
+	Added name spaces, and references.
+	
+2001-03-27 11:50  ponced
+
+	* senator.el:
+
+	(senator-completion-menu-popup): Fixed error when handling a simple
+	list of menu items returned when the Semantic Database feature is
+	disabled.
+	
+2001-03-26 07:55  ponced
+
+	* senator.el:
+
+	(senator-find-nonterminal-by-name,
+	senator-find-nonterminal-by-name-regexp, senator-complete-symbol,
+	senator-eldoc-print-current-symbol-info-default): new format of the
+	value returned by `semanticdb-find-nonterminal-by-name' and
+	`semanticdb-find-nonterminal-by-name-regexp'.
+	
+	(senator-completion-menu-item, senator-completion-menu-popup): Added
+	sub-menus for each file were tokens were found by Semantic Database
+	search functions.
+	
+2001-03-26 07:55  ponced
+
+	* semantic-texi.el:
+
+	(semantic-texi-update-doc-from-texi, semantic-texi-goto-source): new
+	format of the value returned by `semanticdb-find-nonterminal-by-name'.
+	
+2001-03-26 07:54  ponced
+
+	* semantic-ctxt.el:
+
+	(semantic-suggest-lookup-item): new format of the value returned by
+	`semanticdb-find-nonterminal-by-name'.
+	
+2001-03-26 07:54  ponced
+
+	* semanticdb.el:
+
+	(semanticdb-find-nonterminal-by-name,
+	semanticdb-find-nonterminal-by-name-regexp,
+	semanticdb-find-nonterminal-by-type,
+	semanticdb-find-nonterminal-by-function): return the DB table where
+	tokens were found as the first element of each returned list.
+	
+2001-03-21 11:02  ponced
+
+	* semanticdb.el:
+
+	(semanticdb-toggle-global-mode): new function. Toggle use of the
+	Semantic Database feature and update the environment of Semantic
+	enabled buffers accordingly.
+	
+2001-03-21 11:01  ponced
+
+	* semantic-util.el:
+
+	(semantic-map-buffers): new function.  Run a function for each
+	Semantic enabled buffer found.
+	
+2001-03-21 10:57  ponced
+
+	* senator.el:
+
+	(senator-find-nonterminal-by-name,
+	senator-find-nonterminal-by-name-regexp): return the complete list of
+	tokens found instead of the ones from the first semanticdb table.
+	
+	(senator-completion-menu-do-complete, senator-completion-menu-item):
+	use a one element array to pass and receive token instead of the token
+	overlay.  Thus can handle tokens without overlay, returned by
+	semanticdb.
+	
+	(senator-completion-menu-point-as-event): New function that returns
+	the text cursor position as an event.
+	
+	(senator-completion-menu-popup): Now a command.  Uses
+	`senator-completion-menu-point-as-event' to popup the menu at
+	completion point.
+	
+	(senator-completion-menu-mouse-popup,
+	senator-completion-menu-keyboard-popup): deleted.  Replaced by
+	`senator-completion-menu-popup'.
+	
+	(senator-prefix-map, senator-mode-map): updated to use
+	`senator-completion-menu-popup'.
+	
+	(senator-menu-bar): Uses `senator-minor-mode-name' as menu title.
+	Fixed typos.  Replaced `global-semanticdb-minor-mode' by
+	`semanticdb-toggle-global-mode' to enable/disable the Semantic
+	Database feature.
+	
+2001-03-14 13:42  ponced
+
+	* semanticdb.el:
+
+	(semanticdb-find-nonterminal-by-function): avoid unneeded refreshes
+	while typing with senator-eldoc mode.
+	
+2001-03-14 13:41  ponced
+
+	* semantic.el:
+
+	(semantic-read-event): replaced `cond' by `if' to fix a
+	byte-compilation error on FSF Emacs.
+	(semantic-rebovinate-token): delay rebovination if a [maybe temporary]
+	re-parse error occurs.
+	(semantic-flex): fixed the lexer to calm possible errant parsing.
+	
+2001-03-12 20:55  ponced
+
+	* senator.el:
+
+	New faster core search engine.
+	
+	Fixed `beginning-of-defun' and `end-of-defun' advices to accept
+	optional argument ARG.  Usage of ARG is not yet implemented.
+	
+	Fixed `insert-register' and `jump-to-register' advices to use
+	ad-get-arg.
+	
+	Added new hippie expand try function `senator-try-expand-semantic'
+	to try Semantic inline completion.  This try function is
+	automatically activated in Semantic enabled buffers.
+	
+	Many code cleanup and improvement.
+	
+2001-03-10 17:20  zappo
+
+	* semantic-bnf.el:
+
+	Fixed indentation after ; bug.
+	
+2001-03-10 17:19  zappo
+
+	* semantic-c.el:
+
+	New c.bnf.
+	Added `semantic-c-reconstitute-token'.
+	
+2001-03-10 17:18  zappo
+
+	* c.bnf:
+
+	Added lots of summaries to %tokens.
+	variables and functions now share declmod and typedecl start
+	match, and then get recombobulated later.  Prevents massive
+	reparsing.
+	
+2001-03-10 03:31  zappo
+
+	* semantic.texi:
+
+	Ran texinfo menu and node updating command.
+	Added section mentioning semantic-java as an example expand function.
+	
+2001-03-10 03:25  zappo
+
+	* semantic-util.el:
+
+	Removed UNTRUSTED from docs of find-nonterminal-by-overlay-[next/prev].
+	Added Nonterminal region splicing section, with two non-working functions.
+	When concatinating arguments for a concise prototype, make sure we
+	can handle many types of argument lists without crashing.
+	Command `bovinate' now checks the cache.
+	
+2001-03-10 03:10  zappo
+
+	* semantic-load.el:
+
+	Senator and which-fun modes are now forced on, as opposed to just
+	toggled on, hoping they were off before.
+	
+2001-03-10 02:55  zappo
+
+	* semantic-load.el:
+
+	Added scm load.
+	Added which-func turn on.
+	Removed load path hacks.
+	
+2001-03-08 19:45  ponced
+
+	* semantic-util.el:
+
+	Fixed an infinite loop bug in
+	`semantic-find-nonterminal-by-overlay-next' and
+	`semantic-find-nonterminal-by-overlay-prev' when respectively the last
+	or the first overlay are encountered.
+	
+2001-03-08 09:39  ponced
+
+	* semantic-java.el:
+
+	Fixed `semantic-expand-java-nonterminal' which did not cleanup invalid
+	expanded tokens and overlays.
+	
+2001-03-05 23:43  ponced
+
+	* semantic.el:
+
+	Fixed an XEmacs compatibility problem with `read-event'.
+	
+2001-03-05 23:39  zappo
+
+	* semantic.texi:
+
+	Updated the chapter on senator to account for new features.
+	
+2001-03-05 14:05  ponced
+
+	* semantic-bnf.el:
+
+	Improved function `semantic-bnf-find-state-position' to handle
+	multiple match listes on the same line.  Also, if a match occurs in a
+	string or comment it is ignored.
+	
+	New function `semantic-bnf-skip-string-or-comment' to skip strings and
+	comments.
+	
+	Added font-locking for ASSOC, EXPAND and EXPANDFULL builtins.
+	
+2001-03-05 09:07  ponced
+
+	* semantic.el:
+
+	New `semantic-bovinate-nonterminal' with iterative parser.
+	Removed no more needed function `semantic-bovinate-stream'.
+	Fixed some side effect problems when the BNF source debugger
+	is enabled.
+	
+2001-03-05 09:02  ponced
+
+	* senator.el:
+
+	Added new Eldoc suggestion mode feature.
+	
+2001-03-01 15:08  zappo
+
+	* semantic-bnf.el:
+
+	Added summary support to BNF keywords.
+	Properly use the override table.
+	Added a completion keybinding.
+	
+2001-02-28 23:24  ponced
+
+	* java.bnf, semantic-java.el:
+
+	Fixed a bug on 'array_creation_expression' non-terminal which didn't
+	match primitive type arrays.
+	
+2001-02-28 01:59  zappo
+
+	* semantic.texi:
+
+	Added chapter on debugging.
+	
+2001-02-28 01:43  zappo
+
+	* semantic.el:
+
+	Update doc to `semantic-bovinate-toplevel'.
+	If doing a partial reparse fails, recurse for a full reparse.
+	Renamed variables in the cooking function to be wordier.
+	For the token reparser, do even more checks after cooking for
+	an expansion to additional tokens.  Queue a full reparse if it
+	gets too hairy.
+	Make sure the reparse symbol is attached to the new token.
+	
+2001-02-26 16:19  ponced
+
+	* semantic-java.el:
+
+	Regenerated with new version of semantic-bnf.el.
+	
+2001-02-24 16:24  zappo
+
+	* semantic-c.el:
+
+	Updated c.bnf, and semantic-bnf.el.
+	
+2001-02-24 16:24  zappo
+
+	* c.bnf:
+
+	Added a few optimizations for structure parts.
+	Used some %tokens in a few spots where I wasn't using them before.
+	
+2001-02-24 16:17  zappo
+
+	* semantic.el:
+
+	Added `semantic-toplevel-bovine-table-source' variable.
+	Incorporate David Ponce's reparse fix for compounded tokens.
+	Use table source to do source-level debugging.
+	Use new semantic-bnf API to find the bit of source to highlight.
+	
+2001-02-24 04:59  zappo
+
+	* semantic-scm.el:
+
+	Scheme parser lisp stuff.
+	
+2001-02-24 04:57  zappo
+
+	* scheme.bnf:
+
+	Scheme parser
+	
+2001-02-24 03:08  zappo
+
+	* semantic-bnf.el:
+
+	When making an init file, add in a new variable value identifying
+	the .bnf source file it came from.
+	Added a bunch of debugging routines for moving in the .bnf file.
+	
+2001-02-23 17:06  ponced
+
+	* senator.el:
+
+	Copied over all the menu items that used to be in semanic-mode.
+	Added the new token cut/paste items into a menu.
+	Added menu items to configure semantic-imenu and enable semantic-db.
+	Added Options sub menu to customize Semantic, Senator, Semantic Imenu
+	and Semantic Database.
+	Fixed some XEmacs compatibility issues.
+	Improved robustness of some functions.
+	
+2001-02-23 17:06  ponced
+
+	* semantic-util.el:
+
+	Fixed some XEmacs compatibility issues.
+	Added function `semantic-token-invisible-p'.
+	
+2001-02-23 03:03  zappo
+
+	* INSTALL:
+
+	Added simplified installation instructions.
+	
+2001-02-23 03:03  zappo
+
+	* semantic-imenu.el:
+
+	Moved all customizable items into semantic-imenu group.
+	
+2001-02-23 03:02  zappo
+
+	* semanticdb.el:
+
+	Moved all customizable items into semanticdb group.
+	
+2001-02-23 03:00  zappo
+
+	* semantic-util.el:
+
+	Added semantic-token-intangible-p and semantic-token-read-only-p.
+	
+2001-02-22 23:48  ponced
+
+	* semantic-el.el:
+
+	Fixed "args-out-of-range" bugs when doc string is missing (nil)
+	or an empty string ("").
+	
+	Minor typo on first line summary.
+	
+2001-02-22 22:43  ponced
+
+	* senator.el:
+
+	Added token Copy, Cut & Paste and Register feature.
+	
+	Improvement to the senator-jump completion stuff:
+	
+	o The completion list is now cached (buffer local) and reused when
+	  possible.  The cache is refreshed when parsing or partial parsing
+	  occurs.
+	
+	o Greatly simplified the way completion name are handled.  Now only
+	  duplicated names are suffixed by parent names :-)
+	
+	Some minor `checkdoc' fixes.
+	
+2001-02-22 21:01  ponced
+
+	* java.bnf:
+
+	Moved setup of Semantic variables from semantic-java.el.
+	
+2001-02-22 21:01  ponced
+
+	* semantic-java.el:
+
+	Some code reorganization.
+	
+	Moved setup of Semantic variables to java.bnf.
+	
+	Added setup of variables `semantic-command-separation-character',
+	`document-comment-start', `document-comment-line-prefix',
+	`document-comment-end'.
+	
+	New `semantic-find-documentation' function override
+	`semantic-java-find-documentation' which handles javadoc comments.
+	
+2001-02-22 03:46  zappo
+
+	* semantic.el:
+
+	Updated several doc strings.
+	
+2001-02-22 03:45  zappo
+
+	* semantic-texi.el:
+
+	Added `semantic-texi-goto-source'.
+	
+2001-02-22 03:44  zappo
+
+	* semantic-ctxt.el:
+
+	Updated almost all doc strings to include override information.
+	
+2001-02-22 03:43  zappo
+
+	* document.el:
+
+	Added `-' to meta variable name search.
+	Added support to turn "text" to ``text'' in texinfo files.
+	
+2001-02-22 03:42  zappo
+
+	* semantic.texi:
+
+	Updated lots of deffn, defvar, and defuns.
+	Added local context section.
+	Fixed compilation errors by adding the utilities section.
+	
+2001-02-21 23:55  zappo
+
+	* semantic-load.el:
+
+	[no log message]
+	
+2001-02-21 22:19  zappo
+
+	* Project.ede:
+
+	Rearranged things.  There is now a languages target, full of the
+	parser .el files.
+	
+2001-02-21 22:19  zappo
+
+	* semantic-el.el:
+
+	Added `user-visible' as an extra spec to variables and fns.
+	Added override fns for `find-documentation', and `insert-foreign-token'.
+	
+2001-02-21 22:10  zappo
+
+	* semanticdb.el:
+
+	Added `semanticdb-set-buffer', and `semanticdb-refresh-table'.
+	Added `find-file-match' param to all search routines.
+	When a token is found in a file, make sure the file gets loaded into
+	Emacs.  Useful when additional work to a token needs to be done.
+	Fixed a search bug related to `diff-mode' parameter.
+	
+2001-02-21 22:05  zappo
+
+	* semantic-util.el:
+
+	Fixed bug in `semantic-summarize-nonterminal' for when a token
+	type doesn't exist in the name list.
+	
+2001-02-21 21:55  zappo
+
+	* semantic-imenu.el:
+
+	Fixed reversing of token problem when making type submenus, but
+	without running through the bucket function.
+	
+2001-02-21 21:53  zappo
+
+	* document.el:
+
+	Moved where newlines were inserted for new function documentation.
+	Support deffn with Command and Option descriptions.
+	Protect against document generation switching buffers on us.
+	
+2001-02-21 21:51  zappo
+
+	* semantic-texi.el:
+
+	Added 'x' version in -name-field-list.
+	Fixed reversing problems in the return value of the texinfo parser.
+	Added `semantic-texi-insert-foreign-token'.
+	Added value for senator-step-at-start-end-token-ids.
+	Added ':' as the relation-separator-character.
+	Added semantic-texi-associate-files, semantic-texi-find-documentation,
+	semantic-texi-update-doc-from-texi, semantic-texi-update-doc-from-source,
+	and semantic-texi-updae-doc.
+	
+2001-02-21 21:47  zappo
+
+	* semantic.el:
+
+	Added `user-visible' to the list of EXTRA-SPECs.
+	Renamed `semantic-toplevel-bovinate-override' to
+	  `semantic-bovinate-toplevel-override'.
+	Added more documentation to `semantic-clear-toplevel-cache'.
+	Added semantic cache/partial reparse logic around foreign
+	  parsers.
+	More doc for `semantic-flex-keyword-p'.
+	
+2001-02-21 12:27  ponced
+
+	* senator.el:
+
+	`senator-minor-mode-setup' now uses the `semantic-active-p' function
+	to check if the current buffer is set up for parsing.
+	
+	`senator-full-token-name' now append the parent names in reverse order
+	to the token name.  Thus the `senator-jump' completion list is now
+	easy to use.  You can just type a partial token name and press ENTER
+	to jump to it.  If the name is not unique a completion buffer is
+	displayed allowing to choose the right one.
+	
+	`senator-beginning-of-defun' and `senator-end-of-defun' now
+	respectively step at start or end of tokens with identifier specified
+	in `senator-step-at-token-ids'.  Thus, adviced `beginning-of-defun'
+	and `end-of-defun' now work with any tokens where you can step at.
+	
+	`senator-step-at-start-end-token-ids' can be set to `t' to step at
+	start and end of any token where it is allowed to step.
+	
+2001-02-20 23:20  ponced
+
+	* semantic.el:
+
+	Fixed: with `semantic-flex-enable-newlines' on, `semantic-flex' didn't
+	catch newline when there was whitespace characters before it.
+	
+2001-02-20 22:36  zappo
+
+	* Project.ede:
+
+	Version change.  Added semantic-texi.
+	
+2001-02-20 22:35  zappo
+
+	* semantic-ctxt.el:
+
+	Fixed up token identifying when in a sequence of dereferences.
+	
+2001-02-20 22:34  zappo
+
+	* semantic-texi.el:
+
+	New File: Parse texinfo files using semantic's parsing override mechanism.
+	
+2001-02-20 22:05  zappo
+
+	* semantic-el.el:
+
+	Added `semantic-elisp-prototype-nonterminal'.
+	Use it as an override for `prototype-nonterminal' and `concise-prototype-nonterminal'.
+	
+2001-02-20 22:00  zappo
+
+	* semantic-util.el:
+
+	Pulled the default body from `semantoc-prototype-nonterminal', and
+	turned it into `semantic-prototype-nonterminal-default'.
+	
+2001-02-20 21:37  zappo
+
+	* semantic-c.el:
+
+	New c.bnf.
+	
+2001-02-20 21:36  zappo
+
+	* c.bnf:
+
+	Removed unused %put calls.
+	
+2001-02-20 21:31  zappo
+
+	* semantic.el:
+
+	Version change.
+	Added `semantic-active-p' function.
+	Use `semantic-active-p' in `semantic-find-file-hook'.
+	Add beef to `semantic-toplevel-bovinate-override' usage.
+	Removed `reparse needed' message.
+	
+2001-02-20 21:23  zappo
+
+	* semantic-imenu.el:
+
+	Added `semantic-imenu-expand-type-parts' variable.  This lets you not
+	  bucketize a file, and still expand nodes.
+	Added `semantic-imenu-expandable-token' variable.  This lets you have
+	  parser that doesn't have type information, but still benifits from
+	  hierarchical tag display.
+	Removed `notypecheck' from `semantic-create-imenu-index'.
+	Use the above variables.
+	
+2001-02-14 03:36  zappo
+
+	* semantic-bnf.el:
+
+	Vectorized %put.  New forms accept a list in either the token name
+	or symbol/value pair.
+	
+2001-02-09 20:50  zappo
+
+	* semantic.el:
+
+	Fixed parse bug when a semantic-list was tested with a regex, then
+	used with an EXPAND tag.  Make sure the proper item is
+	sent down.
+	
+2001-02-09 20:49  zappo
+
+	* c.bnf:
+
+	Added ( testing to argument lists.
+	
+2001-02-09 20:48  zappo
+
+	* semantic-ctxt.el:
+
+	Added section to determine the current local context (assignment,
+	argument, etc)
+	Added section for suggestions (incomplete) such as the type
+	someting should be.
+	
+2001-02-09 16:52  ponced
+
+	* semantic-java.el:
+
+	Changed `semantic-overlay-delete' by better
+	`semantic-deoverlay-token'.
+	
+2001-02-09 12:55  ponced
+
+	* senator.el:
+
+	New implementation of completion menu to allow customization of menu
+	item text and insert function.
+	
+2001-02-09 12:54  ponced
+
+	* semantic-util.el:
+
+	`semantic-override-table' format changed to obarray.
+	New function `semantic-install-function-overrides' to setup the
+	override table.
+	Updated `semantic-fetch-overload' to use override table format.
+	New functions `semantic-concise-prototype-nonterminal' and
+	`semantic-concise-prototype-nonterminal-default' to get a concise
+	prototype text from a token.
+	
+2001-02-09 12:53  ponced
+
+	* java.bnf, semantic-java.el:
+
+	Honour last changes in semantic-util.el.
+	
+2001-02-09 12:48  zappo
+
+	* semantic-c.el:
+
+	c.bnf changes.
+	
+2001-02-09 12:47  zappo
+
+	* c.bnf:
+
+	Added type separation characters.
+	Added all constituents of DECLMOD into their own tokens.
+	Created a rule to create a list of declmods.
+	
+2001-02-09 12:43  zappo
+
+	* semantic.el:
+
+	`semantic-change-function' will now correctly navigate through
+	all tokens hit by a change, and mark the first one found as dirty,
+	and keep it that way.  It used to mark all tokens, including enclosing
+	types.  Now it will only mark the innermost token.
+	
+2001-02-09 00:43  zappo
+
+	* semantic-util.el:
+
+	`semantic-type-relation-separator-character' is now buffer local.
+	`semantic-find-nonterminal-by-name', get children only if they are
+	valid tokens.
+	
+2001-02-05 15:46  ponced
+
+	* senator.el:
+
+	Use new `semantic-type-relation-separator-character' format.
+	New completion popup menu.
+	
+2001-02-05 15:39  ponced
+
+	* java.bnf, semantic-java.el:
+
+	Use new `semantic-type-relation-separator-character' format.
+	
+2001-02-03 04:33  zappo
+
+	* semantic-util.el:
+
+	Changed `semantic-type-relation-separator-character' to be a list.
+	Change use of it.
+	
+2001-02-03 04:13  zappo
+
+	* semantic-ctxt.el:
+
+	Added new context function that work ok with C.
+	`semantic-end-of-command'
+	`semantic-beginning-of-command'
+	`semantic-ctxt-current-symbol'
+	`semantic-ctxt-current-assignment'
+	`semantic-ctxt-current-function'
+	`semantic-ctxt-current-argument'
+	and `-default' versions.
+	
+2001-02-02 05:16  zappo
+
+	* semanticdb.el:
+
+	Protect against buffers without a parsing table.
+	
+2001-02-02 05:15  zappo
+
+	* semantic-c.el:
+
+	New c.bnf
+	
+2001-02-02 05:14  zappo
+
+	* c.bnf:
+
+	Added c++ to the list of language modes.
+	Added lots of operator symbol tokens.
+	Added DECLMOD symbol w/ complex regexp.
+	Added CLASS, OPERATOR, PUBLIC, PRIVATE, and PROTECTED token keywords.
+	Support parsing of a class.
+	Add class bit parsing for functions.
+	Add destructor bit parsing for functions.
+	Allow operator symbols for methods.
+	Added parent and destructor fields to extra-spec for functions.
+	The function rule now returns a function or prototype.
+	
+2001-02-02 05:11  zappo
+
+	* semantic-bnf.el:
+
+	Added support for multiple language modes in a list.
+	When resetting buffers, reference the language modes as a list.
+	Reset a buffer with the setupfunction when available.
+	
+2001-02-02 00:27  ponced
+
+	* senator.el:
+
+	`senator-last-name' removed.
+	`senator-jump-completion-list' new variable.
+	`senator-jump' simpler and more robust!  Save the current
+	completion table in `senator-jump-completion-list', then reuse it
+	to retrieve the token association.  Also, this solves jump
+	conflicts when the same token name is present in different token
+	children.
+	`senator-completion-stream' Store the full token itself in the
+	value part of each association.
+	
+2001-02-01 20:38  zappo
+
+	* senator.el:
+
+	`senator-complete-symbol' now checks that it complete the same symbol
+	to reuse `senator-last-completion-stat'.  This is needed when for
+	example completing "set..." and then completing "get..." at the same
+	point.
+	
+2001-02-01 03:25  zappo
+
+	* senator.el:
+
+	Removed compatibility code.
+	Added isearch code, which was in `senator-isearch'.  Made that shorter.
+	`senator-step-at-start-end-p' fixed up.
+	Use `semantic-nonterminal-children' instead of querying for type and
+	then getting the parts.
+	Use semantic's separator character.
+	Added senator-find-nonterminal- .. functions.  Uses semanticdb if loaded.
+	When completing, use `senator-find...'.
+	Also do a little more to track if we are doing the same completion.
+	
+2001-02-01 03:20  zappo
+
+	* semantic-util.el:
+
+	Fixed `semantic-token-variable-default' which was using the wrong index.
+	Fixed `semantic-find-nonterminal-by-name' to pass down new parameters.
+	
+2001-02-01 03:16  zappo
+
+	* java.bnf:
+
+	Parses variables with more than one declaration, such as "int i, k;".
+	
+2001-02-01 03:12  zappo
+
+	* semantic-java.el:
+
+	New java.bnf.
+	Expand java nonterminals so compounded variable declarations are
+	separated into it's own token.
+	
+2001-02-01 03:09  zappo
+
+	* semantic.el:
+
+	Fixed `semantic-token-with-position-p'.
+	
+2001-01-31 17:51  zappo
+
+	* java.bnf:
+
+	Java bnf file developed for JDE.
+	
+2001-01-31 17:50  zappo
+
+	* semantic-java.el:
+
+	Sources originally developed for the JDE for java parsing.
+	
+2001-01-31 17:45  zappo
+
+	* semantic-ctxt.el:
+
+	Local context querying and navigation.
+	
+2001-01-31 17:44  zappo
+
+	* Project.ede:
+
+	Project file.
+	
+2001-01-31 17:44  zappo
+
+	* semanticdb.el:
+
+	Added `semanticdb-global-mode' variable.
+	Changed -find-nonterminal-* to take `search-parts' and
+	`search-includes'.
+	Added new -find- routines.
+	
+2001-01-31 17:42  zappo
+
+	* semantic.texi:
+
+	Added `current context' chapter.
+	Changed all MODIFIER references in token descriptions to EXTRA-SPEC.
+	Documented `semantic-token-extra-spec' and friends.
+	
+2001-01-31 17:28  zappo
+
+	* semantic-util.el:
+
+	Changed -modifiers to -extra-spec, and restored -modifiers to the old behavior.
+	Moved `semantic-find-nonterminal-by-name'.
+	Changed `semantic-find-nonterminal-by-token',
+	`semantic-find-nonterminal-standard', and
+	`semantic-find-nonterminal-by-type' to take `search-parts' and
+	`search-include' parameters, and to use
+	`semantic-find-nonterminal-by-function'.
+	Changed `semantic-find-nonterminal-by-name-regexp',
+	`semantic-find-nonterminal-by-property',
+	`semantic-find-nonterminal-by-modifier',
+	and `semantic-find-nonterminal-by-function' to take `search-parts' and
+	`search-include' parameters.
+	New fn `semantic-find-nonterminal-by-type-regexp'.
+	Added new override methods to documentation string. (see semantic-ctxt.el)
+	Use `semantic-token-extra-spec' where apropriate.
+	Use `semantic-token-with-position-p' when returning token children.
+	Added `semantic-narrow-to-token'.
+	Added `semantic-show-dirty-mode' variable.
+	
+2001-01-31 16:59  zappo
+
+	* semantic-sb.el:
+
+	Change -modifier to -extra-spec.
+	
+2001-01-31 16:31  zappo
+
+	* semantic-c.el:
+
+	Updated with new c.bnf
+	Fixed `semantic-expand-c-nonterminal' to use `-extra-spec'.
+	
+2001-01-31 16:29  zappo
+
+	* semantic-bnf.el:
+
+	Created a token keyword table.  Use keywords in language def.
+	Fixed `semantic-bnf-ASSOC' to add spaces in properly (dponce)
+	Added `scopestart' to `semantic-bnf-to-bovine' fn.  Use it.
+	Tried to fix indentation bug for rules.
+	
+2001-01-31 16:26  zappo
+
+	* c.bnf:
+
+	Added `codeblock' rule and `%scopestart'.
+	
+2001-01-31 16:21  zappo
+
+	* semantic.el:
+
+	Version update.
+	Renamed all MODIFIERS references to EXTRA-SPEC.
+	Added `semantic-token-with-position-p'.
+	Changed `semantic-bovinate-block-until-header' to
+	`semantic-bovinate-region-until-error', and fixed it up.
+	
+2001-01-25 20:12  zappo
+
+	* semanticdb.el:
+
+	Added `major-mode' to the table class.
+	Added `semanticdb-live-p' method to database and table classes.
+	Only save a database if it is live, and if
+	`semanticdb-write-directory-p' returns non-nil.
+	Make `semanticdb-save-all-db' interactive.
+	Do not write a table if it is not live.
+	Added `semanticdb-project-predicates' variable to help control
+	`semanticdb-write-directoryp' when the persistent-path contains
+	'project.
+	
+2001-01-25 20:10  zappo
+
+	* semantic-util.el:
+
+	Split `abbreviate-nonterminal' to the override fn, and a default fn.
+	Change `semantic-nonterminal-children' to take an optional argument
+	to only return children if they have positional data in them.
+	
+2001-01-25 20:08  zappo
+
+	* semantic-imenu.el:
+
+	Only create menus from the database with files of the same mode.
+	
+2001-01-25 19:26  zappo
+
+	* semantic-bnf.el:
+
+	Added token abbreviations.
+	
+2001-01-25 04:27  zappo
+
+	* semanticdb.el:
+
+	Added placeholders for persistence control.
+	
+2001-01-25 04:27  zappo
+
+	* semantic.texi:
+
+	Added many functions added to semantic-util.
+	
+2001-01-25 04:26  zappo
+
+	* semantic-imenu.el:
+
+	Moved semantic-imenu-auto-rebuild-running.
+	Protect against empty files.
+	Added ability to rebuild all imenu menus under a given directory.
+	
+2001-01-24 22:28  zappo
+
+	* senator.el:
+
+	Added some completion functions.
+	
+2001-01-24 22:27  zappo
+
+	* senator-isearch.el:
+
+	[no log message]
+	
+2001-01-24 22:24  zappo
+
+	* semantic-util.el:
+
+	Change token accessors to handle new formats, including new functions
+	`semantic-token-type-modifier', `semantic-token-function-modifier',
+	`semantic-token-variable-modifier', `semantic-token-variable-const',
+	and `semantic-token-modifier'.
+	Updated `find-nonterminal-by-function' to take some control arguments.
+	Added `semantic-find-nonterminal-by-name-regexp' and
+	`semantic-find-nonterminal-by-modifier'.
+	Document finding fn now handles inline strings, or positional
+	arguments.
+	Fixed prototype-nonterminal to use new API fns.
+	
+2001-01-24 22:20  zappo
+
+	* semantic-sb.el:
+
+	Handle new modifiers storage.
+	
+2001-01-24 22:19  zappo
+
+	* semantic-make.el:
+
+	New make.bnf.
+	
+2001-01-24 22:19  zappo
+
+	* semantic-imenu.el:
+
+	Create imenu menus with all info from semanticdb.
+	Added xemancs imenu compatibility func.
+	Fixed the flush function to handle clean-token hook.
+	
+2001-01-24 22:17  zappo
+
+	* semantic-el.el:
+
+	Create tokens for the new token format.
+	
+2001-01-24 22:16  zappo
+
+	* semantic-c.el:
+
+	Fixed for new c.bnf.
+	Fixed `semantic-expand-c-nonterminal' to build the correct format
+	for the changed token types.
+	
+2001-01-24 22:11  zappo
+
+	* semantic-bnf.el:
+
+	Added the new ASSOC keyword for the OLE.
+	Added `semantic-bnf-generate-one-rule' and bind to bnf keymap.
+	Remove parens from the syntax table, inherit from parent
+	Add ; comment highlighting in OLE.
+	Rehashed indentation engine to alow more natural lisp indentation
+	  style in the OLE.
+	
+2001-01-24 22:08  zappo
+
+	* c.bnf, make.bnf:
+
+	Added support for new token formats that use ASSOC.
+	
+2001-01-24 22:06  zappo
+
+	* semantic.el:
+
+	Changed the definition of some tokens.
+	Changed the meaning of MODIFIERS.
+	Added fn `semantic-bovinate-make-assoc-list' for use in bnf files.
+	
+2001-01-10 09:09  david_ponce
+
+	* senator.el:
+
+	Fixed undeclared local variable 'slot' in `senator-menu-item'.
+	
+2001-01-10 08:20  zappo
+
+	* semanticdb.el:
+
+	Fixed object-write for tables to be very robust to errors when
+	deoverlaying the cache.  (This happens on exit, so it is very
+	important this work.)
+	
+2001-01-10 07:48  zappo
+
+	* semantic.el:
+
+	Removed some comments.
+	Added a version string.
+	Fixed the group description.
+	
+2001-01-10 07:48  zappo
+
+	* semantic.texi:
+
+	Added `semantic-flex-map-keywords' and `semantic-flex-keywords' doc.
+	
+2001-01-07 04:05  zappo
+
+	* semanticdb.el:
+
+	Added `semanticdb-find-nonterminal-by-name' content.
+	
+2001-01-07 03:55  zappo
+
+	* semantic.el:
+
+	Added `semantic-flex-map-keywords' and `semantic-flex-keywords'
+	from David Ponce.  Moved a few bits around.
+	
+2001-01-06 17:10  zappo
+
+	* semantic-imenu.el:
+
+	Enable the use of the imenu splitup routines via `imenu-max-items'.
+	
+2001-01-06 15:39  zappo
+
+	* semantic-util.el:
+
+	Fixed completing read to work with XEmacs
+	Added `semantic-nonterminal-children' function.
+	Added `semantic-type-relation-separator-character'
+	Use the separator character in the abbreviate nonterminal fn.
+	Fixed overlay and deoverlay-token to use `nonterminal-children', and
+	 to accept non-token items.
+	
+2001-01-06 15:37  zappo
+
+	* semantic-bnf.el:
+
+	Added a space after all CR.
+	Added a command to create a table w/out indentation.
+	Bound old indentation command to C-cc
+	
+2001-01-06 15:37  zappo
+
+	* semantic-c.el:
+
+	Updated from c.bnf.
+	
+2001-01-06 15:35  zappo
+
+	* c.bnf:
+
+	Put `type' `t' onto some tokens.
+	Struct and enums now match the braces, and return nil.
+	Enum parts now have a token type of 'enum.
+	Added ... to fuction arg lists.
+	Match parens for arg lists.
+	
+2001-01-06 06:23  zappo
+
+	* semantic.el:
+
+	Added semantic-bovine-toplevel-full-reparse-needed-p and
+	semantic-bovine-toplevel-partial-reparse-needed-p.
+	Used them in semantic-bovinate-toplevel.
+	
+2001-01-06 06:22  zappo
+
+	* semantic.texi:
+
+	Added new functions in Compiling section.
+	
+2001-01-03 17:09  david_ponce
+
+	* senator.el:
+
+	New version 2.1.
+	
+	Fixed a nasty typo in `senator-minor-mode'.  `run-hooks' were missing
+	a quotation before their arguments.  Thanks to "Charles Rich"
+	<rich@merl.com> who has reported this bug.
+	
+	Added new `senator-jump' command.  Thanks to "Eric M. Ludlam"
+	<zappo@ultranet.com> and "T. V. Raman" <tvraman@almaden.ibm.com> for
+	their help.
+	
+	Added new `senator-minor-mode-name' option to customize the name
+	displayed in the modeline when senator minor mode is on.
+	
+	When semantic isearch mode is on it now appends "/si" to the senator
+	minor mode name displayed in the modeline.
+	
+	Added new keyboard shortcut "\C-," to toggle semantic search in
+	isearch mode.
+	
+	Some code improvements.
+	
+2001-01-03 16:41  david_ponce
+
+	* senator-isearch.el:
+
+	Improved isearch lazy highlighting support.
+	
+2000-12-28 12:51  zappo
+
+	* semantic.el:
+
+	When parsing a file, if text is found, and a token is returned, but
+	that token's car is nil, do not save that token.
+	This will let a language author specify characters in a rule that
+	shouldn't be saved, speeding up the parsing process.
+	
+2000-12-22 17:09  zappo
+
+	* semantic-el.el:
+
+	Dump parsing of the lisp functions, and use a magic read function to
+	pep up the speed of lisp parsing.
+	
+	Eric
+	
+2000-12-16 16:15  zappo
+
+	* semantic.texi:
+
+	Added info about %put in bnf mode.
+	Added stuff about keyword tables in the Lexing chapter.
+	Xref the two.
+	
+2000-12-16 04:12  zappo
+
+	* semanticdb.el:
+
+	Fixed file loading to return an object.
+	Fixed file reader to restore table parent-db slot.
+	
+2000-12-16 04:09  zappo
+
+	* semantic.el:
+
+	Renamed `semantic-flex-is-keyword' to `semantic-flex-keyword-p'.
+	
+2000-12-16 03:59  zappo
+
+	* semantic-bnf.el:
+
+	Added put values of strings and lists.
+	
+2000-12-16 03:48  zappo
+
+	* semantic-bnf.el:
+
+	Added %put to language to values to put on a symbol.
+	`semantic-bnf-generate-and-load' not outputs a propertylist for
+	keyword tables.
+	
+2000-12-16 03:47  zappo
+
+	* semantic.el:
+
+	Added `semantic-flex-keyword-put' and `semantic-flex-keyword-get'.
+	`semantic-flex-make-keyword-table' not takes a property list also.
+	
+2000-12-15 02:20  zappo
+
+	* semanticdb.el:
+
+	Added a parent object to tables.
+	Added `semanticdb-full-filename'.
+	Added error correction when loading a database.
+	Removed error protection during a write.
+	Fix `object-write' for tables; get the buffer of `semanticdb-full-filename'.
+	Fix hook running for `semanticdb-semantic-init-hook-overload'.
+	Set the parent of all tables in init hook.
+	
+2000-12-12 12:02  david_ponce
+
+	* senator.el:
+
+	`senator-mark-defun' now work on XEmacs too.
+	
+2000-12-12 10:21  david_ponce
+
+	* senator.el:
+
+	Fixed a "side effect" bug with latest `beginning-of-defun' and
+	`end-of-defun' advices.  They caused font-lock, which uses
+	beginning/end of defun to force a reparse.  Thanks to "Eric M. Ludlam"
+	<zappo@ultranet.com> for pointing this.
+	
+	Improved consistency with standard behaviour of `beginning-of-defun'
+	(go to the beginning of the line where the defun starts) and
+	`end-of-defun' (go to the beginning of the line following the end of
+	the defun).
+	
+	Added useful advices for `narrow-to-defun', `mark-defun' and
+	`c-mark-function'.
+	
+	Advices are enabled when the functions are called interactively and
+	`senator-minor-mode' is enabled.
+	
+2000-12-12 03:38  zappo
+
+	* semanticdb.el:
+
+	Remove inheritance from eieio-speedbar-*.
+	Added method for the database to get a table based on a filename.
+	Used said method in the init hook.
+	Added `semanticdb-file-stream', to return a stream for a file.
+	
+2000-12-12 00:49  zappo
+
+	* semantic-util.el:
+
+	Fixed semantic-find-token to not expect that the token has a buffer.
+	Use the current buffer if it doesn't have one.  (see comment)
+	
+2000-12-12 00:27  zappo
+
+	* semantic-sb.el:
+
+	Generation of tags will now run through semanticdb if it is active.
+	As such, it is possible to view a file's tags without loading it into
+	a buffer.
+	
+2000-12-11 15:05  david_ponce
+
+	* senator.el:
+
+	Code cleanup and optimization.
+	`senator-next-token' and `senator-previous-token' now correctly work
+	when not binded to keyboard shortcuts.
+	`beginning-of-defun' and `end-of-defun' advices no more need to be
+	called interactively.  So `narrow-to-defun' can use these advices when
+	`senator-minor-mode' is enabled.
+	
+2000-12-11 08:07  david_ponce
+
+	* senator.el:
+
+	Applied Eric Ludlam's patch.  It adds a special face for senator to
+	use for momentary highlight (requires latest semantic-util.el).  If
+	the user cancels the parse (C-g) when `senator-minor-mode'
+	initializes, it doesn't kill the rest of the configuration.  (Useful
+	on a slow machine.)
+	
+2000-12-11 00:46  zappo
+
+	* semantic.texi:
+
+	Added miscellaneous tool chapter.
+	Added senator text.
+	Added information for all the property functions.
+	
+2000-12-10 23:27  zappo
+
+	* semantic-c.el:
+
+	New c.bnf.
+	
+2000-12-10 21:53  zappo
+
+	* c.bnf:
+
+	Fix spelling errors.
+	
+2000-12-10 21:25  zappo
+
+	* semantic-util.el:
+
+	Added `semantic-find-nonterminal-by-property'.
+	Don't try to remove hooks in `semantic-unhighlight-token'.
+	Fix some quoting in some macros to get hooks removed.
+	Added `semantic-add-label', and `semantic-show-label' user fns.
+	Fix `semantic-show-dirty-mode' to check for the right fcn when toggling.
+	
+2000-12-10 21:21  zappo
+
+	* semantic.el:
+
+	Added `semantic-edits-are-safe' variable.
+	Added PROPERTIES to standard token.
+	Added accessors for PROPERTIES slot in a token.
+	Added semantic-token-put, and -get functions.
+	Put the parser nonterminal into the token when it isn't bovine-toplevel.
+	Put 'dirty t into a token when it is edited.
+	Removed 'dirty flag when it is rebovinated.
+	
+2000-12-10 06:07  zappo
+
+	* semantic.el:
+
+	Made semanticdb-minor-mode and auto-load.
+	
+2000-12-10 06:06  zappo
+
+	* semanticdb.el:
+
+	Fixed write to get point max from the correct place.
+	
+2000-12-10 00:29  zappo
+
+	* semanticdb.el:
+
+	Require eieio-base for base classes.
+	Added variable semanticdb-save-database-hooks.
+	Added pointmax to the table class.
+	Wrap the save fcn into condition-case to protect against errors.
+	Added messages when saving the table.
+	Track pointmax on save for each file.
+	Reset the table on load if the table is out of date (pointmax /=)
+	Wrap deoverlaying in a condition case, with clear-table as error condition.
+	Added beginnings of utility functions.
+	
+2000-12-09 17:03  zappo
+
+	* semantic-util.el:
+
+	Turn the highlight/unhighlight set into a stack of faces.
+	Added `semantic-momentary-unhighlight-token' for momentary case.
+	Handle the cache which no longer has buffer size in it.
+	Removed `bovinate-nonterminal'
+	`semantic-current-token' returns a token now, in addition to the message.
+	
+2000-12-09 17:01  zappo
+
+	* semantic.el:
+
+	Added a working type tracking variable.
+	Show working messages when reparsing.
+	Change the cache to not have the size at the end. (It isn't used anymore.)
+	Make sure during a reparse the the new overlay gets its token reset.
+	
+2000-12-09 04:05  zappo
+
+	* semantic.texi:
+
+	Added new chapter for tools, and added speedbar, semanticdb, and senator.
+	
+2000-12-08 22:26  zappo
+
+	* semantic.el:
+
+	Fixed rebovinate-token to handle types.
+	
+2000-12-08 22:21  zappo
+
+	* semantic.el:
+
+	Added variable `semantic-dirty-tokens' to track dirty tokens.
+	Added hooks `semantic-dirty-token-hooks', and `semantic-clean-token-hooks'
+	 which run when a token is marked dirty or clean.
+	Clear dirty tokens during a reparse.
+	Call `semantic-after-toplevel-bovinate-hook' on a clear also.
+	 This lets us track the value of the cache better.
+	In `semantic-bovinate-toplevel', added a new section which cleans
+	 all the dirty tokens, but only if we don't need a full reparse.
+	In our change-function, add dirty tokens to the dirty token list,
+	 and don't bother with the type searching stuff.  Call dirty-token-hooks.
+	New function `semantic-rebovinate-token'.
+	
+2000-12-08 22:15  zappo
+
+	* semantic-util.el:
+
+	Added show-dirty-mode, which highlights dirty tokens.
+	Previous fn bovinate-nonterminal had its guts moved to semantic.el
+	semantic-describe-token forces a reparse upon request.
+	
+2000-12-08 17:18  david_ponce
+
+	* senator-isearch.el, senator.el:
+
+	A bunch of XEmacs compatibility code!
+	
+2000-12-08 04:37  zappo
+
+	* semantic-util.el:
+
+	When re-overlaying a buffer, put the 'semantic property onto the overlay.
+	Added `bovinate-nonterminal' for splicing new data into an old token slot.
+	Added `semantic-describe-token' for seeing what we think is under the cursor.
+	
+2000-12-08 04:36  zappo
+
+	* semantic.el:
+
+	Added `semantic-raw-to-cooked-token' from the guts of
+	`semantic-bovinate-nonterminals'.
+	Added autoload for senator.
+	
+2000-12-07 10:20  david_ponce
+
+	* senator.el:
+
+	Applied Eric Ludlam's doc fix patch.
+	
+2000-12-07 05:51  zappo
+
+	* semantic-imenu.el:
+
+	Fixed `summarize' misspelling.
+	
+2000-12-07 05:50  zappo
+
+	* semantic-util.el:
+
+	Fixed misspelling of summarize.
+	Deoverlayed tokens no longer contain the buffer.
+	Implemented `semantic-deoverlay-cache' and `semantic-overlay-cache'.
+	Added `semantic-deoverlay-list' and `semantic-overlay-list'.
+	
+2000-12-07 05:48  zappo
+
+	* semantic.el:
+
+	Fixed utils that fetch token extents to new vector mode w/out a buffer.
+	Added `semantic-file-token-stream' to get a token stream for a file.
+	
+2000-12-07 05:46  zappo
+
+	* semanticdb.el:
+
+	Add msg to `semanticdb-file-stream'.
+	Add `semanticdb-minor-mode-p' to learn if its active.
+	Fix kill hook to only bovinate if the buffer has a cache to save.
+	
+2000-12-07 05:21  zappo
+
+	* semanticdb.el:
+
+	Initial revision
+	
+2000-12-05 16:59  david_ponce
+
+	* senator.el:
+
+	Improved consistency with built-in search commands.
+	New search commands like the ones in the Emacs Search menu.
+	Added a menu to senator minor mode.
+	The common prefix key in senator minor mode is now "C-c ,".
+	Updated header comments.
+	Some code cleanup.
+	
+2000-12-05 12:15  david_ponce
+
+	* senator-isearch.el:
+
+	Initial revision needed by senator.el 1.7 (version 2.0) and above.
+	
+2000-12-05 12:13  david_ponce
+
+	* senator.el:
+
+	New major version 2.0 with [i]search feature and a senator minor mode.
+	Added compatibility code between GNU Emacs 20.7 and 21.
+	
+2000-12-05 03:25  zappo
+
+	* semantic-util.el:
+
+	Enable a face for momentary highlighting.
+	Added code to convert a token list to/from overlays.
+	
+2000-12-03 15:52  zappo
+
+	* semantic.el:
+
+	Added a defvar for semantic-init-hooks.
+	Renamed to plural for hooks.
+	
+2000-12-03 15:45  zappo
+
+	* semantic.el:
+
+	Added the ability for a semantic token to contain an overlay, or numbers.
+	Added a fn to get the CONS cell the overlay (or whatever) lives in.
+	Added a find-file-hook, which turns around and calls `semantic-init-hook'
+	  when the table is availble for parsing.
+	Move cache setting into a fcn to be called.  This lets an external
+	  program set the cache (from a file perhaps.)
+	
+2000-11-28 13:44  david_ponce
+
+	* senator.el:
+
+	More performance improvements.
+	New option `senator-highlight-found' to customize token highlighting.
+	
+2000-11-27 14:24  david_ponce
+
+	* senator.el:
+
+	Fixed a serious performance problem in `senator-next-token' and
+	`senator-previous-token'.
+	
+	Before searching for a next or previous token the point was just moved
+	to respectively the next or previous character. Thus, during
+	navigation, the buffer was explored character by character :-(.  Now
+	`senator-next-token' and `senator-previous-token' skip whole tokens
+	(unless they are 'type tokens which may include sub tokens).
+	
+2000-11-18 15:09  zappo
+
+	* semantic.el:
+
+	Version number.
+	
+2000-11-14 18:23  david_ponce
+
+	* senator.el:
+
+	Minor change to `senator-next-token' and `senator-previous-token' to
+	return the token at point.  Useful when calling these commands
+	non-interactively.
+	
+2000-11-14 14:04  david_ponce
+
+	* senator.el:
+
+	Improved navigation in semantic token where to step at start and end.
+	
+	- `senator-next-token' move the point to the end of token if it was at
+	  beginning or in the middle of the token.
+	
+	- `senator-previous-token' move the point to the beginning of token if
+	  it was at end or in the middle of the token.
+	
+2000-11-13 22:06  zappo
+
+	* make.bnf:
+
+	Fixed comment.
+	
+2000-11-13 22:06  zappo
+
+	* semantic-c.el:
+
+	Reverted to previous version of keyword regexps.
+	
+2000-11-13 22:04  zappo
+
+	* semantic-bnf.el:
+
+	Force the table to be cleared before a rebuild.
+	Insert `nil' for keyword table if there are no keywords.
+	
+2000-11-13 22:02  zappo
+
+	* semantic-imenu.el:
+
+	Added protection from imenu not existing on older XEmacsen.
+	
+2000-11-13 22:01  zappo
+
+	* semantic.el:
+
+	Fixed XEmacs bug in `semantic-bovinate-nonterminals'.
+	
+2000-11-10 18:11  david_ponce
+
+	* senator.el:
+
+	Fixed a little bug in `senator-previous-token' navigation.
+	
+2000-11-10 17:04  david_ponce
+
+	* senator.el:
+
+	Initial revision.
+	
+2000-10-30 02:52  zappo
+
+	* semantic.el:
+
+	Added in some XEmacs overlay stuff.
+	
+2000-10-30 02:34  zappo
+
+	* c.bnf:
+
+	Tidied up opt-array stuff.
+	
+2000-10-30 02:33  zappo
+
+	* semantic-c.el:
+
+	Updated for new c.bnf
+	
+2000-10-18 05:27  zappo
+
+	* semantic.el:
+
+	Fixed overlay aliases for XEmacs.
+	Added `semantic-overlay-live-p' alias.
+	Use `semantic-overlay-live-p' when needed so XEmacs works properly.
+	
+2000-10-18 04:47  zappo
+
+	* semantic-util.el:
+
+	Fixed some byte compiler warnings.
+	
+2000-10-17 14:45  zappo
+
+	* semantic-util.el:
+
+	Fixed some calls to overloaded functions to take the correct number
+	of parameters.
+	
+2000-10-16 15:06  zappo
+
+	* semantic.el:
+
+	Moved `semantic-after-toplevel-bovinate-hook' call to only happen when
+	a buffer is actually reparsed.
+	
+2000-10-13 00:15  zappo
+
+	* semantic.el:
+
+	Changed the overlay aliases to check the xemacs feature.
+	Added the hooks `semantic-after-toplevel-bovinate-hook',
+	`semantic-before-toplevel-cache-flush-hook' and
+	`semantic-no-reparse-needed-change-hook'.  Call then in the right
+	spots.
+	Enable reparsing the the change hook to use the additions from
+	semantics reparse not found change hook.
+	
+2000-10-13 00:14  zappo
+
+	* semantic-imenu.el:
+
+	Updated the `semantic-imenu-goto-function' to check for deleted overlays.
+	Added `semantic-imenu-flush-fcn' to be used as a hook.
+	Changed what was `semantic-create-imenu-index' to
+	`semantic-create-imenu-index-1'.  The new `semantic-create-imenu-index'
+	calls `semantic-create-imenu-index-1' after setting the goto fcn,
+	and setting the flush hook to `semantic-imenu-flush-fcn'.
+	Changed calls to `semantic-create-imenu-index' to -1.
+	
+2000-10-10 02:48  zappo
+
+	* semantic-bnf.el:
+
+	Added `comment-start' and `comment-start-skip' values in bnf mode.
+	
+2000-10-10 02:48  zappo
+
+	* semantic.el:
+
+	Make `semantic-ignore-comments' and `semantic-flex-depth' buffer local.
+	
+2000-10-06 05:18  zappo
+
+	* semantic-el.el:
+
+	Added defsubst support.
+	
+2000-10-05 16:59  zappo
+
+	* semantic-sb.el:
+
+	Set up to work with older speedbars again. (removing dframe references.)
+	
+2000-10-05 15:03  zappo
+
+	* semantic.texi:
+
+	Added `semantic-find-nonterminal-by-overlay',
+	`semantic-find-nonterminal-by-overlay-in-region', and
+	`semantic-current-nonterminal'.
+	
+2000-10-05 15:02  zappo
+
+	* INSTALL:
+
+	Fixed up a little
+	
+2000-10-05 15:00  zappo
+
+	* INSTALL:
+
+	Initial revision
+	
+2000-10-04 14:28  zappo
+
+	* semantic-util.el:
+
+	Fixed `semantic-token-variable-optsuffix' for overlay stuff.
+	
+2000-10-04 14:27  zappo
+
+	* semantic.el:
+
+	Fixed `semantic-token-docstring' for overlay stuff.
+	
+2000-10-04 14:25  zappo
+
+	* semantic-util.el:
+
+	Fixed throws finding to account for shorter tail of a nonterminal.
+	Added `semantic-current-nonterminal' as a non-list producing short-cut
+	for `semantic-find-nonterminal-by-overlay'.
+	
+2000-10-03 03:54  zappo
+
+	* semantic.el:
+
+	Updated version number.
+	
+2000-09-29 05:22  zappo
+
+	* working.el:
+
+	Fixed copyright.
+	
+2000-09-29 05:10  zappo
+
+	* semantic.el:
+
+	Added `semantic-token-buffer'.
+	
+2000-09-29 05:08  zappo
+
+	* semantic.texi, document.el, semantic-el.el, semantic-sb.el:
+
+	Fixed up with some API changes.
+	
+2000-09-29 05:02  zappo
+
+	* semantic-util.el:
+
+	Several override methods find information about tokens, and took both
+	a buffer, and a token.  Tokens' overlay now have the buffer in it,
+	so don't require this parameter anymore.
+	
+2000-09-29 05:01  zappo
+
+	* semantic.texi:
+
+	Fixed up with some API changes.
+	
+2000-09-29 04:00  zappo
+
+	* working.el:
+
+	Indentation and edebug updates.
+	
+2000-09-28 23:59  zappo
+
+	* working.el:
+
+	Updated the version.
+	Made the user options user options.
+	Fixed press a key.
+	
+2000-09-28 05:20  zappo
+
+	* semantic-el.el:
+
+	Specify to only nab 6 flex tokens from sub-lists.
+	
+2000-09-28 05:19  zappo
+
+	* semantic-util.el, semantic-sb.el, semantic-mode.el,
+	semantic-imenu.el:
+
+	Updated calls to `semantic-bovinate-toplevel'.
+	
+2000-09-28 05:18  zappo
+
+	* semantic.el:
+
+	Added `semantic-flex-depth', and `semantic-ignore-comments'.
+	Removed depth/trashcomments from bovinate-toplevel.
+	Removed comment stripping code from the parser.
+	Do not add comments to the flex list, unless the variable is set.
+	Added length parameter to the flexer.  Lets a language only
+	look at the first few tokens in a sublist.
+	
+2000-09-28 05:06  zappo
+
+	* semantic-bnf.el:
+
+	Updated calls to `semantic-bovinate-toplevel'.
+	
+2000-09-28 04:02  zappo
+
+	* semantic.texi:
+
+	Added long section describing some of semantics variables.
+	
+2000-09-28 03:20  zappo
+
+	* document.el:
+
+	Changed use of `semantic-bovinate-toplevel'.
+	
+2000-09-27 22:40  zappo
+
+	* working.el:
+
+	Added `working-status-call-process', and `working-verify-sleep'.
+	
+2000-09-27 21:40  zappo
+
+	* working.el:
+
+	Added a special form `working-status-timeout' which uses a timer
+	to display the dynamic message, letting the code run normally.
+	Added timer workarounds.
+	Added `working-wait-for-keypress' as an example.
+	
+2000-09-27 16:54  zappo
+
+	* semantic-imenu.el:
+
+	Made customizable vars of type 'bool in 'boolean.
+	
+2000-09-27 16:54  zappo
+
+	* semantic-bnf.el:
+
+	Quote the expression to eval after load.
+	
+2000-09-27 04:13  zappo
+
+	* semantic-bnf.el:
+
+	Added `semantic-bnf-mode' to `which-func-modes' for later use.
+	
+2000-09-27 04:08  zappo
+
+	* semantic-c.el:
+
+	c.bnf changed.
+	
+2000-09-27 04:08  zappo
+
+	* c.bnf:
+
+	Moved `type' to be before `function' and `variable' in `declaration'.
+	
+2000-09-27 04:05  zappo
+
+	* semantic-imenu.el:
+
+	Changed the default which-function to be a new function which
+	intelligently builds a name.
+	
+2000-09-27 03:50  zappo
+
+	* semantic-imenu.el:
+
+	Fixed default for `semantic-which-function'.
+	
+2000-09-27 03:49  zappo
+
+	* semantic-imenu.el:
+
+	Make imenu config items buffer local.
+	
+2000-09-27 03:46  zappo
+
+	* semantic.el:
+
+	Added type internals check when determining if a change requires a
+	reparse.
+	
+2000-09-27 03:35  zappo
+
+	* semantic-util.el:
+
+	Added interactive bovinate fns from semantic.el.
+	
+2000-09-27 03:35  zappo
+
+	* semantic.el:
+
+	`semantic-toplevel-bovine-cache-check' is now boolean.
+	Moved bovinate fns into semantic-util.
+	Moved all debug stuff to after the parser, and before the lexer.
+	Added new `after-change-hook' entry `semantic-change-function'.
+	This new function will set `semantic-toplevel-bovine-cache-check'
+	to true based on what the user changed.
+	
+2000-09-27 03:32  zappo
+
+	* semantic-mode.el:
+
+	Changed comment, and removed dynamic reparse stuff.
+	
+2000-09-27 03:00  zappo
+
+	* semantic-el.el:
+
+	Added advice into the language.
+	
+2000-09-27 02:59  zappo
+
+	* semantic.el:
+
+	Added some more overlay compatibility aliases.
+	Added `semantic-clear-toplevel-cache' to `change-major-mode-hook'.
+	
+2000-09-27 02:58  zappo
+
+	* semantic-util.el:
+
+	Added `semantic-find-nonterminal-by-overlay-in-region',
+	`semantic-find-nonterminal-by-overlay-next', and
+	`semantic-find-nonterminal-by-overlay-prev'.
+	
+2000-09-27 02:43  zappo
+
+	* semantic-imenu.el:
+
+	Added a `which-function' hack to use with `which-function' mode.
+	
+2000-09-26 17:08  zappo
+
+	* semantic-util.el:
+
+	summerize-nonterminal, prototype-nonterminal, and prototype-file all
+	had incorrect overload function grabbing code.  Set them up correctly.
+	
+2000-09-26 13:34  zappo
+
+	* semantic-mode.el:
+
+	Added a lame menu for imenu soring functions
+	
+2000-09-26 13:27  zappo
+
+	* semantic-util.el:
+
+	Reversed all compares in the semantic-sort functions because they were
+	backwards.
+	
+2000-09-26 01:13  zappo
+
+	* semantic-imenu.el:
+
+	nreverse sub-buckets because `semantic-bucketize' now leaves things in
+	the right order.
+	
+2000-09-26 01:04  zappo
+
+	* semantic-util.el:
+
+	Added a filter function to `semantic-bucketize'.
+	Added many sortingfunctions of the form:
+	 `semantic-sort-tokens-by-name/type-in/decreasing[-ci]'
+	
+2000-09-26 00:50  zappo
+
+	* semantic-imenu.el:
+
+	Added `semantic-imenu-sort-bucket-function' variable.
+	Pass this to `semantic-bucketize'.
+	
+2000-09-25 13:04  zappo
+
+	* semantic-mode.el:
+
+	Removed `checkdoc-add-to-list'.
+	
+2000-09-22 04:08  zappo
+
+	* semantic-util.el:
+
+	Added spiffy functions for changing properties on a token's overlay.
+	
+2000-09-22 04:07  zappo
+
+	* semantic-imenu.el:
+
+	Added interactive toggle functions for our sorting/binning variables.
+	
+2000-09-22 04:01  zappo
+
+	* semantic-mode.el:
+
+	Initial revision
+	
+2000-09-22 03:38  zappo
+
+	* semantic-imenu.el:
+
+	Added changes from David Ponce: no double separators, all types have submenus.
+	Added `semantic-imenu-goto-function' which takes overlays for
+	position.  Replaced all explicit numbers with the overlay from the
+	semantic token.
+	
+2000-09-21 05:41  zappo
+
+	* semantic-bnf.el:
+
+	Added symbol->name list to major-mode
+	Added imenu index function to major-mode
+	
+2000-09-21 05:35  zappo
+
+	* c.bnf:
+
+	Fixed up struct/union variable declaration section to use new lexical
+	tokens for struct/union.
+	
+2000-09-21 05:34  zappo
+
+	* semantic-c.el:
+
+	Fixed up struct/union variable declaration section of c.bnf.
+	
+2000-09-21 05:34  zappo
+
+	* semantic.texi:
+
+	Fixed up for use with OVERLAY.
+	Fixed up some descriptions of quoting, and updated the settings
+	section.
+	Broke the BNF converter section into sub-nodes.
+	
+2000-09-21 03:46  zappo
+
+	* semantic-el.el:
+
+	Added support for methods and classes.
+	
+2000-09-21 01:46  zappo
+
+	* semantic.el:
+
+	Fixed typo for delete-overlay in debug mode.
+	
+2000-09-20 20:04  zappo
+
+	* semantic-c.el:
+
+	In `semantic-expand-c-nonterminal', copy the overlay, not start/end.
+	
+2000-09-20 19:59  zappo
+
+	* semantic.el:
+
+	Converted to use overlays instead of start/end.
+	Added overlay compatibility section.
+	Changed the doc string for `semantic-toplevel-bovine-table'.
+	Added `semantic-overlay-error-recovery-stack',
+	  `semantic-overlay-stack-add', 'semantic-overlay-stack-clear',
+	  `semantic-delete-overlay-maybe'
+	  `semantic-clear-toplevel-cache' was updated to delete overlays.
+	`semantic-token-extent/start/end' was changed to use the new
+	  `semantic-token-overlay' macro.
+	`semantic-bovinate-toplevel' was updated to include a local scope of
+	  the overlay error stack.
+	`semantic-bovinate-nonterminals' changed to convert START/END from the
+	  lambdas into overlays.  Convert overlays from the return streamed
+	  onto the error recovery stack.
+	Converted old overlay code in debugger to use compatibility layer.
+	In `semantic-bovinate-stream', added an overlay stack to the local
+	  scope.  Track the overlays from recursive parses, clear the error
+	  recovery stack whenever a failed match occurs.  Return a list of
+	  overlays found during this parse as a third list in the return arg.
+	  Deleted ITERATE section.
+	  Return nothing if we have a failed match.
+	In `semantic-bovinate-from-nonterminal', use car-safe.
+	
+2000-09-20 19:45  zappo
+
+	* semantic-util.el:
+
+	Added `semantic-find-nonterminal-by-overlay'.
+	
+2000-09-19 15:45  zappo
+
+	* semantic-imenu.el:
+
+	Added `semantic-imenu-bucketize-file' option.
+	Added `semantic-imenu-buckets-to-submenu' option.
+	When bucketize-file is nil, then do not put tokens into a bucket.
+	When buckets-to-submenu is nil, then do not put buckets into menus,
+	but only into sections divided with a separator.
+	David Ponce fixed a reverse order problem.
+	
+2000-09-19 06:23  zappo
+
+	* semantic.el:
+
+	`semantic-flex-make-keyword-table' now returns the table instead of
+	assigning it.
+	
+2000-09-19 06:22  zappo
+
+	* c.bnf:
+
+	Added %keywordtable
+	
+2000-09-19 06:22  zappo
+
+	* semantic-bnf.el:
+
+	Rearranged semantic-bnf-generate-and-load to do keyword table, and
+	setup changes first, and the main table last.
+	Added keywordtable keyword to bnf language.
+	Added keywordtable finding function.
+	
+2000-09-19 06:21  zappo
+
+	* semantic-c.el:
+
+	Updated for new semantic-bnf.
+	
+2000-09-19 05:43  zappo
+
+	* semantic-util.el:
+
+	In semantic-bucketize, return only those buckets with stuff in them.
+	
+2000-09-19 05:42  zappo
+
+	* semantic-imenu.el:
+
+	For types, do not show buckets if there is only one bucket.
+	Added *typedef* to list of a types buckets to go to that class'
+	definition. (David Ponce)
+	
+2000-09-16 01:27  zappo
+
+	* semantic.el:
+
+	Added `semantic-flex-keywords-obarray' and `semantic-flex-make-keyword-table'
+	When a symbol is found in `semantic-flex', it is looked up in the
+	obarray, and its symbol is then substituded in place of the symbol.
+	
+2000-09-16 01:24  zappo
+
+	* semantic-bnf.el:
+
+	Tokens that are symbols now generate a keyword list.
+	This list is passed to the flexer, and converted into an obarray.
+	
+2000-09-15 19:10  zappo
+
+	* semantic-imenu.el:
+
+	Fixed reversing of indicies problem.
+	Enable imenu--sort-by-name inside sub-sub menus
+	Added *TypeDef* menu item for jumping to the definition of types, as
+	opposed to their sub-parts.
+	Fixed jumping to the end of a definition, not the beginning.
+	
+2000-09-14 22:04  zappo
+
+	* semantic-make.el:
+
+	Fixed spelling mistake.
+	
+2000-09-14 21:23  zappo
+
+	* semantic-c.el:
+
+	Rebuilt table from c.bnf.
+	
+2000-09-14 21:23  zappo
+
+	* c.bnf:
+
+	Updated to use %token to make new tokens for use in RULES.
+	
+2000-09-14 21:22  zappo
+
+	* semantic-bnf.el:
+
+	Added the %token token to the language.
+	This generates smart regexps in the table.
+	
+2000-09-13 23:45  zappo
+
+	* semantic-bnf.el:
+
+	Removed all indenting commands from code generation.
+	Perform region indentation instead at the very end.
+	
+2000-09-13 23:31  zappo
+
+	* semantic-bnf.el:
+
+	`semantic-bnf-lambda-convert', EXPAND tokens should use the old
+	`lambda' notation, and other code shoud use `semantic-lambda'.
+	This fixes extra start/end data problems.
+	
+2000-09-13 23:30  zappo
+
+	* semantic.el:
+
+	Updated `semantic-bovinate-from-nonterminal' to remove the let statement.
+	
+2000-09-12 01:00  zappo
+
+	* c.bnf:
+
+	Use new BNF settings section.
+	
+2000-09-12 01:00  zappo
+
+	* semantic-el.el:
+
+	Updated for new semantic-lambda macro.
+	Added support for backquote in a single expression.
+	
+2000-09-12 00:59  zappo
+
+	* semantic-c.el:
+
+	Updated for new c.bnf.
+	
+2000-09-09 04:12  zappo
+
+	* semantic.texi:
+
+	Fixed build errors.
+	
+2000-09-09 04:09  zappo
+
+	* semantic.texi:
+
+	Added new section on the setup section and % tokens
+	
+2000-09-09 04:09  zappo
+
+	* make.bnf:
+
+	Use new bnf settings section.
+	
+2000-09-09 04:08  zappo
+
+	* semantic-bnf.el:
+
+	New code generators for settings based on new tokens available in
+	the setup seciton.
+	
+2000-09-09 04:08  zappo
+
+	* semantic-make.el:
+
+	Rebuilt using new semantic-bnf
+	
+2000-09-09 00:22  zappo
+
+	* semantic-sb.el:
+
+	Updates to handle the new speedbar beta.
+	
+2000-09-09 00:21  zappo
+
+	* semantic.el:
+
+	Working is a part of semantic.  Removed large crufty bits.
+	Added `semantic-case-fold' for modes.  Initialize `case-fold-search'
+	from this when parsing.
+	`semantic-bovinate-symbol-nonterminal-p' is now `defsubst'
+	Added `semantic-lambda' macro for use in tables.
+	
+2000-09-08 23:47  zappo
+
+	* semantic-bnf.el:
+
+	Updated language to include % token things.
+	Updated output to use `semantic-lambda' macro.  Updated language to
+	use them.
+	Updated generator setup code to get the token stream, use %tokens
+	parsed in the input file for file/table/mode detection.
+	Passes token stream down to all the sub-functions.
+	Updated font-lock keywords for % tokens.
+	bnf-mode alias to semantic-bnf-mode
+	Updated indent function to use lisp-indent-function whenever inside %( )%
+	Added `semantic-bnf-in-settings-p' function.
+	
+2000-07-07 14:06  zappo
+
+	* semantic-sb.el:
+
+	Remove any reference to parent part of types.
+	We will just ignore it.
+	
+2000-07-05 16:41  zappo
+
+	* c.bnf:
+
+	Support multiple continuous decl modifiers.
+	Added modifiers into variables.
+	
+2000-07-05 16:40  zappo
+
+	* semantic-c.el:
+
+	Updated to new c.bnf.
+	Changed `semantic-expand-c-nonterminal' to use optsuffix for bit
+	fields and arrays.  Use modifiers for actual modifiers like static.
+	
+2000-07-05 16:40  zappo
+
+	* semantic-util.el:
+
+	Added `semantic-token-variable-optsuffix'.
+	Used above in `semantic-prototype-nonterminal'.
+	Also added modifiers support to functions and types.
+	
+2000-07-05 16:39  zappo
+
+	* semantic.el:
+
+	Added OPTSUFFIX to variables for bit fields, or opt arrays.
+	
+2000-07-04 20:33  zappo
+
+	* semantic-imenu.el:
+
+	Fix for imenu subindexes when a types PARTS is empty.
+	
+2000-07-03 15:59  zappo
+
+	* semantic.texi:
+
+	Doc fix for semantic-token-variable-modifiers.
+	
+2000-07-03 15:58  zappo
+
+	* semantic-util.el:
+
+	Fixed doc of type-modifiers.
+	Fixed function-throws macro to be 6 not 5
+	
+2000-07-01 21:18  zappo
+
+	* semantic-util.el:
+
+	Fixed left over `semantic-default-c-built-in-types' as
+	`semantic-default-built-in-types'.
+	
+2000-07-01 21:15  zappo
+
+	* semantic.texi:
+
+	Added semantic-find-inntermost-nonterminal-by-position.
+	
+2000-07-01 20:57  zappo
+
+	* semantic-util.el:
+
+	Added semantic-find-inntermost-nonterminal-by-position.
+	
+2000-07-01 20:19  zappo
+
+	* semantic-make.el:
+
+	Updated with make.bnf.
+	
+2000-07-01 20:19  zappo
+
+	* make.bnf:
+
+	Updated for new elements in the tokens.
+	
+2000-07-01 20:15  zappo
+
+	* semantic-c.el:
+
+	Updated with c.bnf.
+	
+2000-07-01 20:15  zappo
+
+	* c.bnf, semantic-el.el:
+
+	Updated for new elements in the tokens.
+	
+2000-07-01 20:00  zappo
+
+	* semantic.texi:
+
+	Syntax error.
+	
+2000-07-01 20:00  zappo
+
+	* semantic.texi:
+
+	Various documentation updates.
+	Added `semantic-token-type-modifiers', `semantic-token-function-modifiers',
+	`semantic-token-function-throws'.
+	
+2000-07-01 19:54  zappo
+
+	* semantic-util.el:
+
+	Added `semantic-token-type-modifiers', `semantic-token-function-modifiers',
+	`semantic-token-function-throws'.
+	
+2000-07-01 19:52  zappo
+
+	* semantic.el:
+
+	Updated documentation.
+	
+2000-06-24 01:09  zappo
+
+	* semantic-util.el:
+
+	Added `semantic-current-token' to call semantic-find-nonterminal-by-position
+	with arguments.
+	
+2000-06-20 04:12  zappo
+
+	* semantic.el:
+
+	Quick hack to make flex robust to broken lists.
+	
+2000-06-16 22:12  zappo
+
+	* semantic.el:
+
+	Added fn to read nonterminals until it reached an error.
+	Fixed up some doc.
+	Added `with-syntax-table'
+	
+2000-06-14 21:23  zappo
+
+	* semantic-imenu.el:
+
+	Use imenu-summary-function for regular items, not just types.
+	Maybe reverse this later.
+	
+2000-06-14 17:33  zappo
+
+	* semantic-util.el:
+
+	Updated summerize to use the symbol->name assoc list.
+	
+2000-06-14 17:28  zappo
+
+	* semantic-util.el:
+
+	Swapped summerize-nonterminal to call prototype-nonterminal,
+	and prototype-nonterminal now some of the old guts of summerize.
+	abbreviate now does some of the same things as the speedbar display.
+	
+2000-06-14 17:26  zappo
+
+	* semantic-imenu.el:
+
+	Updated for new options in display.
+	
+2000-06-13 16:41  zappo
+
+	* semantic.el:
+
+	Added optional argument to bovinate to force a cache clear.
+	
+2000-06-13 16:40  zappo
+
+	* semantic-util.el:
+
+	Added semantic-bucketize, and semantic-abbreviate-nonterminal.
+	
+2000-06-13 16:39  zappo
+
+	* semantic-sb.el:
+
+	Removed the bucketizer, and used the new version now in semantic-util.
+	
+2000-06-13 16:38  zappo
+
+	* semantic-el.el:
+
+	Build in imenu support
+	
+2000-06-13 16:38  zappo
+
+	* make.bnf:
+
+	Added special equals and colon NTs
+	
+2000-06-13 16:37  zappo
+
+	* c.bnf:
+
+	The table has moved.
+	
+2000-06-13 16:27  zappo
+
+	* semantic-make.el:
+
+	Added imenu bovinator support.
+	
+2000-06-13 16:26  zappo
+
+	* semantic-c.el, semantic-imenu.el:
+
+	Initial revision
+	
+2000-06-11 21:40  zappo
+
+	* semantic.texi:
+
+	Patched with emacs texi functions.
+	Added `semantic-flex-enable-newlines' and `semantic-flex-syntax-modifications'.
+	
+2000-06-11 20:50  zappo
+
+	* semantic.el:
+
+	Added some ITERATE code which doesn't work yet.
+	Added `semantic-symbol->name-assoc-list. (buffer local)
+	Added `semantic-flex-syntax-modifications' (buffer-local)
+	Use syntax-modifications to change the way parsing occurs.
+	
+2000-06-11 20:48  zappo
+
+	* semantic-el.el:
+
+	Renamed to semantic-el.el.
+	Removed all C stuff.
+	Updated mega hook to a setup function.
+	
+2000-06-11 20:46  zappo
+
+	* semantic-make.el:
+
+	Updated from mega-hook lambda to a setup function.
+	Changed table to match new make.bnf
+	
+2000-06-11 20:45  zappo
+
+	* semantic-sb.el:
+
+	Updated to use the new variable `semantic-symbol->name-assoc-list'.
+	This lets languages define their own names for types of tokens.
+	The bucketing code changed.  It now uses a vector.
+	
+2000-06-11 04:18  zappo
+
+	* make.bnf, semantic-make.el:
+
+	Initial revision
+	
+2000-05-25 15:16  zappo
+
+	* semantic.texi:
+
+	Added text about semantic-token-extents.
+	
+2000-05-25 15:16  zappo
+
+	* semantic-util.el:
+
+	Added a comment for finding some other utils functions in semantic.el
+	Fixe typo.
+	
+2000-05-17 04:24  zappo
+
+	* semantic.el:
+
+	Added `semantic-token-extent'
+	
+2000-05-17 04:19  zappo
+
+	* semantic-sb.el:
+
+	Added XEmacs invisibility hack stuff.
+	
+2000-05-14 15:15  zappo
+
+	* working.el:
+
+	Fixed frame-width for XEmacs minibuffer strangeness.
+	fixed up some animation stuff. (Old)
+	
+2000-05-06 03:35  zappo
+
+	* semantic.texi:
+
+	Added small EDE reference
+	
+2000-05-06 03:34  zappo
+
+	* sformat.el:
+
+	Added untokenizing regular expression generators.
+	
+2000-05-06 03:33  zappo
+
+	* document.el:
+
+	Added file-header stuff.
+	
+2000-05-06 03:33  zappo
+
+	* semantic-el.el:
+
+	Added updates from c.bnf
+	
+2000-05-06 03:32  zappo
+
+	* c.bnf:
+
+	Use EXPANDFULL for enums, and for argument lists to functions.
+	
+2000-05-04 05:34  zappo
+
+	* semantic.el:
+
+	Added semantic-flex-start and semantic-flex-end functions.
+	
+2000-05-04 05:34  zappo
+
+	* semantic-util.el:
+
+	Added flex option to the doc finder.
+	
+2000-05-04 05:32  zappo
+
+	* document-vars.el:
+
+	Initial revision
+	
+2000-05-04 05:29  zappo
+
+	* document.el:
+
+	Converted all the CPCOMMENT stuff here, and made work with semantic.
+	
+2000-05-04 04:46  zappo
+
+	* sformat.el:
+
+	if no additional args are passed to sformat, then `format' will not be
+	called on the result.
+	
+2000-05-04 04:45  zappo
+
+	* semantic.el:
+
+	Added semantic group for custom.
+	
+2000-05-04 04:45  zappo
+
+	* semantic-util.el:
+
+	Added find-documentation, and a snarf-doc command.
+	
+2000-05-04 04:44  zappo
+
+	* semantic-sb.el:
+
+	Added autoexpand length variable.
+	Moved making of invisible text.
+	semantic-sb-buttons-plain no longer save-excursion/set-buffer.
+	Removed region narrowing in semantic-sb-buttons.
+	Bucket insertion will now skip the bucket if it only contains one item.
+	
+2000-05-04 04:42  zappo
+
+	* semantic-el.el:
+
+	Added defcustom as variables for Emacs Lisp.
+	
+2000-05-01 23:29  zappo
+
+	* sformat.el:
+
+	Initial revision
+	
+2000-05-01 01:01  zappo
+
+	* document.el:
+
+	Initial revision
+	
+2000-05-01 00:52  zappo
+
+	* semantic.texi:
+
+	Added piles o doc about util functions.
+	
+2000-05-01 00:52  zappo
+
+	* semantic.el:
+
+	docstrings are now described as a position.
+	Fixed other doc strings.
+	semantic-bovinate-toplevel takes new CHECKCACHE argument.
+	If buffer is different size from last time, re-parse.
+	Added more info in semantic-flex reguarding END param.
+	
+2000-05-01 00:45  zappo
+
+	* semantic-util.el:
+
+	Updated a bunch of documentation.
+	Added semantic-find-nonterminal-by-position
+	Fixed a bunch of misspelled &optionals
+	Added a set buffer when finding nonterminals.
+	Added semantic-find-documentation to find a doc string.
+	Added semantic-find-doc-snarf-comment to get the actual text from a buffer.
+	
+2000-05-01 00:44  zappo
+
+	* semantic-el.el:
+
+	Fixed Emacs Lisp codes to have doc-string positions.
+	
+2000-04-30 16:25  zappo
+
+	* semantic-el.el:
+
+	Fixed lisp expressions to have correct sizing information.
+	
+2000-04-30 04:30  zappo
+
+	* semantic-util.el:
+
+	Added semantic-prototype-file as an overridable function.
+	
+2000-04-29 14:56  zappo
+
+	* semantic.el:
+
+	Working msg now has filename in it.
+	Added `returnonerror' flag to semantic-bovinate-nonterminals.
+	goto (point-min) in `bovinate'
+	Open/close paren matching now matches only one paren at a time.
+	
+2000-04-29 14:55  zappo
+
+	* semantic-util.el:
+
+	Added scanning message to recursive search routine.
+	
+2000-04-29 14:54  zappo
+
+	* semantic-el.el:
+
+	Updated w/ c.bnf.
+	Added elisp override for finding dependencies.
+	
+2000-04-29 14:54  zappo
+
+	* c.bnf:
+
+	Added support for Linux __P items.
+	Added support for "..." fn prototypes.
+	
+2000-04-29 00:57  zappo
+
+	* semantic-util.el:
+
+	Find dependency now uses EDE to track local includes if needed.
+	
+2000-04-28 20:59  zappo
+
+	* semantic.el:
+
+	Updated doc about include nonterms.  (Added system flag.)
+	
+2000-04-28 20:59  zappo
+
+	* semantic-util.el:
+
+	Added nil t to all parsing routines used for searching.
+	Added new recursive find-by-name function.
+	
+2000-04-28 20:58  zappo
+
+	* semantic-sb.el:
+
+	Added <> after system includes.
+	
+2000-04-28 20:58  zappo
+
+	* semantic-el.el:
+
+	Updated for c.bnf
+	
+2000-04-28 20:57  zappo
+
+	* c.bnf:
+
+	Added system flag to include files.
+	
+2000-04-28 00:11  zappo
+
+	* semantic-util.el:
+
+	Initial revision
+	
+2000-04-28 00:10  zappo
+
+	* semantic.el:
+
+	Removed some API functions to semantic-util.
+	Require semantic-util.
+	
+2000-04-28 00:09  zappo
+
+	* semantic-sb.el:
+
+	Fixed token display for misc items.
+	
+2000-04-28 00:08  zappo
+
+	* semantic-el.el:
+
+	Added built-in types stuff.
+	
+2000-04-25 19:42  zappo
+
+	* semantic-bnf.el:
+
+	Fixed first line comment.
+	
+2000-04-25 18:33  zappo
+
+	* semantic.el:
+
+	Reverse the order of full expanded items.
+	
+2000-04-25 18:27  zappo
+
+	* semantic-sb.el:
+
+	Fixed typo (extra parens)
+	
+2000-04-25 18:25  zappo
+
+	* semantic.el:
+
+	Added semantic-dependency-include-path, and semantic-find-dependency.
+	These were in semantic-inc.el, but belong here with the override
+	table.  Fixed up semantic-find-nonterminal to use the new function.
+	
+2000-04-25 18:22  zappo
+
+	* semantic-sb.el, semantic-el.el:
+
+	Removed semantic-inc, use new stuff in semantic.el for same behavior.
+	
+2000-04-25 18:19  zappo
+
+	* semantic.texi:
+
+	Added stuff about EXPAND and EXPANDFULL
+	
+2000-04-25 16:47  zappo
+
+	* semantic-bnf.el:
+
+	Added support for the EXPANDFULL token when expanding semantic lists.
+	
+2000-04-25 16:47  zappo
+
+	* semantic-el.el:
+
+	Change to c.bnf.
+	
+2000-04-25 16:46  zappo
+
+	* c.bnf:
+
+	structparts now uses EXPANDFULL to get positional information for it's
+	sub parts.  This simplified STRUCTSUBPARTS nonterminal
+	
+2000-04-25 16:45  zappo
+
+	* semantic.el:
+
+	Added support for a second type of inline token expantion which
+	includes positional information.
+	
+2000-04-25 04:48  zappo
+
+	* semantic-el.el:
+
+	Fixed up the -c- hook to handle the default include path.
+	
+2000-04-25 04:48  zappo
+
+	* semantic-sb.el:
+
+	Added some smarts about the new semantic-inc file.
+	
+2000-04-25 04:47  zappo
+
+	* semantic-inc.el:
+
+	Initial revision
+	
+2000-04-23 17:34  zappo
+
+	* semantic-sb.el, semantic-el.el, semantic.el, semantic-bnf.el:
+
+	Fixed copyright information.
+	
+2000-04-23 17:34  zappo
+
+	* c.bnf:
+
+	Added copyright information.
+	
+2000-04-23 17:17  zappo
+
+	* semantic.texi:
+
+	Added a package recommendation in Non-Terminals chapter.
+	
+2000-04-23 17:15  zappo
+
+	* semantic.el:
+
+	Added a package recommendation to comments.
+	
+2000-04-23 17:14  zappo
+
+	* semantic-el.el:
+
+	Added package support to Emacs Lisp table.
+	
+2000-04-23 17:14  zappo
+
+	* semantic-sb.el:
+
+	Added support for `package'.
+	
+2000-04-21 03:57  zappo
+
+	* semantic.el:
+
+	Documented some byte compiler warnings.
+	
+2000-04-21 01:55  zappo
+
+	* semantic-el.el:
+
+	updated the C bnf to match c.bnf.
+	
+2000-04-21 01:55  zappo
+
+	* c.bnf:
+
+	Macros split from 'variable' nt.
+	Added knr-argument parsing.
+	
+2000-04-21 01:48  zappo
+
+	* semantic-bnf.el:
+
+	Added the ability to also reset all modes (and thereby hooks) for a given mode
+	
+2000-04-17 00:35  zappo
+
+	* semantic.el:
+
+	Turn `semantic-clear-toplevel-cache' into an interactive function.
+	
+2000-04-17 00:35  zappo
+
+	* semantic-sb.el:
+
+	Added a Misc bucket for Speedbar.
+	
+2000-04-17 00:34  zappo
+
+	* semantic-el.el:
+
+	Updated to new c.bnf
+	
+2000-04-17 00:34  zappo
+
+	* semantic-bnf.el:
+
+	Added a .bnf speedbar extension.
+	Make the return list compatible with speedbar.
+	
+2000-04-17 00:34  zappo
+
+	* c.bnf:
+
+	Added `filename' for include rules.
+	
+2000-04-16 16:50  zappo
+
+	* semantic.el:
+
+	Fixed up some documentation.
+	
+2000-04-16 16:49  zappo
+
+	* semantic.texi:
+
+	Added a section on using the nonterminal token stream.
+	
+2000-04-15 23:02  zappo
+
+	* semantic.el:
+
+	Fixed typo.
+	
+2000-04-15 23:00  zappo
+
+	* semantic.el:
+
+	Tried to speed up semantic-flex by using a short-circuit and around
+	the -extentions section.
+	
+2000-04-15 22:58  zappo
+
+	* semantic-el.el:
+
+	Fixed a "." punctuation regular expression.
+	
+2000-04-15 22:57  zappo
+
+	* semantic.texi:
+
+	Added some doc about lexing extentions.  Fixed spelling errors.
+	
+2000-04-15 20:40  zappo
+
+	* semantic.el:
+
+	Added big reference/compare cycle code.  To use uncomment a section.
+	
+2000-04-14 23:32  zappo
+
+	* semantic.el:
+
+	Added parser dumper.
+	
+2000-04-14 19:58  zappo
+
+	* semantic.el:
+
+	Fixed byte compiled table bug.
+	
+2000-01-25 04:22  zappo
+
+	* semantic.el:
+
+	Added debugging support for backquoted tables.
+	
+2000-01-25 04:22  zappo
+
+	* semantic-sb.el:
+
+	Added support for the new speedbar tagging extentions.
+	
+1999-12-17 21:53  zappo
+
+	* semantic.el:
+
+	Use assq instead of assoc for some lookups.
+	
+1999-12-17 21:53  zappo
+
+	* c.bnf:
+
+	Added a splice , for varnamelist.
+	
+1999-12-17 21:51  zappo
+
+	* semantic-bnf.el:
+
+	Output tables now use backquote so that lambda expressions in the
+	list can be byte compiled.
+	
+1999-12-17 21:51  zappo
+
+	* semantic-el.el:
+
+	Converted all tables to use backquote which then inlines lambda expressions.
+	
+1999-12-13 19:44  zappo
+
+	* semantic-el.el:
+
+	don't concat numbers (for XEmacs).  (by Jan Vroonhof)
+	
+1999-06-14 15:57  zappo
+
+	* semantic-el.el:
+
+	Small tweek to cons cells.
+	
+1999-06-06 16:20  zappo
+
+	* semantic-bnf.el:
+
+	Moved the doc into the info file.
+	
+1999-06-06 16:20  zappo
+
+	* c.bnf:
+
+	Fixed up some language definitions.
+	
+1999-06-06 15:56  zappo
+
+	* semantic-el.el:
+
+	Added use of the flex extensions to strip out pre-processor symbols.
+	
+1999-06-06 15:56  zappo
+
+	* semantic.el:
+
+	Added extensions to the flexer so that the mode author can cause some
+	syntax elements to be stripped (such as pre-processor symbols.)
+	
+1999-05-27 18:55  zappo
+
+	* semantic.texi:
+
+	Initial revision
+	
+1999-05-27 03:44  zappo
+
+	* semantic-sb.el:
+
+	Use the semantic token jump and summerize features.
+	
+1999-05-27 03:43  zappo
+
+	* semantic-el.el:
+
+	Updated C code table and expander.
+	
+1999-05-27 03:43  zappo
+
+	* semantic.el:
+
+	Changed the variable format a little bit.
+	Added bovinate-debug
+	Added overridable functions for jump/summerize.
+	
+1999-05-23 15:30  zappo
+
+	* semantic.el:
+
+	Added a cache clear function.
+	Fixed working message call.
+	
+1999-05-23 15:30  zappo
+
+	* semantic-bnf.el:
+
+	Auto-clear when bovinating the BNF.
+	Fixed working message call.
+	
+1999-05-23 15:29  zappo
+
+	* semantic-el.el:
+
+	Fixed the C variables some.
+	
+1999-05-23 15:29  zappo
+
+	* semantic-sb.el:
+
+	Fixed up jumping to non-toplevel token things.
+	Added a parent token finder (a parent has a location)
+	Fixed a little bit with centering.
+	
+1999-05-22 03:13  zappo
+
+	* working.el:
+
+	Added bubble displays.
+	
+1999-05-21 01:38  zappo
+
+	* working.el:
+
+	Fixed up doc strings.
+	Fixed the dotgrowth display to change after growing beyond the edge of
+	the screen.
+	Added a utility fn for getting the frame size.
+	Use utility in dotgrowth and bar-graph.
+	
+1999-05-18 19:51  zappo
+
+	* working.el:
+
+	Fixed the plain bar/percent display.  Updated version to 1.1.
+	
+1999-05-18 19:31  zappo
+
+	* semantic.el:
+
+	Added a simple cache.
+	
+1999-05-18 18:00  zappo
+
+	* semantic-el.el:
+
+	Fixed compile warning.
+	
+1999-05-18 18:00  zappo
+
+	* semantic.el:
+
+	fixed compile warnings.
+	
+1999-05-18 17:59  zappo
+
+	* semantic-sb.el:
+
+	Added support for tag hierarchy methods.
+	
+1999-05-18 16:09  zappo
+
+	* semantic.el:
+
+	Added a type macro.
+	You can now force-fail a match in the debugger.
+	
+1999-05-18 16:09  zappo
+
+	* semantic-el.el:
+
+	changes from c.bnf.
+	
+1999-05-18 16:08  zappo
+
+	* c.bnf:
+
+	Fixed up the returns of some nonterminals.
+	
+1999-05-18 16:08  zappo
+
+	* semantic-sb.el:
+
+	Made it do interesting things for what is returned the C bovinator.
+	
+1999-05-17 19:30  zappo
+
+	* semantic.el:
+
+	Larger types now pass down only position.
+	
+1999-05-17 19:29  zappo
+
+	* semantic-bnf.el:
+
+	Fixed lots o bugs.
+	
+1999-05-17 19:29  zappo
+
+	* semantic-el.el:
+
+	Added a variable expander, and improved bnf from c.bnf
+	
+1999-05-17 19:28  zappo
+
+	* c.bnf:
+
+	Initial revision
+	
+1999-05-14 23:32  zappo
+
+	* semantic.el:
+
+	Debugger fix for termianls.
+	Convenience `bovinate' function.
+	Infinite comment fix.
+	Inline comment stripping.
+	
+1999-05-14 23:31  zappo
+
+	* semantic-bnf.el:
+
+	Initial revision
+	
+1999-05-07 04:39  zappo
+
+	* semantic-el.el:
+
+	Added some C rules (still broken though.)
+	
+1999-05-07 04:39  zappo
+
+	* semantic.el:
+
+	Fixed to work in 20.2
+	
+1999-05-06 23:55  zappo
+
+	* semantic.el:
+
+	Doces on the debugger.
+	
+1999-05-06 22:44  zappo
+
+	* semantic.el:
+
+	Added small doc updates.
+	Added a parse-table debugger, and debug entry point.
+	
+1999-05-06 13:34  zappo
+
+	* semantic-sb.el:
+
+	Last of the changes needed for swapping name/tokensym
+	
+1999-05-06 13:33  zappo
+
+	* semantic.el:
+
+	converted all synthetic words to reference nonterminals.
+	
+1999-05-05 15:59  zappo
+
+	* semantic-sb.el:
+
+	Initial revision
+	
+1999-05-05 13:38  zappo
+
+	* semantic-el.el:
+
+	Updated to put name before token symbol.
+	
+1999-05-05 13:37  zappo
+
+	* semantic.el:
+
+	Changed doc to want the NAME first in the synthetic tokens list.
+	Added lots of macros for referencing return tokens.
+	Mucked with working message code.
+	
+1999-05-05 13:08  zappo
+
+	* working.el:
+
+	fixed to be more robust wrt frames again.
+	
+1999-05-04 21:39  zappo
+
+	* working.el:
+
+	Update copyright.
+	Added celeron-percent-display.
+	Forced incoming precents to integer for status display.
+	Fixed so if the current frame has no minibuffer, the correct frame
+	width is used.
+	Added `working-frame-animation-display' to handle generic animations.
+	Converted the celeron to use the animator display.
+	Added a bounce display.
+	
+1999-05-03 20:06  zappo
+
+	* semantic.el, semantic-el.el:
+
+	Initial revision
+	
+1998-12-18 14:32  zappo
+
+	* working.el:
+
+	Added let of working-log-max into the displayers so they do not drop
+	messages into the *Messages* buffer.
+	
+1998-12-17 19:18  zappo
+
+	* working.el:
+
+	Removed a typo in ref1 defvar.
+	
+1998-12-17 01:55  zappo
+
+	* working.el:
+
+	Fixed some spelling.  Changed static to dynamic.
+	
+1998-12-17 01:40  zappo
+
+	* working.el:
+
+	Updated backwards compatibility comment section.
+	
+1998-12-17 01:28  zappo
+
+	* working.el:
+
+	Changed the custom variable names to be more consistant.
+	
+1998-12-17 01:24  zappo
+
+	* working.el:
+
+	Fixed up documentation and such.
+	Made to compile clean.
+	
+1998-12-17 01:10  zappo
+
+	* working.el:
+
+	Added celeron, plus static status.
+	
+1998-12-16 23:26  zappo
+
+	* working.el:
+
+	Initial revision
+	

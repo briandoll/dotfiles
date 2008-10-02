@@ -1,0 +1,209 @@
+This is semantic.info, produced by makeinfo version 4.2 from
+semantic.texi.
+
+START-INFO-DIR-ENTRY
+* semantic: (semantic).       Semantic Parsing for Emacs
+END-INFO-DIR-ENTRY
+
+
+File: semantic.info,  Node: Index,  Prev: Tools,  Up: Top
+
+Index
+*****
+
+Function Index
+**************
+
+* Menu:
+
+* %( <lisp-expression> )%:               Settings.
+* %keywordtable:                         Settings.
+* %languagemode:                         Settings.
+* %outputfile:                           Settings.
+* %parsetable:                           Settings.
+* %put:                                  Settings.
+* %quotemode:                            Settings.
+* %scopestart:                           Settings.
+* %setupfunction:                        Settings.
+* %start:                                Settings.
+* %token:                                Settings.
+* bovinate:                              Compiling.
+* bovinate-debug:                        Debugging.
+* document:                              document.
+* document-inline:                       document.
+* document-insert-defun-comment:         document.
+* document-insert-new-file-header:       document.
+* global-semantic-auto-parse-mode:       minor modes.
+* global-semantic-show-dirty-mode:       minor modes.
+* global-semantic-show-unmatched-syntax-mode: minor modes.
+* re-search-backward:                    senator.
+* re-search-forward:                     senator.
+* semantic-abbreviate-nonterminal:       Token->Text.
+* semantic-adopt-external-members:       Nonterminal Sorting.
+* semantic-analyze-current-context <1>:  Context Analysis.
+* semantic-analyze-current-context:      analyzer.
+* semantic-analyze-possible-completions <1>: Context Analysis.
+* semantic-analyze-possible-completions: analyzer.
+* semantic-auto-parse-idle-time:         minor modes.
+* semantic-auto-parse-max-buffer-size:   minor modes.
+* semantic-auto-parse-mode:              minor modes.
+* semantic-auto-parse-no-working-message: minor modes.
+* semantic-beginning-of-command <1>:     Blocks.
+* semantic-beginning-of-command:         Local Context.
+* semantic-beginning-of-context <1>:     Local Context.
+* semantic-beginning-of-context:         Blocks.
+* semantic-bovinate-debug-set-table:     Debugging.
+* semantic-bovinate-toplevel:            Compiling.
+* semantic-bovine-toplevel-full-reparse-needed-p: Parser Hooks.
+* semantic-bovine-toplevel-partial-reparse-needed-p: Parser Hooks.
+* semantic-bucketize:                    Nonterminal Sorting.
+* semantic-cb-new-class-browser:         class browser.
+* semantic-cb-speedbar-mode:             class browser.
+* semantic-chart-database-size:          charts.
+* semantic-chart-nonterminal-complexity-token: charts.
+* semantic-chart-nonterminals-by-token:  charts.
+* semantic-clear-toplevel-cache:         Compiling.
+* semantic-concise-prototype-nonterminal: Token->Text.
+* semantic-ctxt-current-argument <1>:    Local Context.
+* semantic-ctxt-current-argument:        Derived Context.
+* semantic-ctxt-current-assignment <1>:  Local Context.
+* semantic-ctxt-current-assignment:      Derived Context.
+* semantic-ctxt-current-function <1>:    Derived Context.
+* semantic-ctxt-current-function:        Local Context.
+* semantic-ctxt-current-symbol <1>:      Derived Context.
+* semantic-ctxt-current-symbol:          Local Context.
+* semantic-ctxt-scoped-types:            Local Context.
+* semantic-current-nonterminal:          Nonterminals at point.
+* semantic-current-nonterminal-parent:   Nonterminals at point.
+* semantic-dirty-token-face:             minor modes.
+* semantic-end-of-command <1>:           Blocks.
+* semantic-end-of-command:               Local Context.
+* semantic-end-of-context <1>:           Local Context.
+* semantic-end-of-context:               Blocks.
+* semantic-equivalent-tokens-p:          Token Queries.
+* semantic-find-dependency:              Token Details.
+* semantic-find-documentation:           Token Details.
+* semantic-find-innermost-nonterminal-by-position: Nonterminal Streams.
+* semantic-find-nonterminal:             Token Details.
+* semantic-find-nonterminal-by-extra-spec: Nonterminal Streams.
+* semantic-find-nonterminal-by-extra-spec-value: Nonterminal Streams.
+* semantic-find-nonterminal-by-function: Nonterminal Streams.
+* semantic-find-nonterminal-by-function-first-match: Nonterminal Streams.
+* semantic-find-nonterminal-by-name:     Nonterminal Streams.
+* semantic-find-nonterminal-by-overlay:  Nonterminals at point.
+* semantic-find-nonterminal-by-overlay-in-region: Nonterminals at point.
+* semantic-find-nonterminal-by-position: Nonterminal Streams.
+* semantic-find-nonterminal-by-property: Nonterminal Streams.
+* semantic-find-nonterminal-by-token:    Nonterminal Streams.
+* semantic-find-nonterminal-by-type:     Nonterminal Streams.
+* semantic-find-nonterminal-standard:    Nonterminal Streams.
+* semantic-flex:                         Lexing.
+* semantic-flex-keyword-get:             Keywords.
+* semantic-flex-keyword-p:               Keywords.
+* semantic-flex-keyword-put:             Keywords.
+* semantic-flex-keywords:                Keywords.
+* semantic-flex-map-keywords:            Keywords.
+* semantic-get-all-local-variables <1>:  Local Variables.
+* semantic-get-all-local-variables:      Local Context.
+* semantic-get-local-arguments <1>:      Local Variables.
+* semantic-get-local-arguments:          Local Context.
+* semantic-get-local-variables <1>:      Local Context.
+* semantic-get-local-variables:          Local Variables.
+* semantic-ia-complete-symbol:           Smart Completion.
+* semantic-ia-complete-symbol-menu:      Smart Completion.
+* semantic-imenu-auto-rebuild-directory-indexes: imenu.
+* semantic-imenu-bucketize-file:         imenu.
+* semantic-imenu-bucketize-type-parts:   imenu.
+* semantic-imenu-buckets-to-submenu:     imenu.
+* semantic-imenu-expand-type-parts:      imenu.
+* semantic-imenu-index-directory:        imenu.
+* semantic-imenu-sort-bucket-function:   imenu.
+* semantic-imenu-summary-function:       imenu.
+* semantic-name-nonterminal:             Token->Text.
+* semantic-nonterminal-abstract:         Token Details.
+* semantic-nonterminal-children:         Token Details.
+* semantic-nonterminal-external-member-children: Token Details.
+* semantic-nonterminal-external-member-p: Token Details.
+* semantic-nonterminal-external-member-parent: Token Details.
+* semantic-nonterminal-leaf:             Token Details.
+* semantic-nonterminal-protection:       Token Details.
+* semantic-nonterminal-static:           Token Details.
+* semantic-prototype-file:               Token->Text.
+* semantic-prototype-nonterminal:        Token->Text.
+* semantic-read-function:                Nonterminal Completion.
+* semantic-read-symbol:                  Nonterminal Completion.
+* semantic-read-type:                    Nonterminal Completion.
+* semantic-read-variable:                Nonterminal Completion.
+* semantic-recursive-find-nonterminal-by-name: Nonterminal Streams.
+* semantic-show-dirty-mode:              minor modes.
+* semantic-show-unmatched-syntax-mode:   minor modes.
+* semantic-speedbar-analysis:            Speedbar Analysis.
+* semantic-summarize-nonterminal:        Token->Text.
+* semantic-texi-goto-source:             document.
+* semantic-texi-update-doc:              document.
+* semantic-token-docstring:              Token Queries.
+* semantic-token-end:                    Token Queries.
+* semantic-token-extent:                 Token Queries.
+* semantic-token-extra-spec:             Token Queries.
+* semantic-token-function-args:          Token Queries.
+* semantic-token-function-destructor:    Token Queries.
+* semantic-token-function-extra-spec:    Token Queries.
+* semantic-token-function-extra-specs:   Token Queries.
+* semantic-token-function-modifiers:     Token Queries.
+* semantic-token-function-parent:        Token Queries.
+* semantic-token-function-throws:        Token Queries.
+* semantic-token-get:                    Token Queries.
+* semantic-token-include-system:         Token Queries.
+* semantic-token-name:                   Token Queries.
+* semantic-token-overlay:                Token Queries.
+* semantic-token-put:                    Token Queries.
+* semantic-token-put-no-side-effect:     Keywords.
+* semantic-token-start:                  Token Queries.
+* semantic-token-token:                  Token Queries.
+* semantic-token-type:                   Token Queries.
+* semantic-token-type-extra-spec:        Token Queries.
+* semantic-token-type-extra-specs:       Token Queries.
+* semantic-token-type-modifiers:         Token Queries.
+* semantic-token-type-parent:            Token Queries.
+* semantic-token-type-parent-implement:  Token Queries.
+* semantic-token-type-parent-superclass: Token Queries.
+* semantic-token-type-parts:             Token Queries.
+* semantic-token-variable-const:         Token Queries.
+* semantic-token-variable-default:       Token Queries.
+* semantic-token-variable-extra-spec:    Token Queries.
+* semantic-token-variable-extra-specs:   Token Queries.
+* semantic-token-variable-modifiers:     Token Queries.
+* semantic-uml-abbreviate-nonterminal:   Token->Text.
+* semantic-unmatched-syntax-face:        minor modes.
+* semantic-up-context <1>:               Blocks.
+* semantic-up-context:                   Local Context.
+* semanticdb-file-stream:                semanticdb.
+* semanticdb-find-nonterminal-by-extra-spec: semanticdb.
+* semanticdb-find-nonterminal-by-extra-spec-value: semanticdb.
+* semanticdb-find-nonterminal-by-function: semanticdb.
+* semanticdb-find-nonterminal-by-name:   semanticdb.
+* semanticdb-find-nonterminal-by-name-regexp: semanticdb.
+* semanticdb-find-nonterminal-by-property: semanticdb.
+* semanticdb-find-nonterminal-by-type:   semanticdb.
+* semanticdb-mode-hooks:                 semanticdb.
+* semanticdb-persistent-path:            semanticdb.
+* semanticdb-project-roots:              semanticdb.
+* senator-complete-symbol:               senator.
+* senator-completion-menu-keyboard-popup: senator.
+* senator-copy-token:                    senator.
+* senator-copy-token-to-register:        senator.
+* senator-isearch-toggle-semantic-mode:  senator.
+* senator-jump:                          senator.
+* senator-kill-token:                    senator.
+* senator-minor-mode:                    senator.
+* senator-next-token:                    senator.
+* senator-previous-token:                senator.
+* senator-search-backward:               senator.
+* senator-search-forward:                senator.
+* senator-step-at-start-end-token-ids:   senator.
+* senator-step-at-token-ids:             senator.
+* senator-yank-token:                    senator.
+* word:                                  senator.
+* word-search-forward:                   senator.
+
+

@@ -1,0 +1,62 @@
+;; Object semantic
+;; EDE project file.
+(ede-proj-project "semantic"
+  :name "semantic"
+  :version "1.4.4"
+  :file "Project.ede"
+  :targets (list 
+   (ede-proj-target-makefile-miscelaneous "example"
+    :name "example"
+    :path ""
+    :source '("semantic-skel.el" "skeleton.bnf" "semantic-example.el")
+    )
+   (ede-proj-target-elisp "nil"
+    :name "init"
+    :path ""
+    :source '("semantic-load.el")
+    :partofall 'nil
+    )
+   (ede-proj-target-elisp "semantic"
+    :name "semantic"
+    :path ""
+    :source '("semantic.el" "semantic-util.el" "semantic-bnf.el" "semantic-ctxt.el")
+    :versionsource '("semantic.el")
+    )
+   (ede-proj-target-elisp "Languages"
+    :name "Languages"
+    :path ""
+    :source '("semantic-c.el" "semantic-el.el" "semantic-java.el" "semantic-make.el" "semantic-scm.el" "semantic-texi.el")
+    )
+   (ede-proj-target-elisp "tools"
+    :name "tools"
+    :path ""
+    :source '("semantic-imenu.el" "semantic-sb.el" "working.el" "semanticdb.el" "document.el" "document-vars.el" "sformat.el" "semantic-chart.el" "semantic-util-modes.el" "semantic-analyze.el" "semantic-ia.el" "semantic-cb.el" "semantic-ia-sb.el")
+    :aux-packages '("eieio" "speedbar")
+    )
+   (ede-proj-target-elisp "senator"
+    :name "senator"
+    :path ""
+    :source '("senator.el")
+    )
+   (ede-proj-target-aux "misc"
+    :name "misc"
+    :path ""
+    :source '("INSTALL" "NEWS" "ChangeLog")
+    )
+   (ede-proj-target-makefile-info "info"
+    :name "info"
+    :path ""
+    :source '("semantic.texi")
+    )
+   (ede-proj-target-aux "aux"
+    :name "aux"
+    :path ""
+    :source '("c.bnf" "make.bnf" "java.bnf" "scheme.bnf")
+    )
+   )
+  :web-site-url "http://cedet.sourceforge.net/semantic.shtml"
+  :web-site-directory "~/cedet/www"
+  :web-site-file "semantic.shtml"
+  :ftp-upload-site "/ftp@upload.sourceforge.net:/incoming"
+  :configuration-variables 'nil
+  )
