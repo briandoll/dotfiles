@@ -2,8 +2,6 @@
 export EDITOR='emacs'
 export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
-export HTTP_PROXY=http://westproxy.wellsfargo.com:80
-export http_proxy=$HTTP_PROXY
  
 fpath=(~/.zsh/functions $fpath)
  
