@@ -58,7 +58,7 @@ else
 
 endif " has("autocmd")
 
-if has("folding")
+if has("foldingggggg")
   set foldenable
   set foldmethod=syntax
   set foldlevel=1
