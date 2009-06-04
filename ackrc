@@ -1,0 +1,10 @@
+# lexically sort filenames
+--sort-files
+
+# add haml and rake extensions to ack's notion of Ruby files
+--type-add=ruby=haml,rake
+
+# ignore vendor dirs, I rarely want to search in there.  can be overridden by
+# --noignore-dir=vendor
+--ignore-dir=vendor
+
