@@ -5,6 +5,7 @@
 :sources: 
 - http://gems.rubyforge.org
 - http://gems.github.com
-gem: --no-ri --no-rdoc
+gem: --no-ri
 :benchmark: false
 :backtrace: false
+rdoc: --inline-source --line-numbers --format=html --template=hanna
