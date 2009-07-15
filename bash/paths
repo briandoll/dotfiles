@@ -1,1 +1,1 @@
-export PATH="~/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:~/.gem/ruby/1.8/bin:$PATH"
+export PATH="~/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/opt/subversion/bin:~/.gem/ruby/1.8/bin:$PATH:/usr/local/jruby/bin"
