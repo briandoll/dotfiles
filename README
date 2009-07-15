@@ -1,8 +1,5 @@
-After getting my work laptop re-imaged, I decided it was about time to make those big changes I'd been putting off for too long.  
+Stolen, resurrected, patched, punched and stretched dotfiles.
 
-I'm hoping to keep these dotfiles up to date as I aim to migrate myself to better tools.
-
-Old: bash, [textmate, eclipse, e, vim]
-New: zsh, emacs
-
-Let us begin, foo
+1. Download
+2. ruby install.rb
+3. Dance!
