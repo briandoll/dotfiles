@@ -4,6 +4,7 @@
 [alias]
   co = checkout
   s = status
+  unadd = "reset HEAD"
 [color]
   diff = auto
   status = auto
@@ -15,3 +16,5 @@
 [github]
 	user = briandoll
 	token = nah
+[push]
+	default = matching
