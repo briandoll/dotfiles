@@ -5,16 +5,19 @@
   co = checkout
   s = status
   unadd = "reset HEAD"
+  info = "remote -v"
+  forget = "update-index --assume-unchanged"
 [color]
   diff = auto
   status = auto
   branch = auto
+  ui = auto
 [core]
   excludesfile = ~/.gitignore
 [apply]
   whitespace = nowarn
 [github]
-	user = briandoll
-	token = nah
+	user = YOU
+	token = YOURS
 [push]
 	default = matching
