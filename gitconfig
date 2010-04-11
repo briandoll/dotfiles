@@ -7,6 +7,7 @@
   unadd = "reset HEAD"
   info = "remote -v"
   forget = "update-index --assume-unchanged"
+  l = "log --stat --summary"
 [color]
   diff = auto
   status = auto
