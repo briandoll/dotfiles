@@ -1,4 +1,3 @@
-
 #!/usr/bin/env ruby
  
 # from http://errtheblog.com/posts/89-huba-huba 
@@ -16,4 +15,3 @@ Dir.chdir File.dirname(__FILE__) do
     end
   end
 end
-
