@@ -5,9 +5,7 @@
 gem: --no-ri
 gemcutter_key: YOURS
 :sources: 
-- http://gemcutter.org
 - http://gems.rubyforge.org
-- http://gems.github.com
 :backtrace: false
 :bulk_threshold: 1000
-rdoc: --inline-source --line-numbers --format=html --template=hanna
+rdoc: --inline-source --line-numbers --format=html

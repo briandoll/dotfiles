@@ -1,18 +1,14 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
 require 'irb/completion'
 require 'irb/ext/save-history'
 require 'rubygems'
 require 'wirble'
 Wirble.init
 Wirble.colorize
-require 'pp'
-require 'looksee/shortcuts'
 
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
- 
 IRB.conf[:PROMPT_MODE] = :SIMPLE
- 
 IRB.conf[:AUTO_INDENT] = true
  
 class Object
@@ -36,9 +32,5 @@ class Object
   end
 end
 
-def foo
-  puts "bar"
-end
- 
 load File.dirname(__FILE__) + '/.railsrc' if $0 == 'irb' && ENV['RAILS_ENV']
 
