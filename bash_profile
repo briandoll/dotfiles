@@ -2,6 +2,7 @@ source ~/.bash/aliases
 source ~/.bash/completions
 source ~/.bash/paths
 source ~/.bash/config
+source ~/.bash/functions
 
 JAVA_HOME=/usr/bin/java
 
