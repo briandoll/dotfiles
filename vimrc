@@ -2,6 +2,8 @@ set nocompatible
 syntax enable
 set encoding=utf-8
 set showcmd                     " display incomplete commands
+let mapleader=","
+call pathogen#infect()
 filetype plugin indent on       " load file type plugins + indentation
 
 "" Whitespace
