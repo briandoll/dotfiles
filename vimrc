@@ -25,7 +25,11 @@ set ruler                       " show the cursor position all the time
 
 " Color scheme
 set background=dark
-colorscheme moria
+if has('gui_running')
+ colorscheme moria
+else
+  colorscheme xoria256
+endif
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 set guifont=Liberation\ Mono:h18
