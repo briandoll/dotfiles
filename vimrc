@@ -33,6 +33,7 @@ endif
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 set guifont=Liberation\ Mono:h18
+syntax on
 
 " Numbers
 set number
