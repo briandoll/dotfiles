@@ -18,7 +18,7 @@
 [apply]
   whitespace = nowarn
 [github]
-	user = YOU
-	token = YOURS
+  user = !sh -c 'echo $GITHUB_USER'
+  token = !sh -c 'echo $GITHUB_TOKEN'
 [push]
-	default = matching
+  default = matching

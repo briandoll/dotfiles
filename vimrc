@@ -1,15 +1,15 @@
 set nocompatible                " incompatibility with vi to enable the awesom of vim
-syntax enable
-set encoding=utf-8
+syntax enable                   " how is this not a default?
+set encoding=utf-8              " we are the world
 set showcmd                     " display incomplete commands
-let mapleader=","
-call pathogen#infect()
+let mapleader=","               " cargo-culted but I like it
+call pathogen#infect()          " manage plugins via /bundle with pathogen`
 filetype plugin indent on       " load file type plugins + indentation
 
 "" Whitespace
-set linebreak
-set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
-set expandtab                   " use spaces, not tabs (optional)
+set linebreak                   " wrap lines on words, not characters
+set tabstop=2 shiftwidth=2      " a tab is two spaces
+set expandtab                   " use spaces, not tabs
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
 "" Searching
@@ -18,8 +18,8 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
-set nobackup
-set nowritebackup
+set nobackup                    " livin on the edge
+set nowritebackup               " do not litter
 set history=50                  " keep 50 lines of command line history
 set ruler                       " show the cursor position all the time
 
@@ -36,5 +36,5 @@ set guifont=Liberation\ Mono:h18
 syntax on
 
 " Numbers
-set number
-set numberwidth=5
+set number                      " enable line numbers
+set numberwidth=5               " and align them nicely
