@@ -1,4 +1,4 @@
-set nocompatible
+set nocompatible                " incompatibility with vi to enable the awesom of vim
 syntax enable
 set encoding=utf-8
 set showcmd                     " display incomplete commands
