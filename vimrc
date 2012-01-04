@@ -48,3 +48,5 @@ map j gj
 
 " copy all text in the file
 map <leader>ca :%y+<CR>
+" close the current buffer
+map <leader>w :bd<CR>
