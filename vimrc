@@ -38,3 +38,8 @@ syntax on
 " Numbers
 set number                      " enable line numbers
 set numberwidth=5               " and align them nicely
+
+" Mapping
+" move up and down visual lines, handy for wrapped lines
+map k gk
+map j gj
