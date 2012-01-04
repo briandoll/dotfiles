@@ -3,6 +3,7 @@ syntax enable                   " how is this not a default?
 set encoding=utf-8              " we are the world
 set showcmd                     " display incomplete commands
 let mapleader=","               " cargo-culted but I like it
+let g:mapleader = ","           " ditto
 call pathogen#infect()          " manage plugins via /bundle with pathogen`
 filetype plugin indent on       " load file type plugins + indentation
 
@@ -43,3 +44,6 @@ set numberwidth=5               " and align them nicely
 " move up and down visual lines, handy for wrapped lines
 map k gk
 map j gj
+
+" copy all text in the file
+map <leader>ca :%y+<CR>
