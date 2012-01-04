@@ -6,6 +6,7 @@ let mapleader=","               " cargo-culted but I like it
 let g:mapleader = ","           " ditto
 call pathogen#infect()          " manage plugins via /bundle with pathogen`
 filetype plugin indent on       " load file type plugins + indentation
+set autoread                    " automatically reload files that have changed outside vim
 
 "" Whitespace
 set linebreak                   " wrap lines on words, not characters
