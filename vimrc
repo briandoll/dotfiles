@@ -50,3 +50,7 @@ map j gj
 map <leader>ca :%y+<CR>
 " close the current buffer
 map <leader>w :bd<CR>
+" clear search results
+map <leader>cs :noh<CR>
+" reload Command-T configuration and cache
+map <leader>tf :CommandTFlush<CR>
