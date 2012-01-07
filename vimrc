@@ -22,6 +22,7 @@ set smartcase                   " ... unless they contain at least one capital l
 
 set nobackup                    " livin on the edge
 set nowritebackup               " do not litter
+set directory=/tmp              " write swap files in /tmp
 set history=50                  " keep 50 lines of command line history
 set ruler                       " show the cursor position all the time
 
