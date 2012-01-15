@@ -55,3 +55,5 @@ map <leader>w :bd<CR>
 map <leader>cs :noh<CR>
 " reload Command-T configuration and cache
 map <leader>tf :CommandTFlush<CR>
+" reload vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
