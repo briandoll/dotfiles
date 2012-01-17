@@ -47,6 +47,20 @@ set numberwidth=5               " and align them nicely
 map k gk
 map j gj
 
+" Restore cursor position when re-opening a file
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
+
+
 " copy all text in the file
 map <leader>ca :%y+<CR>
 " close the current buffer
@@ -56,4 +70,4 @@ map <leader>cs :noh<CR>
 " reload Command-T configuration and cache
 map <leader>tf :CommandTFlush<CR>
 " reload vimrc
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<CR>
