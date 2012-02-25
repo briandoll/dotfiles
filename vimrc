@@ -25,6 +25,7 @@ set nowritebackup               " do not litter
 set directory=/tmp              " write swap files in /tmp
 set history=50                  " keep 50 lines of command line history
 set ruler                       " show the cursor position all the time
+set list listchars=trail:.,tab:>. " highlight trailing whitespace, etc.
 
 " Color scheme
 set background=dark
