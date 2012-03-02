@@ -2,6 +2,6 @@ httpstatus(){
   echo "starting..."
   while read line
   do
-    echo $(curl --write-out %{http_code} --silent --output /dev/null $line)
+    echo $(curl --write-out "%{http_code} %{url_effective}" --silent --output /dev/null $line)
   done <$1
 }
