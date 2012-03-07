@@ -39,6 +39,11 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0
 set guifont=Liberation\ Mono:h18
 syntax on
 
+" set term so it displays properly in tmux
+if !has("gui_running")
+  set term=screen-256color
+endif
+
 " Numbers
 set number                      " enable line numbers
 set numberwidth=5               " and align them nicely
