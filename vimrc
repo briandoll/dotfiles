@@ -9,7 +9,7 @@ filetype plugin indent on       " load file type plugins + indentation
 set autoread                    " automatically reload files that have changed outside vim
 
 "" Whitespace
-set linebreak                   " wrap lines on words, not characters
+set wrap linebreak nolist       " wrap lines on words, not characters
 set tabstop=2 shiftwidth=2      " a tab is two spaces
 set expandtab                   " use spaces, not tabs
 set backspace=indent,eol,start  " backspace through everything in insert mode
