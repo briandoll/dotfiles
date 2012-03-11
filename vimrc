@@ -77,3 +77,5 @@ map <leader>cs :noh<CR>
 map <leader>tf :CommandTFlush<CR>
 " reload vimrc
 nnoremap <leader>sv :source $MYVIMRC<CR>
+" open current file in defult app
+map <leader>o :!open %
