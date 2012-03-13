@@ -1,7 +1,11 @@
-httpstatus(){
+function httpstatus(){
   echo "starting..."
   while read line
   do
     echo $(curl --write-out "%{http_code} %{url_effective}" --silent --output /dev/null $line)
   done <$1
+};
+
+function sum(){
+  awk '{total=total+$1;printf("sum: %d\n", total)}'
 }
