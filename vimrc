@@ -7,6 +7,7 @@ let g:mapleader = ","           " ditto
 call pathogen#infect()          " manage plugins via /bundle with pathogen`
 filetype plugin indent on       " load file type plugins + indentation
 set autoread                    " automatically reload files that have changed outside vim
+set clipboard=unnamed           " use the system clipboard by default
 
 "" Whitespace
 set wrap linebreak nolist       " wrap lines on words, not characters
