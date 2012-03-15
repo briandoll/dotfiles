@@ -67,7 +67,6 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
-
 " copy all text in the file
 map <leader>ca :%y+<CR>
 " close the current buffer
@@ -80,3 +79,6 @@ map <leader>tf :CommandTFlush<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 " open current file in defult app
 map <leader>o :!open %
+" turn off list for prose
+map <leader>prose :set nolist<CR>:set spell
+
