@@ -21,4 +21,4 @@
   user = !sh -c 'echo $GITHUB_USER'
   token = !sh -c 'echo $GITHUB_TOKEN'
 [push]
-  default = matching
+  default = current
