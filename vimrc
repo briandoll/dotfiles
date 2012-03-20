@@ -28,22 +28,16 @@ set history=50                  " keep 50 lines of command line history
 set ruler                       " show the cursor position all the time
 set list listchars=trail:.,tab:>. " highlight trailing whitespace, etc.
 
-" Color scheme
-set background=dark
-if has('gui_running')
- colorscheme moria
-else
-  colorscheme xoria256
-endif
-highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
-set guifont=Liberation\ Mono:h18
-syntax on
-
 " set term so it displays properly in tmux
 if !has("gui_running")
   set term=screen-256color
 endif
+
+" Color scheme
+set background=dark
+syntax on
+colorscheme solarized
+set guifont=Liberation\ Mono:h18
 
 " Numbers
 set number                      " enable line numbers
