@@ -1,6 +1,7 @@
 [user]
   name = Brian Doll
   email = brian@emphaticsolutions.com
+
 [alias]
   co = checkout
   s = status
@@ -8,17 +9,33 @@
   info = "remote -v"
   forget = "update-index --assume-unchanged"
   l = "log --stat --summary"
+  br = branch
+  a = add
+  b = branch
+  d = diff
+  v = show
+  ll = log
+  c = checkout
+  cc = commit
+
 [color]
-  diff = auto
-  status = auto
-  branch = auto
-  ui = auto
+  diff = true
+  status = true
+  branch = true
+  ui = true
+  interactive = true
+
 [core]
   excludesfile = ~/.gitignore
+  editor = vim
+  whitespace = trailing-space,space-before-tab
+
 [apply]
-  whitespace = nowarn
+  whitespace = fix
+
 [github]
   user = !sh -c 'echo $GITHUB_USER'
   token = !sh -c 'echo $GITHUB_TOKEN'
+
 [push]
   default = current
