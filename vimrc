@@ -68,7 +68,8 @@ augroup END
 " Gist config
 let g:gist_browser_command = 'open /Applications/Google\ Chrome.app %URL%'
 let g:gist_show_privates = 1     " show private gists when listing
-let g:gist_private = 1           " create private gists by default
+let g:gist_post_private = 1      " create private gists by default
+let g:gist_detect_filetype = 1
 let g:github_user =  $GITHUB_USER
 let g:github_token = $GITHUB_TOKEN
 
