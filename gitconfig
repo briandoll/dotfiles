@@ -17,6 +17,7 @@
   ll = log
   c = checkout
   cc = commit
+  dc = "diff --cached"
 
 [color]
   diff = true
@@ -39,3 +40,5 @@
 
 [push]
   default = current
+[credential]
+	helper = osxkeychain
