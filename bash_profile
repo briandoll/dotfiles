@@ -16,4 +16,3 @@ fi
 
 # rvm
 if [[ -s /Users/briandoll/.rvm/scripts/rvm ]] ; then source /Users/briandoll/.rvm/scripts/rvm ; fi
-source ~/Developer/cinderella.profile
