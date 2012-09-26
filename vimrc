@@ -84,7 +84,7 @@ map <leader>tf :CommandTFlush<CR>
 " reload vimrc
 nnoremap <leader>sv :source $MYVIMRC<CR>
 " open current file in defult app
-map <leader>o :!open %
+map <leader>o :!open "%"
 " turn off list for prose
 map <leader>prose :set nolist<CR>:set spell
 
