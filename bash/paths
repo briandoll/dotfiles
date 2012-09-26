@@ -1,3 +1,2 @@
 export PATH="~/Developer/bin:~/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/opt/subversion/bin:~/.gem/ruby/1.8/bin:$PATH:/usr/local/jruby/bin"
 export R_HOME=/Library/Frameworks/R.framework/Resources
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:R_HOME/bin
