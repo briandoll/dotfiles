@@ -13,6 +13,8 @@ $(".subtext").css("padding-bottom", "10px");
 $(".title").css("font-size", "12pt");
 
 $('a:contains("github")').closest('tr').css("background-color", "lightyellow");
+$('a:contains("GitHub")').closest('tr').css("background-color", "lightyellow");
+$('a:contains("Github")').closest('tr').css("background-color", "lightyellow");
 $('a[href*="github"]').closest('tr').css("background-color", "lightyellow");
 $('span.comment:contains("github")').closest('td.default').css("background-color", "lightyellow");
 $('span.comment:contains("Github")').closest('td.default').css("background-color", "lightyellow");
