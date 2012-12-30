@@ -9,3 +9,4 @@ alias flushdns="dscacheutil -flushcache; echo 'Flushed DNS, btw here is your hos
 alias tnew="tmux new -s $*"
 alias tls="tmux ls"
 alias ta="tmux attach -t $*"
+alias r="ls -lt | head"
