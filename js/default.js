@@ -1,1 +1,1 @@
-$('body').html($('body').html().replace(/github/gi,'GitHub'));
+$('body').html().replace(/github/gi,'GitHub');
