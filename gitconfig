@@ -27,7 +27,7 @@
   interactive = true
 
 [core]
-  excludesfile = ~/.gitignore
+  excludesfile = /opt/boxen/config/git/gitignore
   editor = vim
   whitespace = trailing-space,space-before-tab
 
@@ -41,6 +41,6 @@
 [push]
   default = current
 [credential]
-	helper = osxkeychain
+	helper = /opt/boxen/bin/boxen-git-credential
 [hub]
 	protocol = https
