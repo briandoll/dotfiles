@@ -1,0 +1,91 @@
+/* Modified from Jason Long's styles: https://gist.github.com/jasonlong/bf8eb2ae033952fee832 */
+/* Hide the ads */
+.mq,
+.oM,
+.u7,
+.V3vJRb,
+.yxEQwb { display: none; }
+
+/* Un-comment to hide the footer */
+.l2 { display: none; }
+
+/* Larger message font */
+.ii {
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+/* max-width for message body */
+.hx .ii {
+  max-width: 95%;
+}
+
+/* message list */
+.F  td {
+  font-size: 14px;
+}
+
+/* compose box */
+.editable {
+ font-size: 14px;
+ line-height: 1.1;
+}
+
+.Zs {
+  display: none;
+}
+
+/* header cleanup */
+.gb_5b {
+  background-color: #f4f4f4;
+}
+
+.gb_na .gb_la,
+#gbwa,
+.gb_ea {
+  display: none;
+}
+
+.gb_I { /* avatar */
+  display: block;
+  float: right;
+}
+
+/* labels in message list */
+.ar.as {
+  display: none;
+}
+
+/* make main content take full width */
+.if {
+  margin-right: 0;
+}
+
+.nH.hx {
+  padding-right: 0;
+}
+
+/* no gray bg for read messages */
+.yO {
+  background: none;
+  color: #555;
+}
+
+/* lighter highlight color */
+.x7 {
+  background: #ffffe7; 
+}
+
+/* lighter bottom borders on message list */
+.xY {
+  border-bottom-color: #e9e9e9;
+}
+
+/* hide quick link buttons in message list */
+.aKS {
+  display: none;
+}
+
+.a4X {
+  padding-right: 0 !important;
+}
